@@ -22,5 +22,207 @@
       "consequencia": "Candidatos com isenção confirmada seguem aptos para homologação final.",
       "fonte": "Cebraspe / DOE-AL"
     }
-  ]
+  ],
+  "federal": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [
+      {
+        "titulo": "Receita Federal do Brasil (RFB)",
+        "sub": "Âmbito Nacional",
+        "badge_class": "badge-planning",
+        "status_badge": "Banca em Contratação",
+        "cargo": "Auditor-Fiscal e Analista-Tributário",
+        "vagas": "146 autorizadas",
+        "remuneraao": "Até R$ 29.921,71",
+        "remuneracao": "Até R$ 29.921,71",
+        "banca": "Em definição final",
+        "perspectiva": "Processo em andamento para contratação direta da banca organizadora e posterior publicação do edital.",
+        "movimentacao": "Minuta de dispensa registrada",
+        "fonte": "Portal RFB"
+      }
+    ],
+    "5": [],
+    "6": [],
+    "7": []
+  },
+  "estadual": {
+    "1": [
+      {
+        "titulo": "SEFAZ-AL — Alagoas",
+        "sub": "Estado de Alagoas",
+        "badge_class": "badge-open",
+        "status_badge": "Inscrições Abertas / Homologação",
+        "cargo": "Auditor Fiscal (AFTE)",
+        "vagas": "40 imediatas",
+        "remuneracao": "Até R$ 25.270,68",
+        "banca": "Cebraspe",
+        "perspectiva": "Fase de consolidação de isenções e inscrições para a aplicação das provas pelo Cebraspe.",
+        "movimentacao": "Divulgação do Edital nº 05 de isenções",
+        "fonte": "Cebraspe"
+      }
+    ],
+    "2": [
+      {
+        "titulo": "SEFAZ-PR — Paraná",
+        "sub": "Estado do Paraná",
+        "badge_class": "badge-closed",
+        "status_badge": "Inscrições Encerradas",
+        "cargo": "Auditor Fiscal da Receita Estadual",
+        "vagas": "60 vagas",
+        "remuneracao": "R$ 26.230,00",
+        "banca": "FGV / Cebraspe",
+        "perspectiva": "Concurso em andamento avançado rumo à aplicação de provas e avaliações médicas.",
+        "movimentacao": "Convocação para perícias médicas",
+        "fonte": "SEFAZ-PR"
+      }
+    ],
+    "3": [
+      {
+        "titulo": "SEFAZ-RJ — Rio de Janeiro",
+        "sub": "Estado do Rio de Janeiro",
+        "badge_class": "badge-open",
+        "status_badge": "Banca Cebraspe",
+        "cargo": "Auditor Fiscal e Analista",
+        "vagas": "195 vagas",
+        "remuneracao": "R$ 27.430,00",
+        "banca": "Cebraspe",
+        "perspectiva": "Contrato assinado com a organizadora. Publicação do edital oficial é iminente.",
+        "movimentacao": "Assinatura de contrato formalizada",
+        "fonte": "SEFAZ-RJ"
+      }
+    ],
+    "4": [],
+    "5": [
+      {
+        "titulo": "SEFAZ-SP — São Paulo",
+        "sub": "Estado de São Paulo",
+        "badge_class": "badge-planning",
+        "status_badge": "Autorizado",
+        "cargo": "Auditor-Fiscal (AFRE)",
+        "vagas": "~200 previstas",
+        "remuneracao": "R$ 20.117,00+",
+        "banca": "A definir",
+        "perspectiva": "Grupo técnico estruturando o termo de referência para escolha de banca e edital.",
+        "movimentacao": "Despacho autorizativo publicado",
+        "fonte": "SEFAZ-SP"
+      }
+    ],
+    "6": [
+      {
+        "titulo": "SEFAZ-MG — Minas Gerais",
+        "sub": "Estado de Minas Gerais",
+        "badge_class": "badge-planning",
+        "status_badge": "Comissão Formada",
+        "cargo": "Auditor Fiscal",
+        "vagas": "A definir",
+        "remuneracao": "R$ 20.000,00+",
+        "banca": "A definir",
+        "perspectiva": "Comissão avaliando dados internos de vacância e impacto orçamentário.",
+        "movimentacao": "Designação de comissão técnica",
+        "fonte": "SEFAZ-MG"
+      }
+    ],
+    "7": [
+      {
+        "titulo": "SEFAZ-RS — Rio Grande do Sul",
+        "sub": "Estado do Rio Grande do Sul",
+        "badge_class": "badge-planning",
+        "status_badge": "Estudo de Quadro",
+        "cargo": "Auditor-Fiscal",
+        "vagas": "A confirmar",
+        "remuneracao": "R$ 21.000,00",
+        "banca": "A definir",
+        "perspectiva": "Levantamento de cargos vagos decorrentes de aposentadorias para futuro certame.",
+        "movimentacao": "Mapeamento interno",
+        "fonte": "Receita Estadual RS"
+      }
+    ]
+  },
+  "municipal": {
+    "1": [
+      {
+        "titulo": "ISS Curitiba / PR",
+        "sub": "Prefeitura de Curitiba",
+        "badge_class": "badge-open",
+        "status_badge": "Inscrições Abertas",
+        "cargo": "Auditor Fiscal de Tributos",
+        "vagas": "30 vagas",
+        "remuneracao": "R$ 18.352,33",
+        "banca": "Fundação FAFIPA",
+        "perspectiva": "Edital ativo com provas agendadas para novembro e dezembro de 2026.",
+        "movimentacao": "Inscrições em andamento",
+        "fonte": "Prefeitura de Curitiba"
+      }
+    ],
+    "2": [],
+    "3": [
+      {
+        "titulo": "ISS Belo Horizonte / MG",
+        "sub": "Prefeitura de Belo Horizonte",
+        "badge_class": "badge-open",
+        "status_badge": "Banca FGV",
+        "cargo": "Auditor Fiscal de Tributos",
+        "vagas": "20 vagas",
+        "remuneracao": "R$ 17.500,00",
+        "banca": "FGV",
+        "perspectiva": "Banca FGV definida por dispensa de licitação. Edital previsto em breve.",
+        "movimentacao": "Ratificação de dispensa no DOM",
+        "fonte": "DOM BH"
+      }
+    ],
+    "4": [],
+    "5": [
+      {
+        "titulo": "ISS Campinas / SP",
+        "sub": "Prefeitura de Campinas",
+        "badge_class": "badge-planning",
+        "status_badge": "Autorizado",
+        "cargo": "Auditor Fiscal Tributário",
+        "vagas": "12 vagas",
+        "remuneracao": "R$ 14.800,00",
+        "banca": "A definir",
+        "perspectiva": "Autorizado pelo executivo municipal para suprir aposentadorias recentes.",
+        "movimentacao": "Publicação de autorização oficial",
+        "fonte": "Prefeitura de Campinas"
+      }
+    ],
+    "6": [
+      {
+        "titulo": "ISS Goiânia / GO",
+        "sub": "Prefeitura de Goiânia",
+        "badge_class": "badge-planning",
+        "status_badge": "Comissão Reestruturada",
+        "cargo": "Auditor Tributário Municipal",
+        "vagas": "A definir",
+        "remuneracao": "R$ 16.200,00",
+        "banca": "A definir",
+        "perspectiva": "Comissão atualizada para agilizar o termo de referência e contratação de banca.",
+        "movimentacao": "Portaria de reestruturação",
+        "fonte": "Diário Oficial de Goiânia"
+      }
+    ],
+    "7": [
+      {
+        "titulo": "ISS Porto Alegre / RS",
+        "sub": "Prefeitura de Porto Alegre",
+        "badge_class": "badge-planning",
+        "status_badge": "Previsão Orçamentária",
+        "cargo": "Auditor-Fiscal da Receita",
+        "vagas": "A confirmar",
+        "remuneracao": "R$ 18.000,00",
+        "banca": "A definir",
+        "perspectiva": "Inclusão de despesas com seleção pública na proposta orçamentária.",
+        "movimentacao": "Previsão no PPA",
+        "fonte": "Prefeitura de Porto Alegre"
+      }
+    ]
+  },
+  "agenda": [
+    { "orgao": "ISS Curitiba / PR", "evento": "Aplicação de Provas (Auditor)", "data": "22/11/2026", "tipo": "Oficial" },
+    { "orgao": "ISS Curitiba / PR", "evento": "Aplicação de Provas (Fiscal)", "data": "13/12/2026", "tipo": "Oficial" },
+    { "orgao": "SEFAZ-RJ", "evento": "Publicação do Edital", "data": "Novembro/2026", "tipo": "Estimada" }
+  ],
+  "nota_rodape": "Data da Pesquisa: 23 de Outubro de 2026. Comparação realizada com base em diários oficiais e portais especializados (Estratégia e Gran Cursos)."
 }
