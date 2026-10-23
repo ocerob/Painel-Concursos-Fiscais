@@ -1,26 +1,28 @@
 import os
 import datetime
-import requests
+import json
 from google import genai
 
-# Configuração da API do Gemini via variáveis de ambiente do GitHub
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 def buscar_e_atualizar():
     data_hoje = datetime.date.today().strftime("%d/%m/%Y")
     
-    # Prompt enviado para o modelo atualizar o código mantendo a estrutura exata
+    # Carrega os dados atuais de concursos
+    try:
+        with open("dados.json", "r", encoding="utf-8") as f:
+            dados_atuais = f.read()
+    except FileNotFoundError:
+        dados_atuais = "{}"
+
     prompt = f"""
-    Você é um assistente encarregado de atualizar um painel interativo semanal em HTML sobre concursos fiscais do Brasil (Receita Federal, SEFAZ e ISS/SEFIN).
+    Você é um assistente de atualização de dados de concursos fiscais no Brasil.
+    Data de referência: {data_hoje}.
     
-    A data de hoje para a atualização é: {data_hoje}.
+    Aqui estão os dados atuais em JSON:
+    {dados_atuais}
     
-    Por favor, leia o arquivo index.html atual do repositório, faça uma busca/análise das movimentações recentes sobre concursos fiscais no Brasil e gere a versão ATUALIZADA do HTML mantendo EXATAMENTE o mesmo CSS, JavaScript, abas e estrutura visual.
-    
-    Regras obrigatorias:
-    1. Retorne APENAS o código HTML completo e válido, sem explicações em markdown fora do código.
-    2. Atualize os indicadores do cabeçalho, a seção de 'Novidades da Semana' com movimentações reais recentes e os cartões nas etapas corretas.
-    3. Mantenha a agenda e as perspectivas dos próximos 12 meses no final da página.
+    Por favor, pesquise mentalmente por movimentações recentes de concursos fiscais (Receita Federal, SEFAZ, ISS) e retorne APENAS um objeto JSON válido (sem blocos de código markdown, sem texto antes ou depois) atualizando a data de atualização, os números dos indicadores e as novidades da semana, mantendo a mesma estrutura.
     """
     
     client = genai.Client(api_key=GEMINI_API_KEY)
@@ -29,20 +31,21 @@ def buscar_e_atualizar():
         contents=prompt,
     )
     
-    novo_html = response.text.strip()
+    texto_resposta = response.text.strip()
     
-    # Remove marcações de bloco de código se o modelo as incluir
-    if novo_html.startswith("```html"):
-        novo_html = novo_html[7:]
-    if novo_html.startswith("```"):
-        novo_html = novo_html[3:]
-    if novo_html.endswith("```"):
-        novo_html = novo_html[:-3]
+    # Limpa formatação markdown se houver
+    if texto_resposta.startswith("```json"):
+        texto_resposta = texto_resposta[7:]
+    if texto_resposta.startswith("```"):
+        texto_resposta = texto_resposta[3:]
+    if texto_resposta.endswith("```"):
+        texto_resposta = texto_resposta[:-3]
         
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(novo_html.strip())
+    # Salva os novos dados atualizados
+    with open("dados.json", "w", encoding="utf-8") as f:
+        f.write(texto_resposta.strip())
 
-    print("Painel atualizado com sucesso!")
+    print("Dados atualizados com sucesso via JSON!")
 
 if __name__ == "__main__":
     buscar_e_atualizar()
