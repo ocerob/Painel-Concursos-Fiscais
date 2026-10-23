@@ -3,7 +3,7 @@
   "indicadores": {
     "abertos": 2,
     "encerrados": 1,
-    "banca": 2,
+    "banca": 3,
     "autorizados": 3,
     "provas": 2
   },
@@ -11,9 +11,16 @@
     {
       "orgao": "ISS Goiânia (GO) — Esfera Municipal",
       "data": "21/10/2026",
-      "mudanca": "Comissão organizadora foi reestruturada para dar andamento aos estudos técnicos e termo de referência do novo concurso.",
+      "mudanca": "Comissão organizadora reestruturada para dar andamento aos estudos do termo de referência.",
       "consequencia": "Retomada dos atos preparatórios para contratação da banca.",
-      "fonte": "Diário Oficial do Município / Estratégia Concursos"
+      "fonte": "Diário Oficial de Goiânia"
+    },
+    {
+      "orgao": "SEFAZ-AL — Esfera Estadual",
+      "data": "23/10/2026",
+      "mudanca": "Divulgação das isenções deferidas e retificação de cronograma pelo Cebraspe.",
+      "consequencia": "Candidatos com isenção confirmada seguem aptos para homologação final.",
+      "fonte": "Cebraspe / DOE-AL"
     }
   ]
 }
