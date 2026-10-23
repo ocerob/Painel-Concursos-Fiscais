@@ -14,14 +14,10 @@
             --border: #e2e8f0;
             --text-dark: #1e293b;
             --text-muted: #64748b;
-            --accent-green: #10b981;
-            --accent-amber: #f59e0b;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.5; padding: 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
-
         .header { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .header h1 { font-size: 1.8rem; margin-bottom: 6px; }
         .header .subtitle { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
@@ -29,82 +25,53 @@
         .indicator-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); }
         .indicator-card .num { font-size: 1.6rem; font-weight: bold; color: #ffffff; }
         .indicator-card .label { font-size: 0.8rem; color: #cbd5e1; text-transform: uppercase; }
-
         .section-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         .section-title { font-size: 1.25rem; color: var(--primary); margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-
         .news-item { background: #f1f5f9; border-left: 4px solid var(--primary-light); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 12px; }
         .news-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.95rem; margin-bottom: 4px; }
         .news-body { font-size: 0.9rem; }
         .news-meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
-
         .panel-controls { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px 12px 0 0; padding: 16px; border-bottom: none; }
         .tabs-header { display: flex; gap: 8px; border-bottom: 2px solid var(--border); margin-bottom: 16px; }
         .tab-btn { padding: 10px 24px; background: none; border: none; font-weight: 600; font-size: 1rem; color: var(--text-muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
         .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
-
         .filters-row { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
         .search-input, .filter-select { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; outline: none; background: var(--bg-main); }
-
         .tab-content-container { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0 0 12px 12px; padding: 20px; margin-bottom: 24px; }
         .tab-pane { display: none; }
         .tab-pane.active { display: block; }
-
         .stage-group { margin-bottom: 28px; }
         .stage-title { font-size: 1.05rem; background: #e2e8f0; color: var(--secondary); padding: 8px 14px; border-radius: 6px; margin-bottom: 14px; font-weight: 700; }
         .empty-stage-msg { font-size: 0.88rem; color: var(--text-muted); font-style: italic; padding: 6px 14px; }
-
-        .contest-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: #fff; margin-bottom: 12px; }
+        .contest-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: #fff; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
         .card-title { font-size: 1.1rem; font-weight: bold; color: var(--primary); }
         .card-badge { font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; background: #e2e8f0; }
         .badge-open { background: #d1fae5; color: #065f46; }
         .badge-closed { background: #fee2e2; color: #991b1b; }
-
+        .badge-planning { background: #e0f2fe; color: #075985; }
         .card-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 10px; }
         .card-table td { padding: 6px 8px; border: 1px solid var(--border); }
         .card-table td.label { background: #f8fafc; font-weight: 600; width: 20%; }
-
         .card-perspective { font-size: 0.85rem; color: #334155; background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; margin-bottom: 10px; border-radius: 0 4px 4px 0; }
-        .card-actions a { color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 0.8rem; }
-
         .agenda-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 8px; }
         .agenda-table th, .agenda-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
         .agenda-table th { background-color: #f1f5f9; }
-
         .footer-note { background: #f1f5f9; border-top: 1px solid var(--border); padding: 14px; border-radius: 8px; font-size: 0.8rem; color: var(--text-muted); margin-top: 24px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-
     <header class="header">
         <h1>Painel Interativo Semanal de Concursos Fiscais do Brasil</h1>
-        <div class="subtitle">Atualizado em: <span id="data-atualizacao">23/10/2026</span> | Cobertura Nacional</div>
-        <div class="indicators-grid">
-            <div class="indicator-card"><div class="num" id="ind-open">2</div><div class="label">Inscrições Abertas</div></div>
-            <div class="indicator-card"><div class="num" id="ind-closed">1</div><div class="label">Inscrições Encerradas</div></div>
-            <div class="indicator-card"><div class="num" id="ind-banca">2</div><div class="label">Banca Definida</div></div>
-            <div class="indicator-card"><div class="num" id="ind-auth">3</div><div class="label">Autorizados/Planejamento</div></div>
-            <div class="indicator-card"><div class="num" id="ind-exams">2</div><div class="label">Provas (Próx. 90 dias)</div></div>
-        </div>
+        <div class="subtitle">Atualizado em: <span id="lbl-data">23/10/2026</span> | Cobertura Fiscal Nacional</div>
+        <div class="indicators-grid" id="indicators-container"></div>
     </header>
 
     <section class="section-box">
         <h2 class="section-title">⚡ Novidades da semana</h2>
-        <div id="novidades-container">
-            <div class="news-item">
-                <div class="news-header"><span>ISS Goiânia (GO) — Esfera Municipal</span><span>21/10/2026</span></div>
-                <div class="news-body">Comissão organizadora reestruturada para dar andamento aos estudos do termo de referência.</div>
-                <div class="news-meta"><strong>Fonte:</strong> Diário Oficial de Goiânia</div>
-            </div>
-            <div class="news-item">
-                <div class="news-header"><span>SEFAZ-AL — Esfera Estadual</span><span>23/10/2026</span></div>
-                <div class="news-body">Divulgação das isenções deferidas e retificação de cronograma pelo Cebraspe.</div>
-                <div class="news-meta"><strong>Fonte:</strong> Cebraspe / DOE-AL</div>
-            </div>
-        </div>
+        <div id="novidades-container"></div>
     </section>
 
     <div class="panel-controls">
@@ -129,179 +96,143 @@
     </div>
 
     <div class="tab-content-container">
-        <!-- ABA FEDERAL -->
-        <div id="tab-federal" class="tab-pane active">
-            <div class="stage-group" data-stage="1"><div class="stage-title">1. Editais abertos — inscrições em andamento</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="2"><div class="stage-title">2. Editais publicados — inscrições encerradas</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="3"><div class="stage-title">3. Banca definida ou aprovada</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="4">
-                <div class="stage-title">4. Banca em contratação</div>
-                <div class="contest-card" data-name="receita federal rfb auditor analista">
-                    <div class="card-header"><div><div class="card-title">Receita Federal do Brasil (RFB)</div><div>Âmbito Nacional</div></div><span class="card-badge">Em Contratação</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor e Analista-Tributário</td><td class="label">Vagas</td><td>146 autorizadas</td></tr></table>
-                    <div class="card-perspective">Minuta de dispensa registrada para contratação da banca.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="5"><div class="stage-title">5. Concursos autorizados</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="6"><div class="stage-title">6. Comissão formada ou planejamento iniciado</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="7"><div class="stage-title">7. Previsões e expectativas</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-        </div>
-
-        <!-- ABA ESTADUAIS -->
-        <div id="tab-estadual" class="tab-pane">
-            <div class="stage-group" data-stage="1">
-                <div class="stage-title">1. Editais abertos — inscrições em andamento</div>
-                <div class="contest-card" data-name="sefaz al alagoas auditor fiscal">
-                    <div class="card-header"><div><div class="card-title">SEFAZ-AL — Alagoas</div><div>Estado de Alagoas</div></div><span class="card-badge badge-open">Inscrições Abertas</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal</td><td class="label">Remuneração</td><td>R$ 25.270,68</td></tr></table>
-                    <div class="card-perspective">Banca Cebraspe responsável pela organização do certame.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="2">
-                <div class="stage-title">2. Editais publicados — inscrições encerradas</div>
-                <div class="contest-card" data-name="sefaz pr parana auditor fiscal">
-                    <div class="card-header"><div><div class="card-title">SEFAZ-PR — Paraná</div><div>Estado do Paraná</div></div><span class="card-badge badge-closed">Inscrições Encerradas</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal</td><td class="label">Vagas</td><td>60 vagas</td></tr></table>
-                    <div class="card-perspective">Fase de convocação para perícias e aplicação de exames.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="3">
-                <div class="stage-title">3. Banca definida ou aprovada</div>
-                <div class="contest-card" data-name="sefaz rj rio de janeiro auditor">
-                    <div class="card-header"><div><div class="card-title">SEFAZ-RJ — Rio de Janeiro</div><div>Estado do Rio de Janeiro</div></div><span class="card-badge">Cebraspe</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal</td><td class="label">Vagas</td><td>195 vagas</td></tr></table>
-                    <div class="card-perspective">Contrato assinado. Edital iminente.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="4"><div class="stage-title">4. Banca em contratação</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="5">
-                <div class="stage-title">5. Concursos autorizados</div>
-                <div class="contest-card" data-name="sefaz sp sao paulo afre">
-                    <div class="card-header"><div><div class="card-title">SEFAZ-SP — São Paulo</div><div>Estado de São Paulo</div></div><span class="card-badge">Autorizado</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor-Fiscal (AFRE)</td><td class="label">Remuneração</td><td>R$ 20.117,00+</td></tr></table>
-                    <div class="card-perspective">Elaboração do termo de referência para contratação de banca.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="6">
-                <div class="stage-title">6. Comissão formada ou planejamento iniciado</div>
-                <div class="contest-card" data-name="sefaz mg minas gerais auditor">
-                    <div class="card-header"><div><div class="card-title">SEFAZ-MG — Minas Gerais</div><div>Estado de Minas Gerais</div></div><span class="card-badge">Comissão Formada</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal</td><td class="label">Vagas</td><td>A definir</td></tr></table>
-                    <div class="card-perspective">Comissão técnica avaliando quadro de pessoal.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="7"><div class="stage-title">7. Previsões e expectativas</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-        </div>
-
-        <!-- ABA MUNICIPAIS -->
-        <div id="tab-municipal" class="tab-pane">
-            <div class="stage-group" data-stage="1">
-                <div class="stage-title">1. Editais abertos — inscrições em andamento</div>
-                <div class="contest-card" data-name="iss curitiba parana auditor">
-                    <div class="card-header"><div><div class="card-title">ISS Curitiba / PR</div><div>Prefeitura de Curitiba</div></div><span class="card-badge badge-open">Inscrições Abertas</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal de Tributos</td><td class="label">Remuneração</td><td>R$ 18.352,33</td></tr></table>
-                    <div class="card-perspective">Edital ativo via Fundação FAFIPA com provas no final do ano.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="2"><div class="stage-title">2. Editais publicados — inscrições encerradas</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="3">
-                <div class="stage-title">3. Banca definida ou aprovada</div>
-                <div class="contest-card" data-name="iss belo horizonte bh auditor fgv">
-                    <div class="card-header"><div><div class="card-title">ISS Belo Horizonte / MG</div><div>Prefeitura de Belo Horizonte</div></div><span class="card-badge">FGV</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal de Tributos</td><td class="label">Vagas</td><td>20 vagas</td></tr></table>
-                    <div class="card-perspective">Banca FGV definida por dispensa de licitação.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="4"><div class="stage-title">4. Banca em contratação</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-            <div class="stage-group" data-stage="5">
-                <div class="stage-title">5. Concursos autorizados</div>
-                <div class="contest-card" data-name="iss campinas sao paulo auditor">
-                    <div class="card-header"><div><div class="card-title">ISS Campinas / SP</div><div>Prefeitura de Campinas</div></div><span class="card-badge">Autorizado</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Fiscal Tributário</td><td class="label">Vagas</td><td>12 vagas</td></tr></table>
-                    <div class="card-perspective">Autorizado pelo Secretário de Finanças.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="6">
-                <div class="stage-title">6. Comissão formada ou planejamento iniciado</div>
-                <div class="contest-card" data-name="iss goiania goias auditor">
-                    <div class="card-header"><div><div class="card-title">ISS Goiânia / GO</div><div>Prefeitura de Goiânia</div></div><span class="card-badge">Comissão Reestruturada</span></div>
-                    <table class="card-table"><tr><td class="label">Cargo</td><td>Auditor Tributário Municipal</td><td class="label">Remuneração</td><td>R$ 16.200,00</td></tr></table>
-                    <div class="card-perspective">Comissão reformulada para elaboração do termo de referência.</div>
-                </div>
-            </div>
-            <div class="stage-group" data-stage="7"><div class="stage-title">7. Previsões e expectativas</div><div class="empty-stage-msg">Nenhum concurso identificado nesta etapa.</div></div>
-        </div>
+        <div id="tab-federal" class="tab-pane active"></div>
+        <div id="tab-estadual" class="tab-pane"></div>
+        <div id="tab-municipal" class="tab-pane"></div>
     </div>
 
     <section class="section-box">
-        <h2 class="section-title">📅 Agenda e Perspectivas para os Próximos 12 Meses</h2>
+        <h2 class="section-title">📅 Agenda de Provas e Prazos</h2>
         <table class="agenda-table">
-            <thead>
-                <tr><th>Concurso / Órgão</th><th>Etapa / Evento</th><th>Data Prevista</th><th>Tipo</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>ISS Curitiba / PR</td><td>Provas Objetivas (Auditor)</td><td>22/11/2026</td><td>Oficial</td></tr>
-                <tr><td>ISS Curitiba / PR</td><td>Provas Objetivas (Fiscal)</td><td>13/12/2026</td><td>Oficial</td></tr>
-                <tr><td>SEFAZ-RJ</td><td>Edital Abertura</td><td>Novembro/2026</td><td>Estimada</td></tr>
-            </tbody>
+            <thead><tr><th>Concurso / Órgão</th><th>Etapa / Evento</th><th>Data Prevista</th><th>Tipo</th></tr></thead>
+            <tbody id="agenda-container"></tbody>
         </table>
     </section>
 
-    <footer class="footer-note">
-        <strong>Nota de Confiabilidade:</strong> Consulta realizada com dados apurados em Diários Oficiais e bancas examinadoras.
-    </footer>
-
+    <footer class="footer-note" id="footer-note"></footer>
 </div>
 
 <script>
-    function switchTab(tabName) {
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+    let dadosGlobais = {};
 
-        if (tabName === 'federal') {
-            document.querySelectorAll('.tab-btn')[0].classList.add('active');
-            document.getElementById('tab-federal').classList.add('active');
-        } else if (tabName === 'estadual') {
-            document.querySelectorAll('.tab-btn')[1].classList.add('active');
-            document.getElementById('tab-estadual').classList.add('active');
-        } else if (tabName === 'municipal') {
-            document.querySelectorAll('.tab-btn')[2].classList.add('active');
-            document.getElementById('tab-municipal').classList.add('active');
+    async function carregarDados() {
+        try {
+            const resposta = await fetch('dados.json?t=' + new Date().getTime());
+            dadosGlobais = await resposta.json();
+            renderizarPainel();
+        } catch (e) {
+            console.error("Erro ao carregar dados.json", e);
         }
+    }
 
+    function renderizarPainel() {
+        document.getElementById('lbl-data').innerText = dadosGlobais.atualizacao || "";
+        
+        // Indicadores
+        const ind = dadosGlobais.indicadores || {};
+        document.getElementById('indicators-container').innerHTML = `
+            <div class="indicator-card"><div class="num">${ind.abertos || 0}</div><div class="label">Inscrições Abertas</div></div>
+            <div class="indicator-card"><div class="num">${ind.encerrados || 0}</div><div class="label">Inscrições Encerradas</div></div>
+            <div class="indicator-card"><div class="num">${ind.banca || 0}</div><div class="label">Banca Definida</div></div>
+            <div class="indicator-card"><div class="num">${ind.autorizados || 0}</div><div class="label">Autorizados/Planejamento</div></div>
+            <div class="indicator-card"><div class="num">${ind.provas || 0}</div><div class="label">Provas (Próx. 90 dias)</div></div>
+        `;
+
+        // Novidades
+        const novidades = dadosGlobais.novidades || [];
+        document.getElementById('novidades-container').innerHTML = novidades.map(n => `
+            <div class="news-item">
+                <div class="news-header"><span>${n.orgao}</span><span>${n.data}</span></div>
+                <div class="news-body">${n.mudanca}</div>
+                <div class="news-meta"><strong>Consequência:</strong> ${n.consequencia} | <strong>Fonte:</strong> ${n.fonte}</div>
+            </div>
+        `).join('');
+
+        // Abas (Federal, Estadual, Municipal)
+        renderizarAba('federal', dadosGlobais.federal || {});
+        renderizarAba('estadual', dadosGlobais.estadual || {});
+        renderizarAba('municipal', dadosGlobais.municipal || {});
+
+        // Agenda
+        const agenda = dadosGlobais.agenda || [];
+        document.getElementById('agenda-container').innerHTML = agenda.map(a => `
+            <tr><td><strong>${a.orgao}</strong></td><td>${a.evento}</td><td>${a.data}</td><td>${a.tipo}</td></tr>
+        `).join('');
+
+        document.getElementById('footer-note').innerHTML = `<strong>Nota de Confiabilidade:</strong> ${dadosGlobais.nota_rodape || "Dados obtidos via monitoramento fiscal."}`;
+        applyFilters();
+    }
+
+    function renderizarAba(nomeAba, etapasObj) {
+        const container = document.getElementById(`tab-${nomeAba}`);
+        const nomesEtapas = {
+            1: "1. Editais abertos — inscrições em andamento",
+            2: "2. Editais publicados — inscrições encerradas",
+            3: "3. Banca definida ou aprovada",
+            4: "4. Banca em contratação",
+            5: "5. Concursos autorizados",
+            6: "6. Comissão formada ou planejamento iniciado",
+            7: "7. Previsões e expectativas"
+        };
+
+        let html = "";
+        for (let i = 1; i <= 7; i++) {
+            const listaConcursos = etapasObj[i] || [];
+            html += `<div class="stage-group" data-stage="${i}">`;
+            html += `<div class="stage-title">${nomesEtapas[i]}</div>`;
+            
+            if (listaConcursos.length === 0) {
+                html += `<div class="empty-stage-msg">Nenhum concurso identificado nesta etapa na pesquisa desta edição.</div>`;
+            } else {
+                listaConcursos.forEach(c => {
+                    const searchStr = `${c.titulo} ${c.sub} ${c.cargo}`.toLowerCase();
+                    html += `
+                        <div class="contest-card" data-name="${searchStr}">
+                            <div class="card-header">
+                                <div><div class="card-title">${c.titulo}</div><div style="font-size:0.85rem; color:var(--text-muted);">${c.sub}</div></div>
+                                <span class="card-badge ${c.badge_class || ''}">${c.status_badge}</span>
+                            </div>
+                            <table class="card-table">
+                                <tr><td class="label">Cargo</td><td>${c.cargo}</td><td class="label">Vagas</td><td>${c.vagas}</td></tr>
+                                <tr><td class="label">Remuneração</td><td>${c.remuneracao}</td><td class="label">Banca</td><td>${c.banca}</td></tr>
+                            </table>
+                            <div class="card-perspective"><strong>Perspectivas:</strong> ${c.perspectiva}</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted);"><strong>Última Movimentação:</strong> ${c.movimentacao} | <strong>Fonte:</strong> ${c.fonte}</div>
+                        </div>
+                    `;
+                });
+            }
+            html += `</div>`;
+        }
+        container.innerHTML = html;
+    }
+
+    function switchTab(tabName) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        if (tabName === 'federal') { document.querySelectorAll('.tab-btn')[0].classList.add('active'); document.getElementById('tab-federal').classList.add('active'); }
+        else if (tabName === 'estadual') { document.querySelectorAll('.tab-btn')[1].classList.add('active'); document.getElementById('tab-estadual').classList.add('active'); }
+        else if (tabName === 'municipal') { document.querySelectorAll('.tab-btn')[2].classList.add('active'); document.getElementById('tab-municipal').classList.add('active'); }
         applyFilters();
     }
 
     function applyFilters() {
         const activePane = document.querySelector('.tab-pane.active');
         if (!activePane) return;
-
         const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
         const stageValue = document.getElementById('stageFilter').value;
-        const stageGroups = activePane.querySelectorAll('.stage-group');
 
-        stageGroups.forEach(group => {
+        activePane.querySelectorAll('.stage-group').forEach(group => {
             const groupStage = group.getAttribute('data-stage');
             const stageMatches = (stageValue === 'ALL' || stageValue === groupStage);
-
-            if (!stageMatches) {
-                group.style.display = 'none';
-                return;
-            }
+            if (!stageMatches) { group.style.display = 'none'; return; }
 
             const cards = group.querySelectorAll('.contest-card');
-            let visibleCards = 0;
-
+            let vis = 0;
             cards.forEach(card => {
-                const searchData = card.getAttribute('data-name') || '';
-                const textMatches = searchData.includes(searchText);
-
-                if (textMatches) {
-                    card.style.display = 'block';
-                    visibleCards++;
-                } else {
-                    card.style.display = 'none';
-                }
+                const match = (card.getAttribute('data-name') || '').includes(searchText);
+                card.style.display = match ? 'block' : 'none';
+                if (match) vis++;
             });
 
             const emptyMsg = group.querySelector('.empty-stage-msg');
@@ -309,16 +240,13 @@
                 group.style.display = 'block';
                 if (emptyMsg) emptyMsg.style.display = 'block';
             } else {
-                if (visibleCards > 0) {
-                    group.style.display = 'block';
-                    if (emptyMsg) emptyMsg.style.display = 'none';
-                } else {
-                    group.style.display = 'none';
-                }
+                group.style.display = vis > 0 ? 'block' : 'none';
+                if (emptyMsg) emptyMsg.style.display = vis === 0 ? 'block' : 'none';
             }
         });
     }
-</script>
 
+    carregarDados();
+</script>
 </body>
 </html>
