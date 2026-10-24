@@ -1,17 +1,15 @@
 name: Atualização Automática do Painel Fiscal
 
 on:
+  workflow_dispatch: # Permite rodar manualmente quando você quiser
   schedule:
-    # Executa todo domingo à meia-noite (UTC)
-    - cron: '0 0 * * 0'
-  workflow_dispatch: # Permite rodar manualmente com 1 clique quando desejar
+    - cron: '0 9 * * *' # Roda automaticamente TODOS OS DIAS às 06:00 (horário de Brasília)
 
 jobs:
-  atualizar-painel:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Baixar código do repositório
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Configurar Python
         uses: actions/setup-python@v4
@@ -21,18 +19,17 @@ jobs:
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai requests
+          pip install google-genai
 
-      - name: Executar Script de Atualização
+      - name: Executar script de atualização
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python atualizar_painel.py
+        run: python atualizar_panel.py
 
-      - name: Salvar e publicar alterações no repositório
+      - name: Commit e Push das alterações
         run: |
-          git config --global user.name 'Robo-Painel-Fiscal'
-          git config --global user.email 'robo@github.com'
-          git add index.html
-          git commit -m "Auto-update: Atualização semanal do painel fiscal" || exit 0
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados.json
+          git diff-index --quiet HEAD || git commit -m "Atualização diária automática do painel fiscal"
           git push
