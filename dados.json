@@ -1,5 +1,5 @@
 {
-  "atualizacao": "23 de Outubro de 2026",
+  "atualizacao": "24/10/2026",
   "indicadores": {
     "abertos": 3,
     "encerrados": 4,
@@ -199,7 +199,7 @@
         "titulo": "SEFAZ-TO — Tocantins",
         "sub": "Estado do Tocantins",
         "badge_class": "badge-planning",
-        "status_badge": "Anunciado / Em Análise",
+        "status_badge": "Anúncio / Em Análise",
         "cargo": "Auditor Fiscal da Receita Estadual",
         "vagas": "100 + 100 CR",
         "remuneracao": "R$ 33.102,96",
@@ -472,19 +472,84 @@
     ]
   },
   "agenda": [
-    { "orgao": "ISS Manaus / AM", "evento": "Provas Objetivas", "data": "01/11/2026", "tipo": "Oficial" },
-    { "orgao": "ISS Curitiba / PR", "evento": "Término das Inscrições", "data": "05/11/2026", "tipo": "Oficial" },
-    { "orgao": "ISS Aracati / CE", "evento": "Término das Inscrições", "data": "06/11/2026", "tipo": "Oficial" },
-    { "orgao": "SEFAZ-SC", "evento": "Provas Objetivas (Finanças)", "data": "22/11/2026", "tipo": "Oficial" },
-    { "orgao": "ISS Caruaru / PE", "evento": "Provas Objetivas e Dissertativas", "data": "29/11/2026", "tipo": "Oficial" },
-    { "orgao": "ISS Curitiba / PR", "evento": "Provas Objetivas", "data": "06/12/2026", "tipo": "Oficial" },
-    { "orgao": "SEFAZ-SP", "evento": "Provas Objetivas (APOFP)", "data": "20/12/2026", "tipo": "Oficial" },
-    { "orgao": "SEFAZ-AL", "evento": "Provas Objetivas", "data": "20/12/2026", "tipo": "Oficial" },
-    { "orgao": "SEFAZ-AL", "evento": "Provas Discursivas", "data": "10/01/2027", "tipo": "Oficial" },
-    { "orgao": "ISS Aracati / CE", "evento": "Provas Objetivas", "data": "24/01/2027", "tipo": "Oficial" },
-    { "orgao": "ISS Manaus / AM", "evento": "Provas Discursivas", "data": "24/01/2027", "tipo": "Oficial" },
-    { "orgao": "ISS Lagoa Santa / MG", "evento": "Abertura de Inscrições", "data": "16/12/2026", "tipo": "Oficial" },
-    { "orgao": "ISS Santa Luzia / MG", "evento": "Abertura de Inscrições", "data": "17/12/2026", "tipo": "Oficial" }
+    {
+      "orgao": "ISS Manaus / AM",
+      "evento": "Provas Objetivas",
+      "data": "01/11/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Curitiba / PR",
+      "evento": "Término das Inscrições",
+      "data": "05/11/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Aracati / CE",
+      "evento": "Término das Inscrições",
+      "data": "06/11/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "SEFAZ-SC",
+      "evento": "Provas Objetivas (Finanças)",
+      "data": "22/11/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Caruaru / PE",
+      "evento": "Provas Objetivas e Dissertativas",
+      "data": "29/11/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Curitiba / PR",
+      "evento": "Provas Objetivas",
+      "data": "06/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "SEFAZ-SP",
+      "evento": "Provas Objetivas (APOFP)",
+      "data": "20/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "SEFAZ-AL",
+      "evento": "Provas Objetivas",
+      "data": "20/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "SEFAZ-AL",
+      "evento": "Provas Discursivas",
+      "data": "10/01/2027",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Aracati / CE",
+      "evento": "Provas Objetivas",
+      "data": "24/01/2027",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Manaus / AM",
+      "evento": "Provas Discursivas",
+      "data": "24/01/2027",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Lagoa Santa / MG",
+      "evento": "Abertura de Inscrições",
+      "data": "16/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Santa Luzia / MG",
+      "evento": "Abertura de Inscrições",
+      "data": "17/12/2026",
+      "tipo": "Oficial"
+    }
   ],
-  "nota_rodape": "Data da Pesquisa Profunda: 23 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
+  "nota_rodape": "Data da Pesquisa Profunda: 24 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
 }
