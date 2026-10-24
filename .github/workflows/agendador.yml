@@ -24,7 +24,7 @@ jobs:
       - name: Executar script de atualização
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python atualizar_panel.py
+        run: python atualizar_painel.py
 
       - name: Commit e Push das alterações
         run: |
