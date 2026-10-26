@@ -1,5 +1,5 @@
 {
-  "atualizacao": "24/10/2026",
+  "atualizacao": "26/10/2026",
   "indicadores": {
     "abertos": 3,
     "encerrados": 4,
@@ -10,9 +10,9 @@
   "novidades": [
     {
       "orgao": "SEFAZ-SP — Esfera Estadual",
-      "data": "22/10/2026",
-      "mudanca": "Retificação do cronograma pela FCC para Analista (APOFP), redefinindo a prova objetiva para 20/12/2026.",
-      "consequencia": "Candidatos ganham mais prazo de preparação para a prova na reta final.",
+      "data": "25/10/2026",
+      "mudanca": "Prazo final de inscrições para APOFP entra na última semana (encerramento em 03/11/2026).",
+      "consequencia": "Candidatos devem atentar para o pagamento da taxa e consolidação cadastral junto à FCC.",
       "fonte": "FCC / DOE-SP"
     },
     {
@@ -479,6 +479,12 @@
       "tipo": "Oficial"
     },
     {
+      "orgao": "SEFAZ-SP",
+      "evento": "Término das Inscrições (APOFP)",
+      "data": "03/11/2026",
+      "tipo": "Oficial"
+    },
+    {
       "orgao": "ISS Curitiba / PR",
       "evento": "Término das Inscrições",
       "data": "05/11/2026",
@@ -506,6 +512,18 @@
       "orgao": "ISS Curitiba / PR",
       "evento": "Provas Objetivas",
       "data": "06/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Lagoa Santa / MG",
+      "evento": "Abertura de Inscrições",
+      "data": "16/12/2026",
+      "tipo": "Oficial"
+    },
+    {
+      "orgao": "ISS Santa Luzia / MG",
+      "evento": "Abertura de Inscrições",
+      "data": "17/12/2026",
       "tipo": "Oficial"
     },
     {
@@ -537,19 +555,7 @@
       "evento": "Provas Discursivas",
       "data": "24/01/2027",
       "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Lagoa Santa / MG",
-      "evento": "Abertura de Inscrições",
-      "data": "16/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Santa Luzia / MG",
-      "evento": "Abertura de Inscrições",
-      "data": "17/12/2026",
-      "tipo": "Oficial"
     }
   ],
-  "nota_rodape": "Data da Pesquisa Profunda: 24 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
+  "nota_rodape": "Data da Pesquisa Profunda: 26 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
 }
