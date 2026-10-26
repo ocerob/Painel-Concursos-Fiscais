@@ -2,32 +2,32 @@
   "atualizacao": "26/10/2026",
   "indicadores": {
     "abertos": 3,
-    "encerrados": 4,
-    "banca": 8,
-    "autorizados": 8,
+    "encerrados": 8,
+    "banca": 9,
+    "autorizados": 7,
     "provas": 5
   },
   "novidades": [
     {
       "orgao": "SEFAZ-SP — Esfera Estadual",
       "data": "25/10/2026",
-      "mudanca": "Prazo final de inscrições para APOFP entra na última semana (encerramento em 03/11/2026).",
-      "consequencia": "Candidatos devem atentar para o pagamento da taxa e consolidação cadastral junto à FCC.",
+      "mudanca": "Prazo final de inscrições para APOFP entra na reta decisiva (encerramento em 03/11/2026).",
+      "consequencia": "Candidatos devem atentar para o pagamento tempestivo da taxa e consolidação cadastral junto à FCC.",
       "fonte": "FCC / DOE-SP"
     },
     {
       "orgao": "SEFAZ-AL — Esfera Estadual",
       "data": "22/10/2026",
       "mudanca": "Divulgação do cronograma definitivo de provas (Objetiva em 20/12/2026 e Discursiva em 10/01/2027).",
-      "consequencia": "Inscrições encerradas. Fase de consulta aos locais de prova e preparação final.",
+      "consequencia": "Inscrições encerradas. Fase de consulta aos locais de prova e preparação final sob organização do Cebraspe.",
       "fonte": "Cebraspe / DOE-AL"
     },
     {
       "orgao": "ISS Curitiba (PR) — Esfera Municipal",
       "data": "20/10/2026",
       "mudanca": "Conferência de retificação do edital com inscrições ativas até 05/11/2026.",
-      "consequencia": "Certame de alta prioridade municipal com prova marcada para 06/12/2026.",
-      "fonte": "Fundação FAFIPA"
+      "consequencia": "Certame prioritário da área fiscal municipal da Região Sul com prova confirmada para 06/12/2026.",
+      "fonte": "Fundação FAFIPA / Prefeitura de Curitiba"
     }
   ],
   "federal": {
@@ -106,7 +106,7 @@
         "remuneracao": "R$ 26.230,00",
         "banca": "FGV / Cebraspe",
         "perspectiva": "Etapa avançada com convocações para perícias médicas e bancas de heteroidentificação.",
-        "movimentacao": "Publicação de edital de convocação de pericias",
+        "movimentacao": "Publicação de edital de convocação de perícias",
         "fonte": "SEFAZ-PR"
       }
     ],
