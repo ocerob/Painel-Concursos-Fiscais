@@ -1,5 +1,5 @@
 {
-  "atualizacao": "26/10/2026",
+  "atualizacao": "27/10/2026",
   "indicadores": {
     "abertos": 3,
     "encerrados": 8,
@@ -10,9 +10,9 @@
   "novidades": [
     {
       "orgao": "SEFAZ-SP — Esfera Estadual",
-      "data": "25/10/2026",
-      "mudanca": "Prazo final de inscrições para APOFP entra na reta decisiva (encerramento em 03/11/2026).",
-      "consequencia": "Candidatos devem atentar para o pagamento tempestivo da taxa e consolidação cadastral junto à FCC.",
+      "data": "27/10/2026",
+      "mudanca": "Contagem regressiva para encerramento das inscrições do concurso para APOFP (encerramento em 03/11/2026).",
+      "consequencia": "Candidatos devem atentar para a geração do boleto bancário e confirmação cadastral no portal da FCC antes do término do prazo.",
       "fonte": "FCC / DOE-SP"
     },
     {
@@ -557,5 +557,5 @@
       "tipo": "Oficial"
     }
   ],
-  "nota_rodape": "Data da Pesquisa Profunda: 26 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
+  "nota_rodape": "Data da Pesquisa Profunda: 27 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
 }
