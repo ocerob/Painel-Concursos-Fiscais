@@ -454,7 +454,9 @@
 </div>
 
 <!--
-  ===== DADOS DO BOLETIM (única parte que a atualização automática precisa editar) =====
+  ===== DADOS EMBUTIDOS (RESERVA) =====
+  A fonte principal é o arquivo dados.json, na mesma pasta (atualizado pela automação ou à mão).
+  Este bloco só é usado se o dados.json não carregar. Mesmo formato nos dois.
   Regras:
    - Manter JSON válido (aspas duplas, sem vírgula sobrando, sem comentários dentro do JSON).
    - meta.edicao / meta.atualizadoEm: AAAA-MM-DD.
@@ -471,8 +473,17 @@
  "meta": {
   "edicao": "2026-10-29",
   "atualizadoEm": "2026-10-29"
-   },
+ },
  "news": [
+  {
+   "date": "2026-10-29",
+   "title": "SEFAZ-SP (APOFP) — Provas remarcadas para 20/12",
+   "tag": "Prazo próximo",
+   "warn": true,
+   "text": "A retificação do edital (Edital 02/2026, DOE de 22/10) adiou as provas de 13/12 para 20/12/2026. As inscrições para os 60 cargos de APOFP seguem até 03/11. É cargo de planejamento e finanças, não de Auditor Fiscal.",
+   "source": "Direção Concursos / Magistrar Cursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-sp-provas-adiadas"
+  },
   {
    "date": "2026-10-29",
    "title": "Receita Federal — 146 vagas autorizadas",
@@ -1155,6 +1166,89 @@
    "perspective": "A prefeitura publicou cronograma geral em duas etapas; a etapa de 2027 inclui outros cargos da administração. Não há confirmação específica de Auditor Fiscal nessa etapa.",
    "source": "Prefeitura de Juazeiro / MPBA",
    "url": "https://www.juazeiro.ba.gov.br/prefeitura-de-juazeiro-avanca-na-realizacao-dos-concursos-publicos-e-define-novo-cronograma-dos-certames/"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-SP",
+   "stage": 0,
+   "status": "Edital publicado; inscrições abertas",
+   "cargo": "Analista em Planejamento, Orçamento e Finanças Públicas (APOFP) — cargo correlato, não é Auditor Fiscal",
+   "vagas": "60 imediatas, em 3 áreas de conhecimento",
+   "education": "Nível superior em qualquer área",
+   "salary": "Até R$ 11.359,50 (vencimento + PIQ máximo)",
+   "bank": "FCC",
+   "dates": "Inscrições até 03/11/2026; provas 20/12/2026 (remarcadas de 13/12)",
+   "next": "Inscrever-se até 03/11 e pagar a taxa (R$ 150,00) até 04/11",
+   "perspective": "Edital 01/2026 publicado em 02/10; a retificação (Edital 02/2026, DOE de 22/10) adiou as provas de 13/12 para 20/12. Cargo de planejamento e finanças, fora do escopo de Auditor Fiscal.",
+   "source": "Edital 01/2026 e 02/2026 (DOE-SP) via Aprova Concursos e Direção Concursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-sp-provas-adiadas",
+   "events": [
+    {
+     "date": "2026-11-03",
+     "tipo": "prazo",
+     "label": "Fim das inscrições",
+     "obs": "Pagamento da taxa até 04/11"
+    },
+    {
+     "date": "2026-12-08",
+     "tipo": "prazo",
+     "label": "Convocação para as provas"
+    },
+    {
+     "date": "2026-12-20",
+     "tipo": "prova",
+     "label": "Provas objetivas e discursiva",
+     "obs": "Remarcadas de 13/12 (Edital 02/2026)"
+    }
+   ]
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-MA",
+   "stage": 5,
+   "status": "Comissão formada; contratação de bancas autorizada",
+   "cargo": "Analista Executivo Fazendário — cargo administrativo fazendário, não é Auditor Fiscal",
+   "vagas": "10 previstas na LOA 2026; pedido de ampliação de +25",
+   "education": "Nível superior",
+   "salary": "Fontes divergem: vencimento básico de R$ 4.725,94 e referência de R$ 17.996,03 divulgadas",
+   "bank": "A definir (contratação direta de bancas autorizada em abril/2026)",
+   "dates": "Sem cronograma oficial",
+   "next": "Acompanhar a contratação da banca e a ampliação das vagas",
+   "perspective": "Fontes divergem sobre vagas de Auditor Fiscal; a resposta da secretaria noticiada pela Magistrar fala só em Analista Executivo Fazendário.",
+   "source": "Direção Concursos / Magistrar Cursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-ma-loa-vagas-banca"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Belo Horizonte (MG)",
+   "stage": 5,
+   "status": "Comissão formada; estudos em andamento",
+   "cargo": "Analista Fazendário — cargo correlato; Auditor Fiscal não confirmado",
+   "vagas": "A definir",
+   "education": "Nível superior (áreas esperadas: Ciências Contábeis e TI)",
+   "salary": "R$ 7.756,25 de referência (último edital de Agente Fazendário); conferir",
+   "bank": "A definir",
+   "dates": "Comissão em 27/05/2026; estudos em 09/06/2026; sem cronograma",
+   "next": "Acompanhar definição de vagas e banca",
+   "perspective": "Não há previsão oficial de novo edital de Auditor Fiscal. O último concurso de Auditor (2021, 14 vagas) teve validade citada até agosto/2026; conferir prorrogação.",
+   "source": "Gran Cursos / Próximos Concursos / Estudo Certeiro",
+   "url": "https://blog.grancursosonline.com.br/concurso-iss-bh/amp/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Niterói (RJ)",
+   "stage": 6,
+   "status": "Previsto",
+   "cargo": "Auditor Fiscal, Fiscal de Posturas e Agente Fazendário",
+   "vagas": "A definir",
+   "education": "Médio e superior, conforme cargo",
+   "salary": "Até R$ 30.468,68 (referência divulgada)",
+   "bank": "A definir",
+   "dates": "Sem cronograma; previsto para 2026/2027",
+   "next": "Aguardar comissão e ato oficial",
+   "perspective": "O último concurso foi em 2015 (FGV). Fontes especializadas citam previsão na LOA, mas não foram localizados edital, banca ou comissão oficial publicados.",
+   "source": "Estratégia Concursos / Magistrar Cursos / Estudo Certeiro",
+   "url": "https://www.estrategiaconcursos.com.br/blog/concurso-iss-niteroi/"
   }
  ],
  "notas": [
@@ -1162,19 +1256,20 @@
   "O levantamento municipal foi ampliado, mas não cobre todos os fiscos municipais do Brasil. A tabela fixa de 15 portais do prompt original não estava disponível nesta execução; não se afirma que todos foram consultados.",
   "Vagas, remuneração e status só são tratados como oficiais quando localizados em edital, ato público ou página institucional. Dados de fontes especializadas são divulgação ou referência. Vencimento básico, gratificações e benefícios não devem ser somados sem conferir a regra legal.",
   "Concursos em andamento que já passaram da inscrição ou prova ficam no painel enquanto houver etapa a acompanhar; os homologados saem da lista de oportunidades futuras.",
-  "O escopo prioriza auditor fiscal, fiscal de tributos, auditor tributário e carreiras com atribuição tributária. Funções fazendárias administrativas ou de controle não são equivalentes a Auditor Fiscal."
+  "O escopo prioriza auditor fiscal, fiscal de tributos, auditor tributário e carreiras com atribuição tributária. Funções fazendárias administrativas ou de controle não são equivalentes a Auditor Fiscal.",
+  "SEFAZ-SP (APOFP), SEFAZ-MA (Analista Executivo Fazendário) e ISS Belo Horizonte (Analista Fazendário) são cargos correlatos da área fazendária, não Auditor Fiscal. SEFAZ-PR e SEFAZ-RJ ficaram fora da lista por já terem concursos homologados."
  ],
  "panorama": {
   "periodo": "nov/2026 a out/2027",
   "Federal": "Receita Federal é o principal processo monitorado: 146 vagas autorizadas e banca em contratação. Edital previsto para dezembro/2026, ainda sem data oficial.",
-  "Estaduais": "SC e AL têm provas entre nov/2026 e jan/2027. BA, DF e RS, com banca noticiada, são os mais próximos de edital; ES e TO seguem em planejamento.",
+  "Estaduais": "SC, AL e SP (cargo de planejamento e finanças) têm provas entre nov/2026 e jan/2027. BA, DF e RS, com banca noticiada, são os mais próximos de edital; MA, ES e TO seguem em planejamento.",
   "Municipais": "Curitiba, Aracati, Manaus, Caruaru, Campina Grande e Rio Verde têm provas até janeiro/2027; Lagoa Santa e Santa Luzia abrem inscrições em dezembro. Vários municípios têm banca definida ou comissão formada, e 2027 traz novas expectativas."
  }
 }
 </script>
 
 <script>
-(function () {
+(async function () {
   const $ = id => document.getElementById(id);
   const MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
   const pad = n => String(n).padStart(2, "0");
@@ -1182,11 +1277,16 @@
   const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "";
 
   let D;
-  try { D = JSON.parse($("boletim-data").textContent); }
-  catch (e) {
+  try { D = JSON.parse($("boletim-data").textContent); } catch (e) { D = null; }
+  // dados.json (atualizado pela automação) tem prioridade; o bloco embutido é só reserva
+  try {
+    const r = await fetch("dados.json?v=" + Date.now(), { cache: "no-store" });
+    if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.contests) && j.contests.length) D = j; }
+  } catch (e) { /* sem rede ou aberto como arquivo local: usa os dados embutidos */ }
+  if (!D) {
     const box = $("app-error");
     box.hidden = false;
-    box.textContent = "Não foi possível ler os dados do boletim (JSON inválido): " + e.message;
+    box.textContent = "Não foi possível carregar os dados do boletim.";
     $("edition").textContent = "Dados indisponíveis";
     return;
   }
