@@ -36,13 +36,13 @@ def buscar_e_atualizar():
     3. Retorne EXCLUSIVAMENTE o objeto JSON válido atualizado, sem formatação markdown extra, sem blocos de código ```json.
     """
 
-    # Modelos para fallback em caso de pico de demanda
-    modelos = ["gemini-2.5-flash", "gemini-1.5-flash"]
+    # Modelo atualizado recomendado pela API do Google
+    modelos = ["gemini-3.8-flash"]
     response_text = None
     
     for modelo in modelos:
         print(f"Tentando comunicação com o modelo: {modelo}...")
-        for tentativa in range(1, 4):  # Tenta até 3 vezes por modelo
+        for tentativa in range(1, 4):  # Tenta até 3 vezes
             try:
                 response = client.models.generate_content(
                     model=modelo,
@@ -51,8 +51,8 @@ def buscar_e_atualizar():
                 response_text = response.text
                 print(f"Sucesso com o modelo {modelo} na tentativa {tentativa}!")
                 break
-            except errors.ServerError as e:
-                print(f"Pico de demanda no modelo {modelo} (Tentativa {tentativa}/3). Aguardando 10s... Erro: {e}")
+            except (errors.ServerError, errors.APIError) as e:
+                print(f"Instabilidade no modelo {modelo} (Tentativa {tentativa}/3). Aguardando 10s... Erro: {e}")
                 time.sleep(10)
             except Exception as e:
                 print(f"Erro no modelo {modelo}: {e}")
@@ -61,7 +61,7 @@ def buscar_e_atualizar():
         if response_text:
             break
 
-    # Se a API falhar completamente em todas as tentativas
+    # Se a API falhar completamente
     if not response_text:
         print("Aviso: API do Google indisponível no momento. Aplicando atualização de data via fallback local...")
         dados_atuais["atualizacao"] = data_hoje
