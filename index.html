@@ -236,10 +236,10 @@
     margin-bottom: 12px;
   }
 
-  /* SUBDIVISÕES DENTRO DAS ESFERAS */
+  /* CONTAINER DAS ESFERAS */
   #contests {
     display: block;
-    min-height: 100px;
+    min-height: 120px;
   }
 
   .stage-section { margin-top: 28px; }
@@ -551,14 +551,143 @@
 </div>
 
 <script>
-const contests = [
-  {sphere:"Federal", name:"Receita Federal", stage:3, status:"Banca em contratação", cargo:"Auditor-Fiscal e Analista-Tributário", vagas:"30 + 116", education:"Nível superior", salary:"A confirmar no edital", bank:"A definir", dates:"Edital previsto para dezembro/2026, sem data oficial", next:"Concluir a contratação da organizadora", perspective:"Prioridade federal de acompanhamento. As 146 vagas estão autorizadas; não confundir previsão com cronograma publicado.", source:"Receita Federal / Ministério da Fazenda", url:"https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/servidores/concurso-publico-2026/concurso-publico-2026"},
-  {sphere:"Estaduais", name:"SEFAZ-BA", stage:2, status:"Banca definida; detalhes a confirmar em ato oficial", cargo:"Auditor-Fiscal e Agente de Tributos Estaduais", vagas:"200 divulgadas; distribuição a confirmar", education:"Conferir edital", salary:"Confirmar por cargo no edital", bank:"Cesgranrio", dates:"Sem data oficial de edital", next:"Acompanhar formalização e publicação", perspective:"A indicação da banca é um avanço, mas distribuição de vagas e calendário devem ser confirmados.", source:"Gran / imprensa especializada"},
-  {sphere:"Estaduais", name:"SEFAZ-DF", stage:2, status:"Banca definida/contratada segundo acompanhamento especializado", cargo:"Auditor Fiscal da Receita do DF", vagas:"115 imediatas + 150 CR divulgadas", education:"Nível superior", salary:"R$ 23.597,07 divulgados; confirmar composição", bank:"Cebraspe", dates:"Sem data oficial de edital", next:"Acompanhar publicação do edital", perspective:"Oportunidade relevante, mas a expectativa não equivale a cronograma confirmado.", source:"Gran / acompanhamento especializado"},
-  {sphere:"Estaduais", name:"SEFAZ-RS", stage:2, status:"Banca definida", cargo:"Auditor-Fiscal e Analista Tributário", vagas:"46 divulgadas; distribuição a confirmar", education:"Nível superior", salary:"Até R$ 39.877,31 para Auditor, valor divulgado", bank:"FCC", dates:"Sem data oficial de edital", next:"Acompanhar autorização e publicação", perspective:"A escolha da banca é avanço concreto; edital e cronograma seguem pendentes.", source:"Acompanhamento especializado"},
-  {sphere:"Estaduais", name:"SEFAZ-ES", stage:5, status:"Previsão orçamentária", cargo:"Auditor Fiscal", vagas:"40 previstas em referência orçamentária", education:"A confirmar", salary:"Referência divulgada; confirmar em ato oficial", bank:"A definir", dates:"Sem cronograma confirmado", next:"Verificar autorização formal e comissão", perspective:"Possibilidade de médio prazo; previsão orçamentária não garante concurso.", source:"Gran / acompanhamento especializado"},
-  {sphere:"Estaduais", name:"SEFAZ-TO", stage:6, status:"Anúncio divulgado; ato formal a confirmar", cargo:"Auditor Fiscal", vagas:"100 + 100 CR divulgadas", education:"A confirmar", salary:"Confirmar em ato oficial", bank:"A definir", dates:"Sem cronograma confirmado", next:"Confirmar autorização e comissão", perspective:"Manter no radar, sem tratar anúncio como edital iminente.", source:"Gran / acompanhamento especializado"},
-  {sphere:"Estaduais", name:"SEFAZ-AL", stage:1, status:"Inscrições encerradas", cargo:"Auditor Fiscal da Administração Tributária Estadual", vagas:"40 imediatas + 60 CR", education:"Nível superior", salary:"R$ 25.270,68 divulgados", bank:"Cebraspe", dates:"Prova objetiva 20/12/2026; discursiva 10/01/2027", next:"Acompanhar local de prova e comunicados", perspective:"Para inscritos, priorizar revisão e acompanhar retificações e orientações da banca.", source:"Gran Cursos Online", url:"https://blog.grancursosonline.com.br/concurso-sefaz-al/"},
-  {sphere:"Estaduais", name:"SEFAZ-SC", stage:1, status:"Inscrições encerradas", cargo:"Auditor Estadual de Finanças Públicas", vagas:"50 + CR divulgadas", education:"Nível superior", salary:"R$ 25.337,61 divulgados", bank:"FCC", dates:"Prova prevista para 22/11/2026", next:"Acompanhar local e orientações da prova", perspective:"Cargo de finanças públicas, não idêntico a Auditor Fiscal Tributário; avaliar aderência ao objetivo de carreira.", source:"Acompanhamento especializado"},
-  {sphere:"Municipais", name:"ISS Curitiba (PR)", stage:0, status:"Inscrições em andamento", cargo:"Auditor Fiscal de Tributos Municipais", vagas:"10", education:"Nível superior", salary:"R$ 18.352,33 divulgados", bank:"Fundação FAFIPA", dates:"Inscrições até 05/11/2026; prova em 06/12/2026", next:"Conferir edital, taxa e retificações", perspective:"Prazo muito próximo; conferir requisitos no edital e decidir rapidamente se vai se inscrever.", source:"Estratégia / edital", url:"https://concursos.estrategia.com/portal/concursos-fiscais/"},
-  {sphere:"Municipais", name:"ISS Aracati (CE)", stage:0, status:"Inscrições em andamento", cargo:"Auditor Fiscal", vagas:"7", education:"Conferir requisito no edital", salary:"R$ 3.347,94 divulgados", bank:"FCPC", dates:"Inscrições até 06/11/2026;
+(function() {
+  function initApp() {
+    const contests = [
+      {sphere:"Federal", name:"Receita Federal", stage:3, status:"Banca em contratação", cargo:"Auditor-Fiscal e Analista-Tributário", vagas:"30 + 116", education:"Nível superior", salary:"A confirmar no edital", bank:"A definir", dates:"Edital previsto para dezembro/2026, sem data oficial", next:"Concluir a contratação da organizadora", perspective:"Prioridade federal de acompanhamento. As 146 vagas estão autorizadas; não confundir previsão com cronograma publicado.", source:"Receita Federal / Ministério da Fazenda", url:"https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/servidores/concurso-publico-2026/concurso-publico-2026"},
+      {sphere:"Estaduais", name:"SEFAZ-BA", stage:2, status:"Banca definida; detalhes a confirmar em ato oficial", cargo:"Auditor-Fiscal e Agente de Tributos Estaduais", vagas:"200 divulgadas; distribuição a confirmar", education:"Conferir edital", salary:"Confirmar por cargo no edital", bank:"Cesgranrio", dates:"Sem data oficial de edital", next:"Acompanhar formalização e publicação", perspective:"A indicação da banca é um avanço, mas distribuição de vagas e calendário devem ser confirmados.", source:"Gran / imprensa especializada"},
+      {sphere:"Estaduais", name:"SEFAZ-DF", stage:2, status:"Banca definida/contratada segundo acompanhamento especializado", cargo:"Auditor Fiscal da Receita do DF", vagas:"115 imediatas + 150 CR divulgadas", education:"Nível superior", salary:"R$ 23.597,07 divulgados; confirmar composição", bank:"Cebraspe", dates:"Sem data oficial de edital", next:"Acompanhar publicação do edital", perspective:"Oportunidade relevante, mas a expectativa não equivale a cronograma confirmado.", source:"Gran / acompanhamento especializado"},
+      {sphere:"Estaduais", name:"SEFAZ-RS", stage:2, status:"Banca definida", cargo:"Auditor-Fiscal e Analista Tributário", vagas:"46 divulgadas; distribuição a confirmar", education:"Nível superior", salary:"Até R$ 39.877,31 para Auditor, valor divulgado", bank:"FCC", dates:"Sem data oficial de edital", next:"Acompanhar autorização e publicação", perspective:"A escolha da banca é avanço concreto; edital e cronograma seguem pendentes.", source:"Acompanhamento especializado"},
+      {sphere:"Estaduais", name:"SEFAZ-ES", stage:5, status:"Previsão orçamentária", cargo:"Auditor Fiscal", vagas:"40 previstas em referência orçamentária", education:"A confirmar", salary:"Referência divulgada; confirmar em ato oficial", bank:"A definir", dates:"Sem cronograma confirmado", next:"Verificar autorização formal e comissão", perspective:"Possibilidade de médio prazo; previsão orçamentária não garante concurso.", source:"Gran / acompanhamento especializado"},
+      {sphere:"Estaduais", name:"SEFAZ-TO", stage:6, status:"Anúncio divulgado; ato formal a confirmar", cargo:"Auditor Fiscal", vagas:"100 + 100 CR divulgadas", education:"A confirmar", salary:"Confirmar em ato oficial", bank:"A definir", dates:"Sem cronograma confirmado", next:"Confirmar autorização e comissão", perspective:"Manter no radar, sem tratar anúncio como edital iminente.", source:"Gran / acompanhamento especializado"},
+      {sphere:"Estaduais", name:"SEFAZ-AL", stage:1, status:"Inscrições encerradas", cargo:"Auditor Fiscal da Administração Tributária Estadual", vagas:"40 imediatas + 60 CR", education:"Nível superior", salary:"R$ 25.270,68 divulgados", bank:"Cebraspe", dates:"Prova objetiva 20/12/2026; discursiva 10/01/2027", next:"Acompanhar local de prova e comunicados", perspective:"Para inscritos, priorizar revisão e acompanhar retificações e orientações da banca.", source:"Gran Cursos Online", url:"https://blog.grancursosonline.com.br/concurso-sefaz-al/"},
+      {sphere:"Estaduais", name:"SEFAZ-SC", stage:1, status:"Inscrições encerradas", cargo:"Auditor Estadual de Finanças Públicas", vagas:"50 + CR divulgadas", education:"Nível superior", salary:"R$ 25.337,61 divulgados", bank:"FCC", dates:"Prova prevista para 22/11/2026", next:"Acompanhar local e orientações da prova", perspective:"Cargo de finanças públicas, não idêntico a Auditor Fiscal Tributário; avaliar aderência ao objetivo de carreira.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Curitiba (PR)", stage:0, status:"Inscrições em andamento", cargo:"Auditor Fiscal de Tributos Municipais", vagas:"10", education:"Nível superior", salary:"R$ 18.352,33 divulgados", bank:"Fundação FAFIPA", dates:"Inscrições até 05/11/2026; prova em 06/12/2026", next:"Conferir edital, taxa e retificações", perspective:"Prazo muito próximo; conferir requisitos no edital e decidir rapidamente se vai se inscrever.", source:"Estratégia / edital", url:"https://concursos.estrategia.com/portal/concursos-fiscais/"},
+      {sphere:"Municipais", name:"ISS Aracati (CE)", stage:0, status:"Inscrições em andamento", cargo:"Auditor Fiscal", vagas:"7", education:"Conferir requisito no edital", salary:"R$ 3.347,94 divulgados", bank:"FCPC", dates:"Inscrições até 06/11/2026; prova em 24/01/2027", next:"Conferir edital, taxa e conteúdo", perspective:"Prazo próximo. Compare remuneração, atribuições e custo de deslocamento.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Manaus (AM)", stage:1, status:"Inscrições encerradas; prova próxima", cargo:"Auditor Fiscal de Tributos Municipais", vagas:"20 + CR divulgadas", education:"Conferir edital", salary:"R$ 27.270,61 divulgados", bank:"FCC", dates:"Prova objetiva prevista para 01/11/2026", next:"Acompanhar local de prova e comunicados", perspective:"Prioridade logística e revisão final para quem está inscrito.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Caruaru (PE)", stage:1, status:"Inscrições encerradas", cargo:"Auditor Fiscal e Analista Fiscal", vagas:"20 no total, segundo divulgação", education:"Conferir por cargo", salary:"Auditor: R$ 22.000 de base divulgados, com possíveis adicionais", bank:"IBAM", dates:"Provas previstas para 29/11/2026", next:"Acompanhar convocação e local", perspective:"Separar vencimento básico de gratificações e produtividade.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Santos (SP)", stage:1, status:"Fase de provas/gabaritos", cargo:"Auditor Fiscal de Tributos Municipais", vagas:"2", education:"Conferir edital", salary:"R$ 12.171,25 divulgados incluindo auxílio-alimentação", bank:"IBAM", dates:"Gabaritos preliminares divulgados segundo fonte especializada", next:"Consultar recursos e cronograma da banca", perspective:"Acompanhar os prazos diretamente no canal oficial.", source:"Estratégia / IBAM", url:"https://concursos.estrategia.com/portal/concurso-iss-santos/"},
+      {sphere:"Municipais", name:"ISS Rio Verde (GO)", stage:1, status:"Inscrições encerradas", cargo:"Auditor Fiscal da Receita Municipal", vagas:"5 + 25 CR", education:"Formação específica conforme edital", salary:"R$ 4.809,00 base; total divulgado até R$ 16.831,50 com gratificações", bank:"UniRV", dates:"Prova prevista para 17/01/2027", next:"Acompanhar convocação e retificações", perspective:"A remuneração total anunciada inclui gratificações, não apenas vencimento básico.", source:"Estratégia / UniRV"},
+      {sphere:"Municipais", name:"ISS Campinas (SP)", stage:2, status:"Banca definida/planejada", cargo:"Agente Fiscal Tributário e Auditor Fiscal Tributário Municipal", vagas:"2 vagas citadas no planejamento", education:"Conferir por cargo", salary:"Referências divulgadas: R$ 4.101,83 e R$ 8.613,79", bank:"FCC", dates:"Planejamento associado a 2027–2029; sem inscrições", next:"Aguardar contrato e cronograma", perspective:"Avanço de planejamento, não concurso com inscrições iminentes.", source:"Estratégia", url:"https://concursos.estrategia.com/portal/concurso-iss-campinas/"},
+      {sphere:"Municipais", name:"ISS Blumenau (SC)", stage:2, status:"Banca definida/contratada segundo acompanhamento", cargo:"Auditor Fiscal Tributário", vagas:"1 + CR divulgadas", education:"Conferir edital", salary:"R$ 7.005,99 divulgados", bank:"FURB", dates:"Sem data oficial de edital", next:"Acompanhar contratação e publicação", perspective:"A banca definida não permite prever data de prova sem cronograma.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Parintins (AM)", stage:2, status:"Banca indicada por fonte especializada; contrato a confirmar", cargo:"Cargo fiscal municipal; nomenclatura a confirmar", vagas:"A confirmar", education:"A confirmar", salary:"A confirmar", bank:"FGV divulgada", dates:"Sem calendário confirmado", next:"Localizar contrato e ato oficial", perspective:"Manter em monitoramento até confirmação documental.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Pelotas (RS)", stage:2, status:"Banca indicada; formalização a confirmar", cargo:"Auditor Fiscal da Receita Municipal", vagas:"A confirmar", education:"Conferir edital", salary:"R$ 5.272,98 divulgado como referência", bank:"Legalle indicada", dates:"Sem data oficial", next:"Confirmar conclusão da contratação", perspective:"A indicação de banca não confirma edital iminente.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Belém (PA)", stage:5, status:"Comissão formada", cargo:"Auditor Fiscal da Receita Municipal", vagas:"20 + 40 CR divulgadas", education:"A confirmar", salary:"Fontes divergem; confirmar em transparência oficial", bank:"A definir", dates:"Sem data confirmada", next:"Acompanhar comissão e contratação", perspective:"Comissão formada indica planejamento, não prazo garantido.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Juiz de Fora (MG)", stage:5, status:"Comissão formada", cargo:"Auditor Fiscal", vagas:"A definir", education:"A confirmar", salary:"R$ 22.520,23 divulgado como referência", bank:"A definir", dates:"Sem cronograma", next:"Acompanhar estudos e contratação", perspective:"Etapa preliminar; não presumir edital próximo.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS São Luís (MA)", stage:5, status:"Comissão formada/autorização divulgada", cargo:"Auditor Fiscal de Tributos", vagas:"A definir", education:"A confirmar", salary:"R$ 21.255,88 divulgado como referência", bank:"A definir", dates:"Sem cronograma", next:"Verificar ato autorizativo", perspective:"Confirmar quantitativo e remuneração em fonte oficial.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Vitória da Conquista (BA)", stage:5, status:"Comissão formada/planejamento", cargo:"Auditor Fiscal e cargos fazendários relacionados", vagas:"24 + CR divulgadas para o conjunto", education:"Varia conforme cargo", salary:"A confirmar por cargo", bank:"A definir", dates:"Sem cronograma", next:"Acompanhar definição de cargos e banca", perspective:"Separar as vagas de Auditor das demais funções fazendárias quando houver edital.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Goiana (PE)", stage:5, status:"Comissão formada", cargo:"Auditor Fiscal da Receita Municipal", vagas:"A definir", education:"A confirmar", salary:"Referência anterior divulgada: R$ 4.229,00 + benefícios", bank:"A definir", dates:"Sem cronograma", next:"Acompanhar vagas e banca", perspective:"Valores do edital anterior não garantem remuneração futura.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Goiânia (GO)", stage:6, status:"Previsão/expectativa", cargo:"Auditor de Tributos do Município", vagas:"43–48 citadas em notícias; sem edital", education:"A confirmar", salary:"R$ 20.427,15 divulgado como referência", bank:"A definir", dates:"Sem cronograma", next:"Aguardar ato oficial", perspective:"Expectativa não substitui autorização formal.", source:"Estratégia / acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Niterói (RJ)", stage:6, status:"Previsto", cargo:"Auditor Fiscal e funções fazendárias relacionadas", vagas:"A definir", education:"A confirmar", salary:"Até R$ 30.468,68 divulgado como referência", bank:"A definir", dates:"Sem cronograma", next:"Aguardar ato oficial", perspective:"Expectativa de médio prazo até surgir ato concreto.", source:"Acompanhamento especializado"},
+      {sphere:"Municipais", name:"ISS Vila Velha (ES)", stage:6, status:"Anunciado", cargo:"Auditor Fiscal", vagas:"A definir", education:"A confirmar", salary:"R$ 4.324,01 divulgado como referência", bank:"A definir", dates:"Sem cronograma", next:"Aguardar comissão, autorização ou contratação", perspective:"Anúncio inicial; faltam etapas para estimar edital e prova.", source:"Estratégia / acompanhamento especializado"}
+    ];
+
+    const stageLabels = [
+      "Editais abertos — inscrições em andamento",
+      "Editais publicados — inscrições encerradas",
+      "Banca definida ou aprovada",
+      "Banca em contratação",
+      "Concursos autorizados",
+      "Comissão formada ou planejamento iniciado",
+      "Previsões e expectativas"
+    ];
+
+    let selectedSphere = "Municipais";
+
+    const escapeHTML = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+    function render() {
+      const qInput = document.getElementById("search");
+      const q = qInput ? qInput.value.trim().toLocaleLowerCase("pt-BR") : "";
+      
+      const filtered = contests.filter(c => c.sphere === selectedSphere &&
+        (!q || [c.name, c.cargo, c.status, c.bank].join(" ").toLocaleLowerCase("pt-BR").includes(q)));
+      
+      const countElem = document.getElementById("count");
+      if (countElem) {
+        countElem.textContent = `${filtered.length} concurso(s) encontrado(s) em ${selectedSphere}.`;
+      }
+      
+      const host = document.getElementById("contests");
+      if (!host) return;
+      
+      if (!filtered.length) { 
+        host.innerHTML = '<div class="card">Nenhum registro corresponde à busca selecionada.</div>'; 
+        return; 
+      }
+      
+      const grouped = {};
+      filtered.forEach(c => {
+        if (!grouped[c.stage]) {
+          grouped[c.stage] = [];
+        }
+        grouped[c.stage].push(c);
+      });
+      
+      let htmlOutput = "";
+      const stagesOrder = Object.keys(grouped).sort((a, b) => Number(a) - Number(b));
+      
+      stagesOrder.forEach(stIndex => {
+        const stageName = stageLabels[stIndex] || "Outras etapas";
+        const items = grouped[stIndex];
+        
+        htmlOutput += `
+          <div class="stage-section">
+            <div class="stage-title">${escapeHTML(stageName)}</div>
+            <div class="contest-list">
+        `;
+        
+        htmlOutput += items.map(c => `
+          <article class="contest">
+            <h3>${escapeHTML(c.name)}</h3>
+            <div class="meta">${escapeHTML(stageLabels[c.stage])}</div>
+            <span class="tag">${escapeHTML(c.status)}</span>
+            <div class="facts">
+              <div class="fact"><b>Cargo(s)</b>${escapeHTML(c.cargo)}</div>
+              <div class="fact"><b>Vagas</b>${escapeHTML(c.vagas)}</div>
+              <div class="fact"><b>Escolaridade</b>${escapeHTML(c.education)}</div>
+              <div class="fact"><b>Remuneração divulgada</b>${escapeHTML(c.salary)}</div>
+              <div class="fact"><b>Banca</b>${escapeHTML(c.bank)}</div>
+              <div class="fact"><b>Datas</b>${escapeHTML(c.dates)}</div>
+            </div>
+            <p><strong>Próximo passo:</strong> ${escapeHTML(c.next)}</p>
+            <p><strong>Perspectivas:</strong> ${escapeHTML(c.perspective)}</p>
+            <p class="muted"><strong>Fonte consultada:</strong> ${escapeHTML(c.source)}${c.url ? ` · <a href="${escapeHTML(c.url)}" target="_blank" rel="noopener">abrir página</a>` : ""}</p>
+          </article>
+        `).join("");
+        
+        htmlOutput += `</div></div>`;
+      });
+      
+      host.innerHTML = htmlOutput;
+    }
+
+    document.querySelectorAll("[data-sphere]").forEach(btn => {
+      btn.addEventListener("click", function() {
+        selectedSphere = this.getAttribute("data-sphere");
+        document.querySelectorAll("[data-sphere]").forEach(b => {
+          const active = b === this;
+          b.classList.toggle("active", active);
+          b.setAttribute("aria-selected", active ? "true" : "false");
+        });
+        render();
+      });
+    });
+
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+      searchInput.addEventListener("input", render);
+    }
+
+    render();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+  } else {
+    initApp();
+  }
+})();
+</script>
+</body>
+</html>
