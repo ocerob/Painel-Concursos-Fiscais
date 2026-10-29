@@ -6,25 +6,26 @@
 <title>Boletim Semanal — Concursos da Área Fiscal | 29/10/2026</title>
 <style>
   :root {
-    --ink: #1e252b;
-    --muted: #5c6773;
-    --line: #d1d9e0;
-    --panel: #f4f6f8;
-    --accent: #3b5343; /* Verde Musgo */
-    --accent-dark: #2c3f32;
-    --accent-light: #4c6d56;
-    --accent2: #eaf2ec;
+    --ink: #222831;
+    --muted: #687482;
+    --line: #393e46;
+    --panel: #f7f9fb;
+    --accent: #466952; /* Verde Musgo mais aparente e vibrante */
+    --accent-dark: #334d3c;
+    --accent-light: #598569;
+    --accent2: #e2ede5;
     --warn-bg: #fef3c7;
     --warn-text: #92400e;
-    --shadow: 0 4px 6px -1px rgba(30, 37, 43, 0.05), 0 2px 4px -2px rgba(30, 37, 43, 0.05);
-    --shadow-hover: 0 10px 15px -3px rgba(30, 37, 43, 0.08), 0 4px 6px -4px rgba(30, 37, 43, 0.04);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
   }
 
   * { box-sizing: border-box; }
   
   body {
     margin: 0;
-    background: linear-gradient(180deg, #f2f4f6 0%, #e5e9ed 100%);
+    /* Fundo da página em um tom cinza mais escuro e sofisticado */
+    background: linear-gradient(180deg, #2b313a 0%, #1a1e24 100%);
     color: var(--ink);
     font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   }
@@ -36,11 +37,11 @@
   }
 
   header {
-    background: linear-gradient(135deg, #262d35 0%, #171c22 100%);
+    background: linear-gradient(135deg, #1f242b 0%, #12151a 100%);
     color: white;
     padding: 36px 32px;
     border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(23, 28, 34, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
     border-bottom: 4px solid var(--accent);
   }
 
@@ -54,7 +55,7 @@
 
   header p {
     margin: 0;
-    color: #a3b8a8;
+    color: #b0c9b6;
     font-size: 1.05rem;
     font-weight: 500;
   }
@@ -69,7 +70,7 @@
 
   .summary-box {
     background: white;
-    border: 1px solid var(--line);
+    border: 1px solid #d1d9e0;
     border-radius: 12px;
     padding: 16px 12px;
     text-align: center;
@@ -97,9 +98,10 @@
   h2 {
     margin: 36px 0 16px;
     font-size: 1.5rem;
-    color: #212830;
+    color: #ffffff;
     font-weight: 700;
     letter-spacing: -0.01em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
 
   h3 {
@@ -114,19 +116,19 @@
     max-height: 520px;
     overflow-y: auto;
     padding: 12px;
-    background: #d8dee3;
-    border: 1px solid var(--line);
+    background: #171b21;
+    border: 1px solid #323842;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
     gap: 14px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
   .news-window::-webkit-scrollbar { width: 8px; }
-  .news-window::-webkit-scrollbar-track { background: #d8dee3; border-radius: 8px; }
-  .news-window::-webkit-scrollbar-thumb { background: #9daab5; border-radius: 8px; }
-  .news-window::-webkit-scrollbar-thumb:hover { background: #7c8a95; }
+  .news-window::-webkit-scrollbar-track { background: #171b21; border-radius: 8px; }
+  .news-window::-webkit-scrollbar-thumb { background: #424955; border-radius: 8px; }
+  .news-window::-webkit-scrollbar-thumb:hover { background: #5a6373; }
 
   .card {
     background: white;
@@ -182,7 +184,7 @@
 
   .controls input {
     padding: 12px 16px;
-    border: 1px solid var(--line);
+    border: 1px solid #d1d9e0;
     border-radius: 10px;
     background: white;
     color: var(--ink);
@@ -205,7 +207,7 @@
   }
 
   .tabs button {
-    border: 1px solid var(--line);
+    border: 1px solid #d1d9e0;
     background: white;
     border-radius: 10px;
     padding: 10px 20px;
@@ -226,11 +228,11 @@
     background: var(--accent);
     color: white;
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(59, 83, 67, 0.3);
+    box-shadow: 0 4px 12px rgba(70, 105, 82, 0.4);
   }
 
   .result-count {
-    color: var(--muted);
+    color: #b0bec5;
     font-size: .92rem;
     font-weight: 500;
     margin-bottom: 12px;
@@ -247,7 +249,7 @@
   .stage-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--accent);
+    color: #9ac2a6; /* Verde Musgo claro e destacado no fundo escuro */
     border-bottom: 2px solid var(--accent);
     padding-bottom: 8px;
     margin-bottom: 16px;
@@ -318,11 +320,11 @@
     text-align: left;
     vertical-align: top;
     padding: 14px 16px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #d1d9e0;
   }
 
   th {
-    background: #eaf2ec;
+    background: var(--accent2);
     color: var(--accent-dark);
     font-weight: 700;
   }
@@ -331,7 +333,7 @@
 
   .table-wrap {
     overflow-x: auto;
-    border: 1px solid var(--line);
+    border: 1px solid #323842;
     border-radius: 12px;
     box-shadow: var(--shadow);
   }
@@ -356,18 +358,19 @@
 
   footer {
     margin-top: 36px;
-    color: var(--muted);
+    color: #9aa5b1;
     font-size: .9rem;
     text-align: center;
   }
 
   @media print {
-    body { background: white; }
+    body { background: white; color: black; }
     .page { max-width: none; padding: 0; }
     header { background: white; color: #111; border: 1px solid #aaa; box-shadow: none; border-bottom: 2px solid #333; }
     header p { color: #333; }
-    .controls, .tabs, .news-window { max-height: none; overflow: visible; }
-    .card, .contest { break-inside: avoid; box-shadow: none; }
+    h2 { color: #111; text-shadow: none; }
+    .controls, .tabs, .news-window { max-height: none; overflow: visible; background: white; }
+    .card, .contest { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
     a { color: #111; text-decoration: none; }
   }
 </style>
