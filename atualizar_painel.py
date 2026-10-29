@@ -40,7 +40,9 @@ def buscar_e_atualizar():
     
     for modelo in modelos:
         print(f"Tentando comunicação com o modelo: {modelo}...")
-        for tentativa in range(1, 4):
+        # Aumentado para 5 tentativas com espaçamento maior
+        max_tentativas = 5
+        for tentativa in range(1, max_tentativas + 1):
             try:
                 response = client.models.generate_content(
                     model=modelo,
@@ -50,18 +52,22 @@ def buscar_e_atualizar():
                 print(f"Sucesso com o modelo {modelo} na tentativa {tentativa}!")
                 break
             except (errors.ServerError, errors.APIError) as e:
-                print(f"Instabilidade no modelo {modelo} (Tentativa {tentativa}/3). Aguardando 10s... Erro: {e}")
-                time.sleep(10)
+                if tentativa == max_tentativas:
+                    print(f"Tentativa {tentativa}/{max_tentativas} esgotada. Erro final: {e}")
+                else:
+                    # Tempo de espera progressivo: 15s, 30s, 45s, 60s
+                    tempo_espera = tentativa * 15
+                    print(f"Instabilidade 503 no modelo {modelo} (Tentativa {tentativa}/{max_tentativas}). Aguardando {tempo_espera}s para nova tentativa...")
+                    time.sleep(tempo_espera)
             except Exception as e:
-                print(f"Erro no modelo {modelo}: {e}")
+                print(f"Erro inesperado no modelo {modelo}: {e}")
                 break
         
         if response_text:
             break
 
-    # Se a API falhar após as tentativas, encerra com erro (mostra a falha no GitHub)
     if not response_text:
-        print("Erro crítico: A API do Google falhou e nenhuma resposta foi obtida.")
+        print("Erro crítico: A API do Google continuou instável após todas as tentativas.")
         exit(1)
 
     texto_limpo = response_text.strip()
