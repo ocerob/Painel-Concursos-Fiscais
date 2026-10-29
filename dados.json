@@ -1,561 +1,797 @@
 {
-  "atualizacao": "29 de October de 2026",
-  "indicadores": {
-    "abertos": 3,
-    "encerrados": 8,
-    "banca": 9,
-    "autorizados": 7,
-    "provas": 5
+ "meta": {
+  "edicao": "2026-10-29",
+  "atualizadoEm": "2026-10-29"
+ },
+ "news": [
+  {
+   "date": "2026-10-29",
+   "title": "SEFAZ-SP (APOFP) — Provas remarcadas para 20/12",
+   "tag": "Prazo próximo",
+   "warn": true,
+   "text": "A retificação do edital (Edital 02/2026, DOE de 22/10) adiou as provas de 13/12 para 20/12/2026. As inscrições para os 60 cargos de APOFP seguem até 03/11. É cargo de planejamento e finanças, não de Auditor Fiscal.",
+   "source": "Direção Concursos / Magistrar Cursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-sp-provas-adiadas"
   },
-  "novidades": [
+  {
+   "date": "2026-10-29",
+   "title": "Receita Federal — 146 vagas autorizadas",
+   "tag": "Contratação da banca",
+   "warn": true,
+   "text": "Continuam autorizadas 146 vagas: 30 Auditor-Fiscal e 116 Analista-Tributário. Dezembro é previsão de edital, não data oficial confirmada.",
+   "source": "Receita Federal",
+   "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/servidores/concurso-publico-2026/concurso-publico-2026"
+  },
+  {
+   "date": "2026-10-29",
+   "title": "ISS Lagoa Santa (MG) — Edital publicado",
+   "tag": "Edital publicado",
+   "text": "O edital municipal 01/2026 inclui Auditor Fiscal da Receita Municipal. Inscrições de 16/12/2026 a 18/01/2027; prova prevista para 21/02/2027. Confirmado no edital oficial.",
+   "source": "Prefeitura de Lagoa Santa",
+   "url": "https://www.lagoasanta.mg.gov.br/concursos-e-processos-seletivos/12776-concurso-publico-001-2026"
+  },
+  {
+   "date": "2026-10-29",
+   "title": "ISS Santa Luzia (MG) — Edital publicado",
+   "tag": "Edital publicado",
+   "text": "O edital 01/2026 traz 1 vaga para Fiscal de Tributos. Inscrições de 17/12/2026 a 15/01/2027. O cargo “Auditor” do mesmo edital não foi classificado automaticamente como Auditor Fiscal.",
+   "source": "COTEC/FADENOR",
+   "url": "https://www.cotec.fadenor.com.br/informacoes/36/"
+  },
+  {
+   "date": "2026-10-29",
+   "title": "ISS Caxias do Sul (RS) — Homologado",
+   "tag": "Saiu do radar de próximos editais",
+   "text": "O concurso 01/2026 para Auditor-Fiscal da Receita Municipal foi homologado em setembro. Corrigida a classificação anterior que o mantinha como edital iminente.",
+   "source": "Prefeitura de Caxias do Sul",
+   "url": "https://caxias.rs.gov.br/servicos/administracao-tecnologia-e-inovacao/concursos/vigentes/concurso-publico-01-2026/auditor-fiscal-da-receita-municipal"
+  }
+ ],
+ "contests": [
+  {
+   "sphere": "Federal",
+   "name": "Receita Federal",
+   "stage": 3,
+   "status": "146 vagas autorizadas; organizadora em contratação",
+   "cargo": "Auditor-Fiscal (30) e Analista-Tributário (116)",
+   "vagas": "30 + 116",
+   "education": "Nível superior",
+   "salary": "A confirmar no edital",
+   "bank": "A definir",
+   "dates": "Edital previsto para dezembro/2026; sem data oficial",
+   "next": "Concluir contratação da banca",
+   "perspective": "A autorização é oficial; a previsão de dezembro não é garantia de publicação.",
+   "source": "Receita Federal / Ministério da Fazenda",
+   "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/servidores/concurso-publico-2026/concurso-publico-2026",
+   "events": [
     {
-      "orgao": "SEFAZ-SP — Esfera Estadual",
-      "data": "27/10/2026",
-      "mudanca": "Contagem regressiva para encerramento das inscrições do concurso para APOFP (encerramento em 03/11/2026).",
-      "consequencia": "Candidatos devem atentar para a geração do boleto bancário e confirmação cadastral no portal da FCC antes do término do prazo.",
-      "fonte": "FCC / DOE-SP"
-    },
-    {
-      "orgao": "SEFAZ-AL — Esfera Estadual",
-      "data": "22/10/2026",
-      "mudanca": "Divulgação do cronograma definitivo de provas (Objetiva em 20/12/2026 e Discursiva em 10/01/2027).",
-      "consequencia": "Inscrições encerradas. Fase de consulta aos locais de prova e preparação final sob organização do Cebraspe.",
-      "fonte": "Cebraspe / DOE-AL"
-    },
-    {
-      "orgao": "ISS Curitiba (PR) — Esfera Municipal",
-      "data": "20/10/2026",
-      "mudanca": "Conferência de retificação do edital com inscrições ativas até 05/11/2026.",
-      "consequencia": "Certame prioritário da área fiscal municipal da Região Sul com prova confirmada para 06/12/2026.",
-      "fonte": "Fundação FAFIPA / Prefeitura de Curitiba"
+     "date": "2026-12",
+     "tipo": "previsao",
+     "label": "Edital previsto",
+     "obs": "Previsão, sem data oficial confirmada"
     }
-  ],
-  "federal": {
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [
-      {
-        "titulo": "Receita Federal do Brasil (RFB)",
-        "sub": "Âmbito Nacional",
-        "badge_class": "badge-planning",
-        "status_badge": "Banca em Contratação",
-        "cargo": "Auditor-Fiscal e Analista-Tributário",
-        "vagas": "146 autorizadas",
-        "remuneracao": "Até R$ 29.921,71",
-        "banca": "Em definição final",
-        "perspectiva": "Processo administrativo em andamento para contratação direta da banca organizadora e posterior publicação do edital.",
-        "movimentacao": "Minuta de dispensa registrada no sistema interno",
-        "fonte": "Portal Gov.br / RFB"
-      }
-    ],
-    "5": [],
-    "6": [],
-    "7": []
+   ]
   },
-  "estadual": {
-    "1": [
-      {
-        "titulo": "SEFAZ-SP — São Paulo",
-        "sub": "Estado de São Paulo",
-        "badge_class": "badge-open",
-        "status_badge": "Inscrições Abertas",
-        "cargo": "Analista em Planejamento, Orçamento e Finanças (APOFP)",
-        "vagas": "60 vagas",
-        "remuneracao": "Até R$ 11.359,50",
-        "banca": "FCC",
-        "perspectiva": "Inscrições abertas até 03/11/2026. Provas adiadas para o dia 20/12/2026 pela FCC.",
-        "movimentacao": "Retificação de cronograma oficializada em outubro",
-        "fonte": "FCC / DOE-SP"
-      }
-    ],
-    "2": [
-      {
-        "titulo": "SEFAZ-AL — Alagoas",
-        "sub": "Estado de Alagoas",
-        "badge_class": "badge-closed",
-        "status_badge": "Inscrições Encerradas",
-        "cargo": "Auditor Fiscal da Administração Tributária (AFTE)",
-        "vagas": "40 + 60 CR",
-        "remuneracao": "R$ 25.270,68",
-        "banca": "Cebraspe",
-        "perspectiva": "Provas objetivas marcadas para 20/12/2026 e discursivas para 10/01/2027.",
-        "movimentacao": "Cronograma de provas ratificado em 22/10/2026",
-        "fonte": "Cebraspe / DOE-AL"
-      },
-      {
-        "titulo": "SEFAZ-SC — Santa Catarina",
-        "sub": "Estado de Santa Catarina",
-        "badge_class": "badge-closed",
-        "status_badge": "Inscrições Encerradas",
-        "cargo": "Auditor Estadual de Finanças Públicas",
-        "vagas": "50 + CR",
-        "remuneracao": "R$ 25.337,61",
-        "banca": "FCC",
-        "perspectiva": "Fase de preparação logística. Prova objetiva confirmada para 22/11/2026.",
-        "movimentacao": "Divulgação de locais de prova iminente",
-        "fonte": "FCC / SEFAZ-SC"
-      },
-      {
-        "titulo": "SEFAZ-PR — Paraná",
-        "sub": "Estado do Paraná",
-        "badge_class": "badge-closed",
-        "status_badge": "Inscrições Encerradas",
-        "cargo": "Auditor Fiscal da Receita Estadual",
-        "vagas": "60 vagas",
-        "remuneracao": "R$ 26.230,00",
-        "banca": "FGV / Cebraspe",
-        "perspectiva": "Etapa avançada com convocações para perícias médicas e bancas de heteroidentificação.",
-        "movimentacao": "Publicação de edital de convocação de perícias",
-        "fonte": "SEFAZ-PR"
-      }
-    ],
-    "3": [
-      {
-        "titulo": "SEFAZ-BA — Bahia",
-        "sub": "Estado da Bahia",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida",
-        "cargo": "Auditor-Fiscal e Agente de Tributos Estaduais",
-        "vagas": "200 vagas (100 por cargo)",
-        "remuneracao": "Variável por cargo (Até R$ 19.000,00+)",
-        "banca": "Fundação Cesgranrio",
-        "perspectiva": "Banca definida pela Cesgranrio. Publicação do edital aguardada para os próximos meses.",
-        "movimentacao": "Confirmação de banca organizadora",
-        "fonte": "DOE-BA / Cesgranrio"
-      },
-      {
-        "titulo": "SEFAZ-DF — Distrito Federal",
-        "sub": "Distrito Federal",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida / Contratada",
-        "cargo": "Auditor-Fiscal da Receita do DF",
-        "vagas": "115 imediatas + 150 CR",
-        "remuneracao": "R$ 23.597,07",
-        "banca": "Cebraspe",
-        "perspectiva": "Banca Cebraspe contratada. Ajustes finais da comissão para liberação do edital.",
-        "movimentacao": "Acompanhamento pré-edital ativo",
-        "fonte": "DODF / Cebraspe"
-      },
-      {
-        "titulo": "SEFAZ-RS — Rio Grande do Sul",
-        "sub": "Estado do Rio Grande do Sul",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida",
-        "cargo": "Auditor-Fiscal e Analista Tributário",
-        "vagas": "46 vagas",
-        "remuneracao": "Até R$ 39.877,31 (Auditor)",
-        "banca": "FCC",
-        "perspectiva": "Banca definida junto à Fundação Carlos Chagas. Elaboração de minuta do edital.",
-        "movimentacao": "Ato de escolha da organizadora",
-        "fonte": "SEFAZ-RS / FCC"
-      },
-      {
-        "titulo": "SEFAZ-RJ — Rio de Janeiro",
-        "sub": "Estado do Rio de Janeiro",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida / Contrato Assinado",
-        "cargo": "Auditor Fiscal e Analista",
-        "vagas": "195 vagas",
-        "remuneracao": "R$ 27.430,00",
-        "banca": "Cebraspe",
-        "perspectiva": "Contrato formalizado. Publicação do edital é iminente no Diário Oficial.",
-        "movimentacao": "Assinatura do contrato com o Cebraspe",
-        "fonte": "DOE-RJ / Cebraspe"
-      }
-    ],
-    "4": [],
-    "5": [],
-    "6": [
-      {
-        "titulo": "SEFAZ-MA — Maranhão",
-        "sub": "Estado do Maranhão",
-        "badge_class": "badge-planning",
-        "status_badge": "Em Planejamento",
-        "cargo": "Analista Executivo Fazendário",
-        "vagas": "10 vagas",
-        "remuneracao": "R$ 17.996,03",
-        "banca": "A definir",
-        "perspectiva": "Fase de procedimentos preparatórios e levantamento de impacto financeiro.",
-        "movimentacao": "Relatório de fase preparatória reportado",
-        "fonte": "SEFAZ-MA"
-      }
-    ],
-    "7": [
-      {
-        "titulo": "SEFAZ-ES — Espírito Santo",
-        "sub": "Estado do Espírito Santo",
-        "badge_class": "badge-planning",
-        "status_badge": "Previsão LOA 2026",
-        "cargo": "Auditor-Fiscal da Receita Estadual",
-        "vagas": "40 previstas",
-        "remuneracao": "R$ 22.315,19",
-        "banca": "A definir",
-        "perspectiva": "Inclusão orçamentária na LOA. Aguarda atos formais de autorização do executivo.",
-        "movimentacao": "Reserva de diretrizes orçamentárias",
-        "fonte": "LOA ES / SEFAZ-ES"
-      },
-      {
-        "titulo": "SEFAZ-TO — Tocantins",
-        "sub": "Estado do Tocantins",
-        "badge_class": "badge-planning",
-        "status_badge": "Anúncio / Em Análise",
-        "cargo": "Auditor Fiscal da Receita Estadual",
-        "vagas": "100 + 100 CR",
-        "remuneracao": "R$ 33.102,96",
-        "banca": "A definir",
-        "perspectiva": "Anúncio público realizado pela gestão estadual. Aguarda instituição oficial de comissão.",
-        "movimentacao": "Anúncio de intenção de certame",
-        "fonte": "Governo do Tocantins"
-      }
-    ]
-  },
-  "municipal": {
-    "1": [
-      {
-        "titulo": "ISS Curitiba / PR",
-        "sub": "Prefeitura de Curitiba",
-        "badge_class": "badge-open",
-        "status_badge": "Inscrições Abertas",
-        "cargo": "Auditor Fiscal de Tributos Municipais",
-        "vagas": "10 vagas + CR",
-        "remuneracao": "R$ 18.352,33",
-        "banca": "Fundação FAFIPA",
-        "perspectiva": "Inscrições abertas até 05/11/2026. Prova objetiva agendada para 06/12/2026.",
-        "movimentacao": "Edital retificado e inscrições em andamento",
-        "fonte": "FAFIPA / Prefeitura de Curitiba"
-      },
-      {
-        "titulo": "ISS Aracati / CE",
-        "sub": "Prefeitura de Aracati",
-        "badge_class": "badge-open",
-        "status_badge": "Inscrições Abertas",
-        "cargo": "Auditor Fiscal",
-        "vagas": "7 vagas",
-        "remuneracao": "R$ 3.347,94",
-        "banca": "FCPC",
-        "perspectiva": "Inscrições abertas até 06/11/2026. Provas objetivas agendadas para 24/01/2027.",
-        "movimentacao": "Acompanhamento de edital publicado",
-        "fonte": "FCPC / Prefeitura de Aracati"
-      }
-    ],
-    "2": [
-      {
-        "titulo": "ISS Manaus / AM",
-        "sub": "Prefeitura de Manaus",
-        "badge_class": "badge-closed",
-        "status_badge": "Inscrições Encerradas",
-        "cargo": "Auditor Fiscal de Tributos Municipais",
-        "vagas": "20 + CR",
-        "remuneracao": "R$ 27.270,61",
-        "banca": "FCC",
-        "perspectiva": "Inscrições encerradas. Prova objetiva em 01/11/2026 e discursiva em 24/01/2027.",
-        "movimentacao": "Convocação para aplicação de provas",
-        "fonte": "FCC / Prefeitura de Manaus"
-      },
-      {
-        "titulo": "ISS Caruaru / PE",
-        "sub": "Prefeitura de Caruaru",
-        "badge_class": "badge-closed",
-        "status_badge": "Inscrições Encerradas",
-        "cargo": "Auditor Fiscal e Analista Fiscal",
-        "vagas": "20 vagas (10 por cargo)",
-        "remuneracao": "R$ 22.000,00 (Vencimento Básico Auditor)",
-        "banca": "IBAM",
-        "perspectiva": "Inscrições encerradas. Provas objetivas e dissertativas agendadas para 29/11/2026.",
-        "movimentacao": "Consolidação de candidatos inscritos",
-        "fonte": "IBAM / Prefeitura de Caruaru"
-      },
-      {
-        "titulo": "ISS Campina Grande / PB",
-        "sub": "Prefeitura de Campina Grande",
-        "badge_class": "badge-closed",
-        "status_badge": "Edital Retificado",
-        "cargo": "Auditor Fiscal da Receita Municipal",
-        "vagas": "4 vagas",
-        "remuneracao": "R$ 8.816,66",
-        "banca": "IDECAN",
-        "perspectiva": "Situação sob validação oficial após retificações no calendário.",
-        "movimentacao": "Publicação de edital retificador",
-        "fonte": "IDECAN"
-      },
-      {
-        "titulo": "ISS Lagoa Santa / MG",
-        "sub": "Prefeitura de Lagoa Santa",
-        "badge_class": "badge-planning",
-        "status_badge": "Edital Publicado (Inscrições Futuras)",
-        "cargo": "Auditor Fiscal da Receita Municipal",
-        "vagas": "1 + CR",
-        "remuneracao": "R$ 5.021,11 + Gratificação de R$ 10.042,22",
-        "banca": "IBGP",
-        "perspectiva": "Edital publicado. Período de inscrições abrirá de 16/12/2026 a 18/01/2027. Prova em 21/02/2027.",
-        "movimentacao": "Edital 01/2026 publicado",
-        "fonte": "IBGP"
-      },
-      {
-        "titulo": "ISS Santa Luzia / MG",
-        "sub": "Prefeitura de Santa Luzia",
-        "badge_class": "badge-planning",
-        "status_badge": "Edital Publicado (Inscrições Futuras)",
-        "cargo": "Fiscal de Tributos e Auditor",
-        "vagas": "1 + CR por cargo",
-        "remuneracao": "Até R$ 5.235,94 + Benefícios",
-        "banca": "COTEC / FADENOR",
-        "perspectiva": "Edital publicado. Inscrições de 17/12/2026 a 15/01/2027. Prova em 14/03/2027.",
-        "movimentacao": "Edital 01/2026 oficializado",
-        "fonte": "COTEC"
-      }
-    ],
-    "3": [
-      {
-        "titulo": "ISS Blumenau / SC",
-        "sub": "Prefeitura de Blumenau",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida (FURB)",
-        "cargo": "Auditor Fiscal Tributário",
-        "vagas": "1 + CR",
-        "remuneracao": "R$ 7.005,99",
-        "banca": "FURB",
-        "perspectiva": "Banca indicada em termo de referência oficial. Aguarda minuta do edital.",
-        "movimentacao": "Termo de referência expedido",
-        "fonte": "Prefeitura de Blumenau"
-      },
-      {
-        "titulo": "ISS Campinas / SP",
-        "sub": "Prefeitura de Campinas",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Definida (FCC)",
-        "cargo": "Agente Fiscal Tributário e Auditor Fiscal",
-        "vagas": "A definir",
-        "remuneracao": "R$ 8.991,95 (Auditor)",
-        "banca": "FCC",
-        "perspectiva": "Banca FCC selecionada. Trâmites de contratação e cronograma pré-edital.",
-        "movimentacao": "Escolha de banca organizadora",
-        "fonte": "FCC / DOM Campinas"
-      },
-      {
-        "titulo": "ISS Parintins / AM",
-        "sub": "Prefeitura de Parintins",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Contratada (FGV)",
-        "cargo": "Auditor Fiscal de Tributos Municipais",
-        "vagas": "A definir",
-        "remuneracao": "A confirmar no edital",
-        "banca": "FGV",
-        "perspectiva": "Contratação reportada com a FGV. Aguarda publicação formal no diário.",
-        "movimentacao": "Processo de dispensa de licitação",
-        "fonte": "FGV"
-      },
-      {
-        "titulo": "ISS Pelotas / RS",
-        "sub": "Prefeitura de Pelotas",
-        "badge_class": "badge-open",
-        "status_badge": "Banca Escolhida (Legalle)",
-        "cargo": "Auditor Fiscal da Receita Municipal",
-        "vagas": "CR",
-        "remuneracao": "R$ 5.272,98",
-        "banca": "Legalle Concursos",
-        "perspectiva": "Processo administrativo em análise jurídica para assinatura de contrato.",
-        "movimentacao": "Banca em análise pela Procuradoria",
-        "fonte": "Prefeitura de Pelotas"
-      }
-    ],
-    "4": [],
-    "5": [],
-    "6": [
-      {
-        "titulo": "ISS Belém / PA",
-        "sub": "Prefeitura de Belém",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Atualizada",
-        "cargo": "Auditor Fiscal da Receita Municipal",
-        "vagas": "20 + 40 CR",
-        "remuneracao": "Variável por produtividade (R$ 15.000,00+)",
-        "banca": "A definir",
-        "perspectiva": "Concurso autorizado e comissão reestruturada para elaboração do projeto básico.",
-        "movimentacao": "Atualização de portaria de comissão",
-        "fonte": "DOM Belém"
-      },
-      {
-        "titulo": "ISS Belo Horizonte / MG",
-        "sub": "Prefeitura de Belo Horizonte",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Formada",
-        "cargo": "Analista Fazendário / Auditor Fiscal",
-        "vagas": "A definir",
-        "remuneracao": "R$ 8.866,80 a R$ 17.500,00",
-        "banca": "A definir / FGV",
-        "perspectiva": "Comissão técnica trabalhando na definição do quantitativo e edital.",
-        "movimentacao": "Designação de grupo de trabalho fazendário",
-        "fonte": "DOM BH"
-      },
-      {
-        "titulo": "ISS Juiz de Fora / MG",
-        "sub": "Prefeitura de Juiz de Fora",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Formada",
-        "cargo": "Auditor Fiscal",
-        "vagas": "A definir",
-        "remuneracao": "R$ 22.520,23",
-        "banca": "A definir",
-        "perspectiva": "Etapa preparatória iniciada para contratação de banca organizadora.",
-        "movimentacao": "Portaria de instituição de comissão",
-        "fonte": "DOM Juiz de Fora"
-      },
-      {
-        "titulo": "ISS São Luís / MA",
-        "sub": "Prefeitura de São Luís",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Formada",
-        "cargo": "Auditor Fiscal de Tributos",
-        "vagas": "A definir",
-        "remuneracao": "R$ 21.255,88",
-        "banca": "A definir",
-        "perspectiva": "Comissão constituída promovendo estudos de cargos vagos.",
-        "movimentacao": "Ato de autorização e comissão",
-        "fonte": "DOM São Luís"
-      },
-      {
-        "titulo": "ISS Vitória da Conquista / BA",
-        "sub": "Prefeitura de Vitória da Conquista",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Formada",
-        "cargo": "Auditor Fiscal e Carreiras Fazendárias",
-        "vagas": "24 + CR",
-        "remuneracao": "A confirmar no edital",
-        "banca": "A definir",
-        "perspectiva": "Certame autorizado contemplando múltiplos cargos do setor fiscal.",
-        "movimentacao": "Ato de formação de comissão",
-        "fonte": "DOM Vitória da Conquista"
-      },
-      {
-        "titulo": "ISS Goiânia / GO",
-        "sub": "Prefeitura de Goiânia",
-        "badge_class": "badge-planning",
-        "status_badge": "Comissão Reestruturada",
-        "cargo": "Auditor-Fiscal da Receita Municipal",
-        "vagas": "A definir",
-        "remuneracao": "R$ 20.427,15",
-        "banca": "A definir",
-        "perspectiva": "Comissão reorganizada para andamento do projeto básico do concurso.",
-        "movimentacao": "Portaria de reestruturação de comissão",
-        "fonte": "Diário Oficial de Goiânia"
-      }
-    ],
-    "7": [
-      {
-        "titulo": "ISS Niterói / RJ",
-        "sub": "Prefeitura de Niterói",
-        "badge_class": "badge-planning",
-        "status_badge": "Previsão Orçamentária",
-        "cargo": "Auditor Fiscal da Receita",
-        "vagas": "A definir",
-        "remuneracao": "Até R$ 30.468,68",
-        "banca": "A definir",
-        "perspectiva": "Previsão em estudo orçamentário. Aguarda ato formal de autorização.",
-        "movimentacao": "Estudo interno de vacância",
-        "fonte": "Prefeitura de Niterói"
-      },
-      {
-        "titulo": "ISS Vila Velha / ES",
-        "sub": "Prefeitura de Vila Velha",
-        "badge_class": "badge-planning",
-        "status_badge": "Anúncio Público",
-        "cargo": "Auditor Fiscal da Receita Municipal",
-        "vagas": "A definir",
-        "remuneracao": "R$ 4.324,01 + Produtividade",
-        "banca": "A definir",
-        "perspectiva": "Anúncio público da gestão municipal. Aguarda atos oficiais de comissão.",
-        "movimentacao": "Anúncio de planejamento",
-        "fonte": "Prefeitura de Vila Velha"
-      }
-    ]
-  },
-  "agenda": [
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-AL",
+   "stage": 1,
+   "status": "Inscrições encerradas",
+   "cargo": "Auditor Fiscal da Administração Tributária Estadual",
+   "vagas": "40 imediatas + 60 CR",
+   "education": "Nível superior",
+   "salary": "R$ 25.270,68 divulgados",
+   "bank": "Cebraspe",
+   "dates": "Objetiva 20/12/2026; discursiva 10/01/2027",
+   "next": "Acompanhar locais e comunicados",
+   "perspective": "Concurso em fase de preparação para prova; priorizar acompanhamento do Cebraspe.",
+   "source": "Gran Cursos",
+   "url": "https://blog.grancursosonline.com.br/concurso-sefaz-al/",
+   "events": [
     {
-      "orgao": "ISS Manaus / AM",
-      "evento": "Provas Objetivas",
-      "data": "01/11/2026",
-      "tipo": "Oficial"
+     "date": "2026-12-20",
+     "tipo": "prova",
+     "label": "Prova objetiva",
+     "obs": "Inscrições encerradas"
     },
     {
-      "orgao": "SEFAZ-SP",
-      "evento": "Término das Inscrições (APOFP)",
-      "data": "03/11/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Curitiba / PR",
-      "evento": "Término das Inscrições",
-      "data": "05/11/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Aracati / CE",
-      "evento": "Término das Inscrições",
-      "data": "06/11/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "SEFAZ-SC",
-      "evento": "Provas Objetivas (Finanças)",
-      "data": "22/11/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Caruaru / PE",
-      "evento": "Provas Objetivas e Dissertativas",
-      "data": "29/11/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Curitiba / PR",
-      "evento": "Provas Objetivas",
-      "data": "06/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Lagoa Santa / MG",
-      "evento": "Abertura de Inscrições",
-      "data": "16/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Santa Luzia / MG",
-      "evento": "Abertura de Inscrições",
-      "data": "17/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "SEFAZ-SP",
-      "evento": "Provas Objetivas (APOFP)",
-      "data": "20/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "SEFAZ-AL",
-      "evento": "Provas Objetivas",
-      "data": "20/12/2026",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "SEFAZ-AL",
-      "evento": "Provas Discursivas",
-      "data": "10/01/2027",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Aracati / CE",
-      "evento": "Provas Objetivas",
-      "data": "24/01/2027",
-      "tipo": "Oficial"
-    },
-    {
-      "orgao": "ISS Manaus / AM",
-      "evento": "Provas Discursivas",
-      "data": "24/01/2027",
-      "tipo": "Oficial"
+     "date": "2027-01-10",
+     "tipo": "prova",
+     "label": "Prova discursiva",
+     "obs": "Conforme cronograma divulgado"
     }
-  ],
-  "nota_rodape": "Data da Pesquisa Profunda: 27 de Outubro de 2026. Mapeamento exaustivo integrado com diários oficiais e fontes primárias (Cebraspe, FCC, FAFIPA, IBAM, IDECAN, COTEC) e portais especializados de alta reputação."
+   ]
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-SC",
+   "stage": 1,
+   "status": "Inscrições encerradas",
+   "cargo": "Auditor Estadual de Finanças Públicas",
+   "vagas": "50 + CR divulgadas",
+   "education": "Nível superior",
+   "salary": "R$ 25.337,61 divulgados",
+   "bank": "FCC",
+   "dates": "Prova prevista para 22/11/2026",
+   "next": "Acompanhar locais de prova",
+   "perspective": "Atenção: o cargo é Auditor Estadual de Finanças Públicas, não Auditor Fiscal Tributário.",
+   "source": "Acompanhamento especializado",
+   "events": [
+    {
+     "date": "2026-11-22",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Auditor Estadual de Finanças Públicas"
+    }
+   ]
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-BA",
+   "stage": 2,
+   "status": "Cesgranrio indicada como banca",
+   "cargo": "Auditor-Fiscal e Agente de Tributos Estaduais",
+   "vagas": "200 divulgadas; distribuição a confirmar",
+   "education": "Conferir edital",
+   "salary": "A confirmar por cargo",
+   "bank": "Cesgranrio",
+   "dates": "Sem cronograma oficial",
+   "next": "Acompanhar formalização e edital",
+   "perspective": "Banca noticiada por fontes especializadas; confirmar publicação contratual e distribuição das vagas.",
+   "source": "Imprensa especializada / Gran"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-DF",
+   "stage": 2,
+   "status": "Banca definida/contratada segundo fontes especializadas",
+   "cargo": "Auditor Fiscal da Receita do DF",
+   "vagas": "115 + 150 CR divulgadas",
+   "education": "Nível superior",
+   "salary": "R$ 23.597,07 divulgado; composição a confirmar",
+   "bank": "Cebraspe",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar ato e publicação",
+   "perspective": "Não confundir notícias de contratação com edital publicado.",
+   "source": "Gran / acompanhamento especializado"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-RS",
+   "stage": 2,
+   "status": "Banca definida",
+   "cargo": "Auditor-Fiscal e Analista Tributário",
+   "vagas": "46 divulgadas; divisão a confirmar",
+   "education": "Nível superior",
+   "salary": "Até R$ 39.877,31 divulgado para Auditor",
+   "bank": "FCC",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar atos de preparação",
+   "perspective": "A definição da banca é avanço, mas o cronograma depende de publicação oficial.",
+   "source": "Acompanhamento especializado"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-ES",
+   "stage": 5,
+   "status": "Previsão orçamentária/planejamento",
+   "cargo": "Auditor Fiscal",
+   "vagas": "40 previstas em referência orçamentária",
+   "education": "A confirmar",
+   "salary": "Referência divulgada; confirmar",
+   "bank": "A definir",
+   "dates": "Sem cronograma",
+   "next": "Aguardar autorização formal",
+   "perspective": "Previsão orçamentária não equivale a autorização de concurso.",
+   "source": "Gran / acompanhamento especializado"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-TO",
+   "stage": 6,
+   "status": "Anúncio divulgado; ato formal a confirmar",
+   "cargo": "Auditor Fiscal",
+   "vagas": "100 + 100 CR divulgadas",
+   "education": "A confirmar",
+   "salary": "A confirmar",
+   "bank": "A definir",
+   "dates": "Sem cronograma",
+   "next": "Confirmar autorização e comissão",
+   "perspective": "Manter no radar, sem tratar anúncio como edital iminente.",
+   "source": "Acompanhamento especializado"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Curitiba (PR)",
+   "stage": 0,
+   "status": "Inscrições abertas",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "10",
+   "education": "Nível superior",
+   "salary": "R$ 18.352,33 divulgados",
+   "bank": "Fundação FAFIPA",
+   "dates": "Inscrições até 05/11/2026; prova 06/12/2026",
+   "next": "Inscrição e leitura de retificações",
+   "perspective": "Prazo imediato. O portal municipal lista edital retificado em outubro.",
+   "source": "Portal oficial / edital",
+   "url": "https://concursos.curitiba.pr.gov.br/documento/00/0/2026/5/72/1/1",
+   "events": [
+    {
+     "date": "2026-11-05",
+     "tipo": "prazo",
+     "label": "Fim das inscrições",
+     "obs": "Prazo conforme portal municipal"
+    },
+    {
+     "date": "2026-12-06",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Auditor Fiscal de Tributos Municipais"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Aracati (CE)",
+   "stage": 0,
+   "status": "Inscrições abertas",
+   "cargo": "Auditor Fiscal",
+   "vagas": "7",
+   "education": "Conferir requisito no edital",
+   "salary": "R$ 3.347,94 divulgados",
+   "bank": "FCPC",
+   "dates": "Inscrições até 06/11/2026; prova 24/01/2027",
+   "next": "Conferir edital e inscrição",
+   "perspective": "Prazo próximo; confirmar regras diretamente com a FCPC.",
+   "source": "Prof. Wilson Tavares",
+   "url": "https://wilsontavares.com.br/blog/artigos/concursos/",
+   "events": [
+    {
+     "date": "2026-11-06",
+     "tipo": "prazo",
+     "label": "Fim das inscrições",
+     "obs": "Auditor Fiscal; FCPC"
+    },
+    {
+     "date": "2027-01-24",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Conforme edital"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Lagoa Santa (MG)",
+   "stage": 0,
+   "status": "Edital publicado; inscrições futuras",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "1 + CR divulgado",
+   "education": "Nível superior; conferir Anexo I",
+   "salary": "R$ 5.021,11 + gratificação divulgada de R$ 10.042,22; conferir lei e edital",
+   "bank": "IBGP",
+   "dates": "Inscrições 16/12/2026 a 18/01/2027; prova 21/02/2027",
+   "next": "Acompanhar retificações e abertura do sistema",
+   "perspective": "Edital oficial 01/2026 publicado em 02/10. Prova consta para 21/02/2027; valores de gratificação devem ser confirmados no quadro remuneratório.",
+   "source": "Prefeitura de Lagoa Santa / IBGP",
+   "url": "https://www.lagoasanta.mg.gov.br/concursos-e-processos-seletivos/12776-concurso-publico-001-2026",
+   "events": [
+    {
+     "date": "2026-12-16",
+     "tipo": "prazo",
+     "label": "Início das inscrições",
+     "obs": "Até 18/01/2027"
+    },
+    {
+     "date": "2027-01-18",
+     "tipo": "prazo",
+     "label": "Fim das inscrições"
+    },
+    {
+     "date": "2027-02-21",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Conforme edital municipal"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Santa Luzia (MG)",
+   "stage": 0,
+   "status": "Edital publicado; inscrições futuras",
+   "cargo": "Fiscal de Tributos",
+   "vagas": "1 vaga",
+   "education": "Conferir Anexo I do edital",
+   "salary": "R$ 1.622,41 + GIPFT divulgado; conferir regra",
+   "bank": "COTEC/FADENOR",
+   "dates": "Inscrições 17/12/2026 a 15/01/2027; prova 14/03/2027",
+   "next": "Conferir atribuições, escolaridade e remuneração",
+   "perspective": "O edital oficial inclui Fiscal de Tributos. O cargo “Auditor” também aparece no quadro, mas não deve ser confundido automaticamente com Auditor Fiscal tributário.",
+   "source": "COTEC/FADENOR",
+   "url": "https://www.cotec.fadenor.com.br/informacoes/36/",
+   "events": [
+    {
+     "date": "2026-12-17",
+     "tipo": "prazo",
+     "label": "Início das inscrições",
+     "obs": "Até 15/01/2027"
+    },
+    {
+     "date": "2027-01-15",
+     "tipo": "prazo",
+     "label": "Fim das inscrições"
+    },
+    {
+     "date": "2027-03-14",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Conforme cronograma COTEC"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Manaus (AM)",
+   "stage": 1,
+   "status": "Inscrições encerradas; prova próxima",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "20 + CR",
+   "education": "Conferir edital",
+   "salary": "R$ 27.270,61 divulgado",
+   "bank": "FCC",
+   "dates": "Prova objetiva 01/11/2026",
+   "next": "Acompanhar local e orientações",
+   "perspective": "Prazo de inscrição encerrado; foco agora na prova e nos comunicados da banca.",
+   "source": "Magistrar / acompanhamento especializado",
+   "url": "https://magistrarcursos.com.br/blog/concursos-fiscais/",
+   "events": [
+    {
+     "date": "2026-11-01",
+     "tipo": "prova",
+     "label": "Prova objetiva",
+     "obs": "Inscrições encerradas"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Caruaru (PE)",
+   "stage": 1,
+   "status": "Inscrições encerradas",
+   "cargo": "Auditor Fiscal e Analista Fiscal",
+   "vagas": "20 no conjunto divulgado",
+   "education": "Conferir por cargo",
+   "salary": "Auditor: R$ 22 mil de base divulgados; adicionais à parte",
+   "bank": "IBAM",
+   "dates": "Prova prevista para 29/11/2026",
+   "next": "Acompanhar convocação e local",
+   "perspective": "Separar vencimento básico de adicionais e produtividade.",
+   "source": "Acompanhamento especializado",
+   "events": [
+    {
+     "date": "2026-11-29",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Conferir cronograma IBAM"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Santos (SP)",
+   "stage": 1,
+   "status": "Provas/gabaritos e resultados",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "2",
+   "education": "Conferir edital",
+   "salary": "R$ 12.171,25 divulgado incluindo auxílio-alimentação",
+   "bank": "IBAM",
+   "dates": "Gabaritos preliminares reportados; conferir calendário atual",
+   "next": "Acompanhar recursos e resultados",
+   "perspective": "Não há nova inscrição indicada nesta fase.",
+   "source": "Estratégia / IBAM",
+   "url": "https://concursos.estrategia.com/portal/concurso-iss-santos/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Campina Grande (PB)",
+   "stage": 1,
+   "status": "Inscrições encerradas; prova remarcada",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "4",
+   "education": "Conferir edital",
+   "salary": "R$ 8.816,66 divulgado",
+   "bank": "IDECAN",
+   "dates": "Prova remarcada para 09/01/2027",
+   "next": "Confirmar data e local na banca",
+   "perspective": "Inscrições reabertas em setembro e encerradas em outubro; usar a data remarcada somente após conferir retificações.",
+   "source": "Prof. Wilson Tavares",
+   "url": "https://wilsontavares.com.br/blog/artigos/concursos/",
+   "events": [
+    {
+     "date": "2027-01-09",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Data remarcada, confirmar IDECAN"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Rio Verde (GO)",
+   "stage": 1,
+   "status": "Inscrições encerradas",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "5 + 25 CR",
+   "education": "Formação específica conforme edital",
+   "salary": "R$ 4.809,00 base; até R$ 16.831,50 com adicionais divulgados",
+   "bank": "UniRV",
+   "dates": "Prova prevista para 17/01/2027",
+   "next": "Acompanhar convocação e retificações",
+   "perspective": "Remuneração total divulgada inclui gratificações; não equivale ao vencimento básico.",
+   "source": "Prof. Wilson Tavares / UniRV",
+   "events": [
+    {
+     "date": "2027-01-17",
+     "tipo": "prova",
+     "label": "Prova",
+     "obs": "Inscrições encerradas"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Cascavel (PR)",
+   "stage": 2,
+   "status": "Banca definida; edital esperado",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "Cadastro de reserva",
+   "education": "Nível superior",
+   "salary": "Último edital: R$ 4.576,47 a R$ 8.386,18",
+   "bank": "Fundação FAFIPA",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar contrato e publicação",
+   "perspective": "O Estratégia indica edital iminente, mas a referência salarial é do último edital, não necessariamente a atual.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Campinas (SP)",
+   "stage": 2,
+   "status": "Banca definida/planejamento",
+   "cargo": "Agente Fiscal Tributário e Auditor Fiscal Tributário Municipal",
+   "vagas": "2 vagas citadas no planejamento",
+   "education": "Médio e superior, conforme cargo",
+   "salary": "R$ 4.281,91 a R$ 8.991,95 + produtividade divulgados",
+   "bank": "FCC",
+   "dates": "Sem inscrições; planejamento plurianual",
+   "next": "Acompanhar publicação de edital",
+   "perspective": "A definição da FCC foi noticiada; o planejamento não equivale a edital aberto.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Blumenau (SC)",
+   "stage": 2,
+   "status": "Banca contratada segundo acompanhamento",
+   "cargo": "Auditor Fiscal Tributário",
+   "vagas": "1 + CR",
+   "education": "Nível superior",
+   "salary": "R$ 7.005,99 divulgado",
+   "bank": "FURB",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar edital e cronograma",
+   "perspective": "A banca foi indicada como contratada por fonte especializada; conferir contrato e ato municipal.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Pelotas (RS)",
+   "stage": 2,
+   "status": "Banca definida/selecionada segundo fontes",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "A definir / CR divulgado",
+   "education": "Nível superior",
+   "salary": "R$ 5.272,98 de referência",
+   "bank": "Legalle",
+   "dates": "Sem data oficial",
+   "next": "Confirmar contratação e publicação",
+   "perspective": "Status divulgado por fonte especializada; verificar formalização no município.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Parintins (AM)",
+   "stage": 2,
+   "status": "Banca definida segundo acompanhamento",
+   "cargo": "Cargo fiscal municipal; nomenclatura a confirmar",
+   "vagas": "A definir",
+   "education": "A definir",
+   "salary": "A definir",
+   "bank": "FGV",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar contrato e edital",
+   "perspective": "Manter como monitoramento, sem presumir quantitativo ou remuneração.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Foz do Iguaçu (PR)",
+   "stage": 2,
+   "status": "Banca definida; cargo correlato",
+   "cargo": "Técnico em Tributos",
+   "vagas": "1 + CR divulgado",
+   "education": "A confirmar no edital",
+   "salary": "A confirmar",
+   "bank": "Fundação FAFIPA",
+   "dates": "Sem novo cronograma confirmado",
+   "next": "Acompanhar edital específico e atos da banca",
+   "perspective": "Cargo tributário correlato, mas não equivalente a Auditor Fiscal. Não confundir com o concurso geral de Foz já em andamento.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Belém (PA)",
+   "stage": 5,
+   "status": "Autorizado e comissão formada",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "20 + 40 CR divulgados",
+   "education": "Nível superior",
+   "salary": "R$ 5.513,14 de referência divulgada",
+   "bank": "A definir",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar comissão e contratação",
+   "perspective": "A autorização e comissão são avanços; remuneração divulgada precisa ser confrontada com a tabela vigente.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Juiz de Fora (MG)",
+   "stage": 5,
+   "status": "Comissão formada",
+   "cargo": "Auditor Fiscal",
+   "vagas": "A definir; fonte especializada menciona 17 cargos vagos",
+   "education": "Nível superior",
+   "salary": "R$ 22.520,23 de referência divulgada",
+   "bank": "A definir",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar estudo de vagas e banca",
+   "perspective": "Comissão formada não garante edital imediato.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS São Luís (MA)",
+   "stage": 5,
+   "status": "Autorizado e comissão formada",
+   "cargo": "Auditor Fiscal de Tributos",
+   "vagas": "A definir",
+   "education": "Nível superior",
+   "salary": "R$ 21.255,88 de referência divulgada",
+   "bank": "A definir",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar contratação da banca",
+   "perspective": "A autorização e a comissão são sinais concretos de preparação; vagas ainda não confirmadas.",
+   "source": "Gran / Estratégia",
+   "url": "https://blog.grancursosonline.com.br/concurso-iss-sao-luis-ma/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Vitória da Conquista (BA)",
+   "stage": 5,
+   "status": "Comissão formada/planejamento",
+   "cargo": "Auditor Fiscal e cargos fazendários correlatos",
+   "vagas": "24 + CR para o conjunto divulgado",
+   "education": "Médio e superior, conforme cargo",
+   "salary": "Até cerca de R$ 20 mil divulgado; confirmar por cargo",
+   "bank": "A definir",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar definição de cargos e vagas",
+   "perspective": "O quantitativo divulgado abrange mais de um cargo; não atribuir todas as vagas ao Auditor Fiscal.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Goiana (PE)",
+   "stage": 5,
+   "status": "Comissão/grupo de trabalho instituído",
+   "cargo": "Auditor Fiscal da Receita Municipal",
+   "vagas": "A definir",
+   "education": "A confirmar",
+   "salary": "R$ 4.229,00 do último concurso, referência histórica",
+   "bank": "A definir",
+   "dates": "Sem data oficial",
+   "next": "Acompanhar estudos e contratação",
+   "perspective": "Remuneração é referência anterior e não deve ser tomada como valor do próximo edital.",
+   "source": "Magistrar Cursos",
+   "url": "https://magistrarcursos.com.br/blog/concurso-iss-goiana-pe/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Goiânia (GO)",
+   "stage": 4,
+   "status": "Recomendação do MPGO / expectativa",
+   "cargo": "Auditor de Tributos do Município",
+   "vagas": "43 a 48 citadas em acompanhamento",
+   "education": "Nível superior",
+   "salary": "R$ 20.427,15 de referência",
+   "bank": "A definir",
+   "dates": "Sem cronograma oficial",
+   "next": "Aguardar autorização formal e comissão",
+   "perspective": "Recomendação ministerial não é, por si só, autorização ou edital.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Várzea Grande (MT)",
+   "stage": 6,
+   "status": "Previsto para 2027",
+   "cargo": "Auditor Tributário da Receita Municipal e Inspetor de Tributos",
+   "vagas": "A definir para a área fiscal",
+   "education": "Superior para Auditor; médio para Inspetor",
+   "salary": "R$ 14.270,39 a R$ 15.021,47 projetados para 2027",
+   "bank": "A definir",
+   "dates": "Expectativa 2027",
+   "next": "Acompanhar orçamento, autorização e vagas",
+   "perspective": "Lei Complementar 5.522/2026 reestruturou as carreiras. A prefeita informou previsão de concurso geral em 2027; vagas fiscais ainda não quantificadas.",
+   "source": "Estratégia — notícia de 23/09/2026",
+   "url": "https://concursos.estrategia.com/portal/concurso-iss-varzea-grande-mt/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Vitória de Santo Antão (PE)",
+   "stage": 6,
+   "status": "Projeto de lei em tramitação / previsão",
+   "cargo": "Auditor Fiscal",
+   "vagas": "7 previstas",
+   "education": "Nível superior",
+   "salary": "R$ 8.523,29 de vencimento inicial divulgado; gratificações à parte",
+   "bank": "A definir",
+   "dates": "Sem cronograma; PL precisa avançar",
+   "next": "Acompanhar aprovação do PL e atos preparatórios",
+   "perspective": "As sete vagas e remuneração são dados divulgados; o projeto de lei ainda precisava de aprovação e sanção na fonte consultada.",
+   "source": "Estratégia — notícia de 17/07/2026",
+   "url": "https://concursos.estrategia.com/portal/concurso-iss-vitoria-santo-antao-pe/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Vila Velha (ES)",
+   "stage": 6,
+   "status": "Anunciado",
+   "cargo": "Auditor Fiscal",
+   "vagas": "A definir",
+   "education": "Nível superior",
+   "salary": "R$ 4.324,01 de referência divulgada",
+   "bank": "A definir",
+   "dates": "Sem cronograma",
+   "next": "Aguardar comissão e autorização",
+   "perspective": "Anúncio político não substitui ato autorizativo ou edital.",
+   "source": "Estratégia — concursos ISS",
+   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Juazeiro (BA)",
+   "stage": 6,
+   "status": "Cronograma geral de concursos municipais prevê etapa posterior em 2027",
+   "cargo": "Possíveis cargos tributários a confirmar",
+   "vagas": "A definir",
+   "education": "A definir",
+   "salary": "Último edital / referências históricas não confirmam novo vencimento",
+   "bank": "A definir",
+   "dates": "Etapa ampla prevista para 2º semestre de 2027",
+   "next": "Acompanhar atualização do acordo com MPBA e relação de cargos",
+   "perspective": "A prefeitura publicou cronograma geral em duas etapas; a etapa de 2027 inclui outros cargos da administração. Não há confirmação específica de Auditor Fiscal nessa etapa.",
+   "source": "Prefeitura de Juazeiro / MPBA",
+   "url": "https://www.juazeiro.ba.gov.br/prefeitura-de-juazeiro-avanca-na-realizacao-dos-concursos-publicos-e-define-novo-cronograma-dos-certames/"
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-SP",
+   "stage": 0,
+   "status": "Edital publicado; inscrições abertas",
+   "cargo": "Analista em Planejamento, Orçamento e Finanças Públicas (APOFP) — cargo correlato, não é Auditor Fiscal",
+   "vagas": "60 imediatas, em 3 áreas de conhecimento",
+   "education": "Nível superior em qualquer área",
+   "salary": "Até R$ 11.359,50 (vencimento + PIQ máximo)",
+   "bank": "FCC",
+   "dates": "Inscrições até 03/11/2026; provas 20/12/2026 (remarcadas de 13/12)",
+   "next": "Inscrever-se até 03/11 e pagar a taxa (R$ 150,00) até 04/11",
+   "perspective": "Edital 01/2026 publicado em 02/10; a retificação (Edital 02/2026, DOE de 22/10) adiou as provas de 13/12 para 20/12. Cargo de planejamento e finanças, fora do escopo de Auditor Fiscal.",
+   "source": "Edital 01/2026 e 02/2026 (DOE-SP) via Aprova Concursos e Direção Concursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-sp-provas-adiadas",
+   "events": [
+    {
+     "date": "2026-11-03",
+     "tipo": "prazo",
+     "label": "Fim das inscrições",
+     "obs": "Pagamento da taxa até 04/11"
+    },
+    {
+     "date": "2026-12-08",
+     "tipo": "prazo",
+     "label": "Convocação para as provas"
+    },
+    {
+     "date": "2026-12-20",
+     "tipo": "prova",
+     "label": "Provas objetivas e discursiva",
+     "obs": "Remarcadas de 13/12 (Edital 02/2026)"
+    }
+   ]
+  },
+  {
+   "sphere": "Estaduais",
+   "name": "SEFAZ-MA",
+   "stage": 5,
+   "status": "Comissão formada; contratação de bancas autorizada",
+   "cargo": "Analista Executivo Fazendário — cargo administrativo fazendário, não é Auditor Fiscal",
+   "vagas": "10 previstas na LOA 2026; pedido de ampliação de +25",
+   "education": "Nível superior",
+   "salary": "Fontes divergem: vencimento básico de R$ 4.725,94 e referência de R$ 17.996,03 divulgadas",
+   "bank": "A definir (contratação direta de bancas autorizada em abril/2026)",
+   "dates": "Sem cronograma oficial",
+   "next": "Acompanhar a contratação da banca e a ampliação das vagas",
+   "perspective": "Fontes divergem sobre vagas de Auditor Fiscal; a resposta da secretaria noticiada pela Magistrar fala só em Analista Executivo Fazendário.",
+   "source": "Direção Concursos / Magistrar Cursos",
+   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-ma-loa-vagas-banca"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Belo Horizonte (MG)",
+   "stage": 5,
+   "status": "Comissão formada; estudos em andamento",
+   "cargo": "Analista Fazendário — cargo correlato; Auditor Fiscal não confirmado",
+   "vagas": "A definir",
+   "education": "Nível superior (áreas esperadas: Ciências Contábeis e TI)",
+   "salary": "R$ 7.756,25 de referência (último edital de Agente Fazendário); conferir",
+   "bank": "A definir",
+   "dates": "Comissão em 27/05/2026; estudos em 09/06/2026; sem cronograma",
+   "next": "Acompanhar definição de vagas e banca",
+   "perspective": "Não há previsão oficial de novo edital de Auditor Fiscal. O último concurso de Auditor (2021, 14 vagas) teve validade citada até agosto/2026; conferir prorrogação.",
+   "source": "Gran Cursos / Próximos Concursos / Estudo Certeiro",
+   "url": "https://blog.grancursosonline.com.br/concurso-iss-bh/amp/"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Niterói (RJ)",
+   "stage": 6,
+   "status": "Previsto",
+   "cargo": "Auditor Fiscal, Fiscal de Posturas e Agente Fazendário",
+   "vagas": "A definir",
+   "education": "Médio e superior, conforme cargo",
+   "salary": "Até R$ 30.468,68 (referência divulgada)",
+   "bank": "A definir",
+   "dates": "Sem cronograma; previsto para 2026/2027",
+   "next": "Aguardar comissão e ato oficial",
+   "perspective": "O último concurso foi em 2015 (FGV). Fontes especializadas citam previsão na LOA, mas não foram localizados edital, banca ou comissão oficial publicados.",
+   "source": "Estratégia Concursos / Magistrar Cursos / Estudo Certeiro",
+   "url": "https://www.estrategiaconcursos.com.br/blog/concurso-iss-niteroi/"
+  }
+ ],
+ "notas": [
+  "Fontes desta rodada: páginas oficiais da Receita Federal, Lagoa Santa, Santa Luzia, Caxias do Sul e Juazeiro; Estratégia Concursos; Gran Cursos; Prof. Wilson Tavares e páginas das bancas.",
+  "O levantamento municipal foi ampliado, mas não cobre todos os fiscos municipais do Brasil. A tabela fixa de 15 portais do prompt original não estava disponível nesta execução; não se afirma que todos foram consultados.",
+  "Vagas, remuneração e status só são tratados como oficiais quando localizados em edital, ato público ou página institucional. Dados de fontes especializadas são divulgação ou referência. Vencimento básico, gratificações e benefícios não devem ser somados sem conferir a regra legal.",
+  "Concursos em andamento que já passaram da inscrição ou prova ficam no painel enquanto houver etapa a acompanhar; os homologados saem da lista de oportunidades futuras.",
+  "O escopo prioriza auditor fiscal, fiscal de tributos, auditor tributário e carreiras com atribuição tributária. Funções fazendárias administrativas ou de controle não são equivalentes a Auditor Fiscal.",
+  "SEFAZ-SP (APOFP), SEFAZ-MA (Analista Executivo Fazendário) e ISS Belo Horizonte (Analista Fazendário) são cargos correlatos da área fazendária, não Auditor Fiscal. SEFAZ-PR e SEFAZ-RJ ficaram fora da lista por já terem concursos homologados."
+ ],
+ "panorama": {
+  "periodo": "nov/2026 a out/2027",
+  "Federal": "Receita Federal é o principal processo monitorado: 146 vagas autorizadas e banca em contratação. Edital previsto para dezembro/2026, ainda sem data oficial.",
+  "Estaduais": "SC, AL e SP (cargo de planejamento e finanças) têm provas entre nov/2026 e jan/2027. BA, DF e RS, com banca noticiada, são os mais próximos de edital; MA, ES e TO seguem em planejamento.",
+  "Municipais": "Curitiba, Aracati, Manaus, Caruaru, Campina Grande e Rio Verde têm provas até janeiro/2027; Lagoa Santa e Santa Luzia abrem inscrições em dezembro. Vários municípios têm banca definida ou comissão formada, e 2027 traz novas expectativas."
+ }
 }
