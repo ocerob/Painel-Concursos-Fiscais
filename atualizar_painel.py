@@ -9,11 +9,10 @@ def buscar_e_atualizar():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("Erro: GEMINI_API_KEY não configurada.")
-        return
+        exit(1)
 
     client = genai.Client(api_key=api_key)
     
-    # Carrega o dados.json existente
     try:
         with open("dados.json", "r", encoding="utf-8") as f:
             dados_atuais = json.load(f)
@@ -36,13 +35,12 @@ def buscar_e_atualizar():
     3. Retorne EXCLUSIVAMENTE o objeto JSON válido atualizado, sem formatação markdown extra, sem blocos de código ```json.
     """
 
-    # Modelo atualizado recomendado pela API do Google
     modelos = ["gemini-3.8-flash"]
     response_text = None
     
     for modelo in modelos:
         print(f"Tentando comunicação com o modelo: {modelo}...")
-        for tentativa in range(1, 4):  # Tenta até 3 vezes
+        for tentativa in range(1, 4):
             try:
                 response = client.models.generate_content(
                     model=modelo,
@@ -61,16 +59,11 @@ def buscar_e_atualizar():
         if response_text:
             break
 
-    # Se a API falhar completamente
+    # Se a API falhar após as tentativas, encerra com erro (mostra a falha no GitHub)
     if not response_text:
-        print("Aviso: API do Google indisponível no momento. Aplicando atualização de data via fallback local...")
-        dados_atuais["atualizacao"] = data_hoje
-        with open("dados.json", "w", encoding="utf-8") as f:
-            json.dump(dados_atuais, f, ensure_ascii=False, indent=2)
-        print("Data atualizada localmente com sucesso! O workflow será concluído sem erros.")
-        return
+        print("Erro crítico: A API do Google falhou e nenhuma resposta foi obtida.")
+        exit(1)
 
-    # Limpeza e salvamento do JSON retornado pela IA
     texto_limpo = response_text.strip()
     if texto_limpo.startswith("```json"):
         texto_limpo = texto_limpo[7:]
@@ -86,7 +79,8 @@ def buscar_e_atualizar():
             json.dump(json_validado, f, ensure_ascii=False, indent=2)
         print("dados.json atualizado e salvo com sucesso via API!")
     except json.JSONDecodeError as e:
-        print(f"Erro ao decodificar JSON da API: {e}. Mantendo arquivo local atualizado.")
+        print(f"Erro ao decodificar JSON retornado pela API: {e}")
+        exit(1)
 
 if __name__ == "__main__":
     buscar_e_atualizar()
