@@ -1,543 +1,64 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boletim Semanal — Concursos da Área Fiscal</title>
-<meta name="description" content="Acompanhamento semanal de concursos da área fiscal: SEFAZ, ISS municipais e Receita Federal.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8B%3C/text%3E%3C/svg%3E">
-<style>
-  :root {
-    --ink: #222831;
-    --muted: #687482;
-    --line: #393e46;
-    --panel: #f7f9fb;
-    --accent: #466952;
-    --accent-dark: #334d3c;
-    --accent-light: #598569;
-    --accent2: #e2ede5;
-    --warn-bg: #fef3c7;
-    --warn-text: #92400e;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
-  }
-
-  * { box-sizing: border-box; }
-  
-  body {
-    margin: 0;
-    background: linear-gradient(180deg, #2b313a 0%, #1a1e24 100%);
-    color: var(--ink);
-    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  .page {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 32px 20px 60px;
-  }
-
-  header {
-    background: linear-gradient(135deg, #1f242b 0%, #12151a 100%);
-    color: white;
-    padding: 36px 32px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-    border-bottom: 4px solid var(--accent);
-  }
-
-  header h1 {
-    margin: 0 0 8px;
-    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-    line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-
-  header p {
-    margin: 0;
-    color: #b0c9b6;
-    font-size: 1.05rem;
-    font-weight: 500;
-  }
-
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 12px;
-    margin: 24px 0 32px;
-  }
-
-  .summary-box {
-    background: white;
-    border: 1px solid #d1d9e0;
-    border-radius: 12px;
-    padding: 16px 12px;
-    text-align: center;
-    box-shadow: var(--shadow);
-  }
-
-  .summary-num {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1.1;
-  }
-
-  .summary-label {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-top: 4px;
-  }
-
-  h2 {
-    margin: 36px 0 16px;
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 1.12rem;
-    color: #212830;
-    font-weight: 700;
-  }
-
-  .news-window {
-    max-height: 520px;
-    overflow-y: auto;
-    padding: 12px;
-    background: #171b21;
-    border: 1px solid #323842;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
-  }
-
-  .news-window::-webkit-scrollbar { width: 8px; }
-  .news-window::-webkit-scrollbar-track { background: #171b21; border-radius: 8px; }
-  .news-window::-webkit-scrollbar-thumb { background: #424955; border-radius: 8px; }
-
-  .card {
-    background: white;
-    border: 1px solid #e1e7ec;
-    border-radius: 12px;
-    padding: 20px;
-    min-width: 0;
-    box-shadow: var(--shadow);
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: .8rem;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 99px;
-    background: var(--accent2);
-    color: var(--accent);
-    margin: 4px 0 10px;
-  }
-
-  .tag.warn {
-    background: var(--warn-bg);
-    color: var(--warn-text);
-  }
-
-  a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-  }
-
-  a:hover { text-decoration: underline; }
-
-  .muted {
-    color: var(--muted);
-    font-size: .92rem;
-  }
-
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 12px 0 20px;
-  }
-
-  .controls input {
-    padding: 12px 16px;
-    border: 1px solid #d1d9e0;
-    border-radius: 10px;
-    background: white;
-    color: var(--ink);
-    font: inherit;
-    flex: 1 1 260px;
-    box-shadow: var(--shadow);
-  }
-
-  .controls input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-
-  .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 16px 0;
-  }
-
-  .tabs button {
-    border: 1px solid #d1d9e0;
-    background: white;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font: inherit;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: all 0.2s ease;
-  }
-
-  .tabs button:hover {
-    color: var(--ink);
-    border-color: var(--accent);
-  }
-
-  .tabs button.active {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(70, 105, 82, 0.4);
-  }
-
-  .result-count {
-    color: #b0bec5;
-    font-size: .92rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-
-  #contests {
-    display: block;
-    min-height: 120px;
-  }
-
-  .stage-section { margin-top: 28px; }
-
-  .stage-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #9ac2a6;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 8px;
-    margin-bottom: 16px;
-  }
-
-  .contest-list {
-    display: grid;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .contest {
-    background: white;
-    border: 1px solid #e1e7ec;
-    border-radius: 12px;
-    padding: 22px;
-    box-shadow: var(--shadow);
-  }
-
-  .contest h3 { font-size: 1.25rem; margin-top: 0; }
-
-  .meta {
-    color: var(--muted);
-    font-size: .92rem;
-    margin-bottom: 10px;
-  }
-
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 12px;
-    margin: 16px 0;
-  }
-
-  .fact {
-    background: var(--panel);
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #eaeff3;
-  }
-
-  .fact b {
-    display: block;
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  th, td {
-    text-align: left;
-    vertical-align: top;
-    padding: 14px 16px;
-    border-bottom: 1px solid #d1d9e0;
-  }
-
-  th {
-    background: var(--accent2);
-    color: var(--accent-dark);
-    font-weight: 700;
-  }
-
-  tr:last-child td { border-bottom: 0; }
-
-  .table-wrap {
-    overflow-x: auto;
-    border: 1px solid #323842;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-  }
-
-  footer {
-    margin-top: 36px;
-    color: #9aa5b1;
-    font-size: .9rem;
-    text-align: center;
-  }
-
-  [hidden] { display: none !important; }
-  .controls select { padding: 12px 16px; border: 1px solid #d1d9e0; border-radius: 10px; background: white; color: var(--ink); font: inherit; flex: 0 1 320px; box-shadow: var(--shadow); }
-  .pan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
-  .alert { background: var(--warn-bg); color: var(--warn-text); border-radius: 12px; padding: 12px 16px; margin: 16px 0 0; font-weight: 600; }
-  .tag.info { background: #e0e7ff; color: #3730a3; }
-  .tag.gray { background: #e5e7eb; color: #374151; }
-  td.when { color: var(--muted); white-space: nowrap; font-size: .92rem; }
-  td.date { white-space: nowrap; font-weight: 700; }
-  tr.soon td { background: #fffbeb; }
-  details.past { margin-top: 14px; color: #b0bec5; }
-  details.past summary { cursor: pointer; font-weight: 600; margin-bottom: 10px; }
-  details.past .table-wrap { opacity: .85; }
-  button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #9ac2a6; outline-offset: 2px; }
-  /* ===== Refinamento visual ===== */
-  :root { --radius: 14px; --border: #e3e9ee; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { line-height: 1.65; -webkit-font-smoothing: antialiased; min-height: 100vh; }
-  .page { max-width: 1080px; padding: 28px 20px 64px; }
-  header { padding: 40px 36px; }
-  header p { line-height: 1.5; }
-  h2 { margin: 52px 0 18px; padding-left: 14px; border-left: 4px solid var(--accent-light); font-size: 1.4rem; line-height: 1.25; text-shadow: none; }
-  h3 { line-height: 1.3; }
-  .summary-grid { gap: 14px; margin: 28px 0 8px; }
-  .summary-box { border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 18px 12px; }
-  .summary-label { line-height: 1.3; }
-  .card, .contest { border-color: var(--border); border-radius: var(--radius); padding: 22px 24px; }
-  .contest { border-left: 4px solid var(--accent); transition: box-shadow .2s ease; }
-  .contest:hover { box-shadow: var(--shadow-hover); }
-  .contest p { margin: 8px 0; }
-  .contest h3 { margin-bottom: 6px; }
-  .facts { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-  .fact { overflow-wrap: anywhere; }
-  .news-window { max-height: 560px; padding: 14px; gap: 14px; scrollbar-gutter: stable; }
-  .tabs button { min-height: 44px; }
-  .controls { gap: 12px; }
-  .controls input, .controls select { min-height: 46px; }
-  .table-wrap { background: #fff; }
-  table { min-width: 680px; }
-  thead th { position: sticky; top: 0; z-index: 1; }
-  tbody tr:nth-child(even) td { background: #fafcfb; }
-  tbody tr:hover td { background: var(--accent2); }
-  tbody tr.soon td { background: #fffbeb; }
-  .pan-grid .card { border-top: 4px solid var(--accent); }
-  .pan-grid h3 { color: var(--accent-dark); font-size: 1.15rem; margin-bottom: 10px; }
-  .pan-grid p { margin: 0; }
-  details.past summary { padding: 6px 0; }
-  footer { max-width: 72ch; margin: 56px auto 0; padding-top: 24px; border-top: 1px solid #323842; line-height: 1.6; }
-  @media (max-width: 640px) {
-    .page { padding: 16px 14px 48px; }
-    header { padding: 28px 20px; border-radius: 14px; }
-    h2 { font-size: 1.25rem; margin-top: 40px; }
-    .card, .contest { padding: 18px; }
-    .tabs button { flex: 1 1 auto; text-align: center; padding: 10px 12px; }
-    .controls select { flex: 1 1 100%; }
-    .card h3 .muted { float: none !important; display: block; margin-top: 2px; }
-    th, td { padding: 10px 12px; }
-  }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
-  @media print {
-    body { background: #fff; }
-    header { background: #fff; color: #000; box-shadow: none; }
-    header p, h2, .result-count { color: #000; text-shadow: none; }
-    .news-window { max-height: none; background: #fff; }
-    .tabs, .controls { display: none; }
-  }
-</style>
-</head>
-<body>
-<div class="page">
-<header>
-  <h1>Boletim semanal — Concursos da área fiscal</h1>
-  <p id="edition">Carregando…</p>
-</header>
-<div id="app-error" class="alert" hidden></div>
-<div id="stale" class="alert" hidden></div>
-<noscript><div class="alert">Este boletim precisa de JavaScript para exibir os concursos.</div></noscript>
-
-<div class="summary-grid" id="summary"></div>
-
-<section id="news-section" hidden>
-<h2>Novidades da semana</h2>
-<div class="news-window" id="news"></div>
-</section>
-
-<h2>Painel de acompanhamento</h2>
-<p class="muted" style="color:#b0bec5">Use as abas para alternar entre as esferas.</p>
-<div class="tabs" role="tablist">
-  <button class="active" data-sphere="Municipais" role="tab" aria-selected="true">Municipais</button>
-  <button data-sphere="Estaduais" role="tab" aria-selected="false">Estaduais</button>
-  <button data-sphere="Federal" role="tab" aria-selected="false">Federal</button>
-</div>
-<div class="controls">
-  <input id="search" type="search" placeholder="Filtrar por concurso, cargo ou situação..." aria-label="Buscar concursos">
-  <select id="stage" aria-label="Filtrar por etapa"></select>
-</div>
-<div id="count" class="result-count" aria-live="polite"></div>
-<div id="contests"></div>
-
-<h2>Agenda de provas e prazos</h2>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Data</th><th>Quando</th><th>Concurso</th><th>Compromisso</th><th>Tipo</th></tr></thead>
-<tbody id="agenda"></tbody>
-</table>
-</div>
-<details class="past" id="past-box" hidden>
-  <summary id="past-title">Eventos já realizados</summary>
-  <div class="table-wrap"><table><tbody id="agenda-past"></tbody></table></div>
-</details>
-
-<details class="past" id="notes-box" hidden>
-  <summary>Fontes e limites da pesquisa</summary>
-  <div class="card" style="color:var(--ink)"><ul id="notes" style="margin:0;padding-left:20px"></ul></div>
-</details>
-
-<section id="panorama-section" hidden>
-<h2 id="panorama-title">Panorama dos próximos 12 meses</h2>
-<div class="pan-grid" id="panorama"></div>
-</section>
-
-<footer>
-  <p id="updated"></p>
-  <p><strong>Nota de uso:</strong> boletim informativo. Antes de se inscrever, pagar taxa, viajar ou alterar o planejamento de estudos, confira edital, retificações, diário oficial e portal da banca.</p>
-</footer>
-</div>
-
-<!--
-  ===== DADOS EMBUTIDOS (RESERVA) =====
-  A fonte principal é o arquivo dados.json, na mesma pasta (atualizado pela automação ou à mão).
-  Este bloco só é usado se o dados.json não carregar. Mesmo formato nos dois.
-  Regras:
-   - Manter JSON válido (aspas duplas, sem vírgula sobrando, sem comentários dentro do JSON).
-   - meta.edicao / meta.atualizadoEm: AAAA-MM-DD.
-   - Datas dos eventos: AAAA-MM-DD, ou AAAA-MM quando só o mês é conhecido (aparece como "previsão").
-   - contests[].events[]: {date, tipo, label, obs?}. tipo: "prazo" | "prova" | "previsao". A AGENDA é gerada daqui; não há tabela manual.
-   - contests[].stage: 0 inscrições abertas/edital publicado | 1 inscrições encerradas | 2 banca definida | 3 banca em contratação
-                       | 4 autorizado | 5 comissão/planejamento | 6 previsão/expectativa
-   - contests[].sphere: "Municipais" | "Estaduais" | "Federal".
-   - panorama: periodo + resumo curto (1-2 frases) por esfera para os próximos 12 meses. Só texto.
-   - news: itens recentes (10 mais novos aparecem). notas: lista de textos de "Fontes e limites".
--->
-<script id="boletim-data" type="application/json">
 {
  "meta": {
-  "edicao": "2026-11-02",
-  "atualizadoEm": "2026-11-02"
+  "edicao": "2026-11-26",
+  "atualizadoEm": "2026-11-26"
  },
  "news": [
   {
-   "date": "2026-11-02",
-   "title": "Receita Federal — 146 vagas autorizadas",
-   "tag": "Em contratação",
-   "warn": false,
-   "text": "146 vagas autorizadas. Contratação da banca ainda sem conclusão confirmada.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "date": "2026-11-02",
-   "title": "SEFAZ-BA — Cesgranrio reportada como contratada",
-   "tag": "Edital pendente",
-   "warn": false,
-   "text": "Cesgranrio reportada como contratada por fontes especializadas; edital ainda não publicado.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "date": "2026-11-02",
-   "title": "ISS Curitiba (PR) — Inscrições até 05/11",
-   "tag": "Prazo próximo",
+   "date": "2026-11-24",
+   "title": "Receita Federal — FGV definida como banca",
+   "tag": "Banca definida",
    "warn": true,
-   "text": "10 vagas para Auditor Fiscal; inscrições até 05/11 e prova em 06/12.",
-   "source": "Painel de acompanhamento de 02/11/2026"
+   "text": "A escolha da FGV foi homologada em 23/11, por dispensa de licitação. Falta assinar o contrato; o edital segue previsto para dezembro, sem data de inscrição ou prova. O boletim de 21/11 ainda dava a banca como não anunciada.",
+   "source": "Estado de Minas / Tribuna do Norte",
+   "url": "https://www.em.com.br/mundo-corporativo/2026/11/7543351-receita-federal-define-fgv-para-concurso-com-146-vagas.html"
   },
   {
-   "date": "2026-11-02",
-   "title": "ISS Manaus (AM) — Prova objetiva aplicada",
-   "tag": "Prova realizada",
-   "warn": false,
-   "text": "Prova objetiva aplicada em 01/11; o concurso segue para etapas posteriores.",
-   "source": "Painel de acompanhamento de 02/11/2026"
+   "date": "2026-11-18",
+   "title": "Maranhão — 1º edital unificado sem a SEFAZ",
+   "tag": "Edital de outros órgãos",
+   "text": "O Edital 01/2026 (FCC; 2.317 vagas; inscrições de 14/12 a 29/01; prova em 04/04/2027) não traz cargo da SEFAZ. Analista Executivo Fazendário e Auditor Fiscal continuam sem edital.",
+   "source": "Aprova Concursos / Jornal Pequeno",
+   "url": "https://www.aprovaconcursos.com.br/noticias/?p=169002"
   },
   {
-   "date": "2026-11-02",
-   "title": "ISS Nova Pádua (RS) — Auditor Tributário",
-   "tag": "Edital publicado",
-   "warn": false,
-   "text": "Auditor Tributário em cadastro de reserva; Fundatec; R$ 9.113,48; prova em 13/12. Registro histórico preservado.",
-   "source": "Painel de acompanhamento de 02/11/2026"
+   "date": "2026-11-17",
+   "title": "ISS Queimados (RJ) — Provas em 22/11",
+   "tag": "Provas",
+   "text": "Agente Fiscal e Agente Fazendário (cargos correlatos) fazem prova objetiva em 22/11, com gabarito preliminar previsto para 23/11. A etapa de 20/11 era de outros cargos.",
+   "source": "Folha Dirigida / Aprova Concursos",
+   "url": "https://folha.qconcursos.com/n/concurso-queimados-rj-2026-inscricoes-datas-etapas"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "ISS Nova Pádua (RS) — Inscrições encerradas",
+   "tag": "Inscrições encerradas",
+   "text": "As inscrições para Auditor Tributário terminaram em 19/11. A prova objetiva continua prevista para 13/12/2026.",
+   "source": "Boletim de 21/11/2026"
   }
  ],
  "contests": [
   {
    "sphere": "Federal",
    "name": "Receita Federal",
-   "stage": 3,
-   "status": "146 vagas autorizadas; organizadora em contratação",
+   "stage": 2,
+   "status": "FGV definida como banca (escolha homologada em 23/11, por dispensa de licitação)",
    "cargo": "Auditor-Fiscal (30) e Analista-Tributário (116)",
    "vagas": "30 + 116",
    "education": "Nível superior",
    "salary": "A confirmar no edital",
-   "bank": "A definir",
-   "dates": "Edital previsto para dezembro/2026; sem data oficial",
-   "next": "Formalização da organizadora",
-   "perspective": "Edital estimado para dezembro de 2026. A autorização é oficial; a previsão de dezembro não é garantia de publicação.",
+   "bank": "FGV (contrato a assinar)",
+   "dates": "Edital previsto para dezembro/2026; prazo máximo da autorização: 03/01/2027",
+   "next": "Assinatura do contrato com a FGV e publicação do edital",
+   "perspective": "Comissão de Coordenação e Grupo de Trabalho instituídos pelas Portarias Sucor nº 56 e 57 (04/11). O boletim de 21/11 ainda dava a banca como não anunciada; a FGV foi definida em 23/11. Inscrições e provas dependem do edital.",
    "source": "Receita Federal / Ministério da Fazenda",
-   "url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/servidores/concurso-publico-2026/concurso-publico-2026",
+   "url": "https://www.em.com.br/mundo-corporativo/2026/11/7543351-receita-federal-define-fgv-para-concurso-com-146-vagas.html",
    "events": [
     {
      "date": "2026-12",
      "tipo": "previsao",
      "label": "Edital previsto",
-     "obs": "Previsão, sem data oficial confirmada"
+     "obs": "FGV definida; contrato ainda a assinar"
     }
    ]
   },
@@ -583,7 +104,7 @@
    "bank": "FCC",
    "dates": "Prova prevista para 22/11/2026",
    "next": "Acompanhar locais de prova",
-   "perspective": "Carreira correlata: o cargo é Auditor Estadual de Finanças Públicas, não Auditor Fiscal Tributário.",
+   "perspective": "Carreira correlata: Auditor Estadual de Finanças Públicas, fora da contagem principal do boletim de 21/11.",
    "source": "Acompanhamento especializado",
    "events": [
     {
@@ -598,51 +119,51 @@
    "sphere": "Estaduais",
    "name": "SEFAZ-BA",
    "stage": 2,
-   "status": "Cesgranrio reportada como contratada; edital pendente",
+   "status": "Cesgranrio escolhida como banca; edital previsto para novembro e ainda não publicado",
    "cargo": "Auditor-Fiscal e Agente de Tributos Estaduais",
-   "vagas": "100 + 100 previstas (Auditor-Fiscal e Agente de Tributos)",
+   "vagas": "200 previstas (100 + 100) em fontes recentes; a autorização do DOE de 24/03/2026 indicava 187 (100 + 87)",
    "education": "Conferir edital",
    "salary": "A confirmar por cargo",
-   "bank": "Cesgranrio",
+   "bank": "Cesgranrio (contrato em elaboração, segundo o Sindsefaz)",
    "dates": "Sem cronograma oficial",
-   "next": "Aguardar edital (perspectiva: novembro/2026)",
-   "perspective": "Cesgranrio reportada como contratada por fontes especializadas; edital ainda não publicado.",
+   "next": "Aguardar edital(is)",
+   "perspective": "Provas de Auditor Fiscal e Agente de Tributos Estaduais devem ocorrer em datas distintas. Há divergência entre os quantitativos divulgados.",
    "source": "Imprensa especializada / Gran"
   },
   {
    "sphere": "Estaduais",
    "name": "SEFAZ-DF",
    "stage": 2,
-   "status": "Banca definida/contratada segundo fontes especializadas",
+   "status": "Cebraspe contratado; ajustes de minuta e contrato até dezembro/2026",
    "cargo": "Auditor Fiscal da Receita do DF",
-   "vagas": "115 + 150 CR, conforme levantamento anterior",
+   "vagas": "265: 115 imediatas + 150 CR",
    "education": "Nível superior",
-   "salary": "R$ 23.597,07 divulgado; composição a confirmar",
-   "bank": "Cebraspe",
-   "dates": "Sem data oficial",
-   "next": "Acompanhar ato e publicação",
-   "perspective": "Edital pendente; quantitativos a confirmar oficialmente. Não confundir notícias de contratação com edital publicado.",
+   "salary": "R$ 23.597,07",
+   "bank": "Cebraspe (extrato de contrato de 03/11/2025)",
+   "dates": "Sem data de edital, inscrição ou prova",
+   "next": "Conclusão dos ajustes e publicação do edital",
+   "perspective": "A previsão de concluir ajustes em dezembro é marco de andamento, não confirmação de publicação do edital.",
    "source": "Gran / acompanhamento especializado"
   },
   {
    "sphere": "Estaduais",
    "name": "SEFAZ-RS",
    "stage": 2,
-   "status": "Banca definida",
+   "status": "FCC contratada (autorização em 24/09/2026); edital pendente",
    "cargo": "Auditor-Fiscal e Analista Tributário",
-   "vagas": "46 reportadas no conjunto; divisão a confirmar",
+   "vagas": "46 previstas: 29 Auditor Fiscal + 17 Analista Tributário (proposta técnica)",
    "education": "Nível superior",
-   "salary": "Até R$ 39.877,31 divulgado para Auditor",
+   "salary": "Referências divulgadas: Auditor R$ 39.877,31; Analista R$ 17.687,12 (composição a confirmar no edital)",
    "bank": "FCC",
-   "dates": "Sem data oficial",
-   "next": "Acompanhar atos de preparação",
-   "perspective": "FCC definida em levantamentos anteriores; formalização e edital pendentes. Analista Tributário é cargo correlato.",
+   "dates": "Sem data de edital; contrato com validade até nov/2029",
+   "next": "Publicação do edital",
+   "perspective": "Contrato com a FCC por dispensa de licitação (R$ 1,9 milhão). Analista Tributário é cargo correlato.",
    "source": "Acompanhamento especializado"
   },
   {
    "sphere": "Estaduais",
    "name": "SEFAZ-ES",
-   "stage": 5,
+   "stage": 6,
    "status": "Previsão orçamentária/planejamento",
    "cargo": "Auditor Fiscal",
    "vagas": "40 previstas em referência orçamentária",
@@ -651,7 +172,7 @@
    "bank": "A definir",
    "dates": "Sem cronograma",
    "next": "Aguardar autorização formal",
-   "perspective": "Previsão orçamentária não equivale a autorização de concurso.",
+   "perspective": "Previsão orçamentária não equivale a autorização; sem base para edital iminente.",
    "source": "Gran / acompanhamento especializado"
   },
   {
@@ -666,21 +187,21 @@
    "bank": "A definir",
    "dates": "Sem cronograma",
    "next": "Confirmar autorização e comissão",
-   "perspective": "Manter no radar, sem tratar anúncio como edital iminente.",
+   "perspective": "Autorização formal não confirmada; sem base para edital iminente.",
    "source": "Acompanhamento especializado"
   },
   {
    "sphere": "Municipais",
    "name": "ISS Curitiba (PR)",
-   "stage": 0,
-   "status": "Inscrições abertas",
+   "stage": 1,
+   "status": "Inscrições encerradas em 05/11; prova em 06/12",
    "cargo": "Auditor Fiscal de Tributos Municipais",
    "vagas": "10",
    "education": "Nível superior",
-   "salary": "R$ 18.352,33 divulgados",
+   "salary": "Vencimento-base R$ 14.117,18 + gratificação técnica de 30%; total inicial divulgado R$ 18.352,33",
    "bank": "Fundação FAFIPA",
    "dates": "Inscrições até 05/11/2026; prova 06/12/2026",
-   "next": "Inscrição e leitura de retificações",
+   "next": "Prova em 06/12/2026",
    "perspective": "Prazo imediato. O portal municipal lista edital retificado em outubro.",
    "source": "Portal oficial / edital",
    "url": "https://concursos.curitiba.pr.gov.br/documento/00/0/2026/5/72/1/1",
@@ -702,15 +223,15 @@
   {
    "sphere": "Municipais",
    "name": "ISS Aracati (CE)",
-   "stage": 0,
-   "status": "Inscrições abertas",
+   "stage": 1,
+   "status": "Inscrições encerradas em novembro; prova em 24/01/2027",
    "cargo": "Auditor Fiscal",
    "vagas": "7",
    "education": "Conferir requisito no edital",
    "salary": "R$ 3.347,94 divulgados",
    "bank": "FCPC",
    "dates": "Inscrições até 06/11/2026; prova 24/01/2027",
-   "next": "Conferir edital e inscrição",
+   "next": "Prova em 24/01/2027",
    "perspective": "Prazo próximo; confirmar regras diretamente com a FCPC.",
    "source": "Prof. Wilson Tavares",
    "url": "https://wilsontavares.com.br/blog/artigos/concursos/",
@@ -732,16 +253,16 @@
   {
    "sphere": "Municipais",
    "name": "ISS Lagoa Santa (MG)",
-   "stage": 6,
+   "stage": 1,
    "status": "Edital publicado; inscrições futuras",
    "cargo": "Auditor Fiscal da Receita Municipal",
    "vagas": "1 + CR divulgado",
    "education": "Nível superior; conferir Anexo I",
-   "salary": "R$ 5.021,11 + gratificação divulgada de R$ 10.042,22; conferir lei e edital",
+   "salary": "R$ 5.021,11",
    "bank": "IBGP",
    "dates": "Inscrições 16/12/2026 a 18/01/2027; prova 21/02/2027",
    "next": "Acompanhar retificações e abertura do sistema",
-   "perspective": "Edital oficial 01/2026 publicado em 02/10. Prova consta para 21/02/2027; valores de gratificação devem ser confirmados no quadro remuneratório.",
+   "perspective": "Edital já publicado, não é mera previsão. Mantido em 'editais publicados' por falta de etapa própria para inscrições futuras.",
    "source": "Prefeitura de Lagoa Santa / IBGP",
    "url": "https://www.lagoasanta.mg.gov.br/concursos-e-processos-seletivos/12776-concurso-publico-001-2026",
    "events": [
@@ -767,16 +288,16 @@
   {
    "sphere": "Municipais",
    "name": "ISS Santa Luzia (MG)",
-   "stage": 6,
+   "stage": 1,
    "status": "Edital publicado; inscrições futuras",
    "cargo": "Fiscal de Tributos",
    "vagas": "1 vaga",
    "education": "Conferir Anexo I do edital",
-   "salary": "R$ 1.622,41 + GIPFT divulgado; conferir regra",
+   "salary": "Vencimento-base R$ 1.622,41 (gratificação e auxílio a conferir)",
    "bank": "COTEC/FADENOR",
    "dates": "Inscrições 17/12/2026 a 15/01/2027; prova 14/03/2027",
    "next": "Conferir atribuições, escolaridade e remuneração",
-   "perspective": "O edital oficial inclui Fiscal de Tributos. O cargo “Auditor” também aparece no quadro, mas não deve ser confundido automaticamente com Auditor Fiscal tributário.",
+   "perspective": "Cargo tributário correlato (Fiscal de Tributos), não Auditor Fiscal. Mantido em 'editais publicados' por falta de etapa própria para inscrições futuras.",
    "source": "COTEC/FADENOR",
    "url": "https://www.cotec.fadenor.com.br/informacoes/36/",
    "events": [
@@ -803,29 +324,38 @@
    "sphere": "Municipais",
    "name": "ISS Manaus (AM)",
    "stage": 1,
-   "status": "Prova objetiva aplicada em 01/11",
+   "status": "Prova objetiva realizada em 01/11; resultado preliminar previsto para 02/12",
    "cargo": "Auditor Fiscal de Tributos Municipais",
    "vagas": "20 + CR",
    "education": "Conferir edital",
-   "salary": "R$ 27.270,61 divulgado",
+   "salary": "R$ 5.561,61 de vencimento + R$ 21.709,00 de produtividade; total inicial informado R$ 27.270,61",
    "bank": "FCC",
-   "dates": "Prova objetiva aplicada em 01/11/2026; etapas posteriores a acompanhar",
-   "next": "Acompanhar gabarito, resultados e etapas posteriores",
-   "perspective": "Concurso segue para as etapas posteriores; confirmar a etapa indicada para 24/01/2027.",
+   "dates": "Objetiva 01/11 (realizada); resultado preliminar 02/12/2026; definitivo e convocação 06/01/2027; discursiva 24/01/2027; resultado final previsto 31/05/2027",
+   "next": "Acompanhar o resultado preliminar (02/12) e os recursos (03 a 07/12)",
+   "perspective": "Gabaritos e recursos contra gabarito já passaram.",
    "source": "Magistrar / acompanhamento especializado",
    "url": "https://magistrarcursos.com.br/blog/concursos-fiscais/",
    "events": [
     {
      "date": "2026-11-01",
      "tipo": "prova",
-     "label": "Prova objetiva",
-     "obs": "Inscrições encerradas"
+     "label": "Prova objetiva"
+    },
+    {
+     "date": "2026-12-02",
+     "tipo": "prazo",
+     "label": "Resultado preliminar da prova objetiva"
+    },
+    {
+     "date": "2027-01-06",
+     "tipo": "prazo",
+     "label": "Resultado definitivo e convocação para a discursiva"
     },
     {
      "date": "2027-01-24",
      "tipo": "prova",
-     "label": "Etapa prevista",
-     "obs": "Confirmar data com a banca"
+     "label": "Prova discursiva",
+     "obs": "Confirmada no cronograma do edital"
     }
    ]
   },
@@ -835,11 +365,11 @@
    "stage": 1,
    "status": "Inscrições encerradas",
    "cargo": "Auditor Fiscal e Analista Fiscal",
-   "vagas": "20 no conjunto divulgado",
+   "vagas": "10 Auditor Fiscal + 10 Analista Fiscal (Analista é carreira correlata)",
    "education": "Conferir por cargo",
-   "salary": "Auditor: R$ 22 mil de base divulgados; adicionais à parte",
+   "salary": "Auditor: referência de R$ 6.000,00; Analista: R$ 2.500,00 (conferir gratificações no edital)",
    "bank": "IBAM",
-   "dates": "Prova prevista para 29/11/2026",
+   "dates": "Provas previstas para 29/11/2026",
    "next": "Acompanhar convocação e local",
    "perspective": "Separar vencimento básico de adicionais e produtividade.",
    "source": "Acompanhamento especializado",
@@ -856,14 +386,14 @@
    "sphere": "Municipais",
    "name": "ISS Santos (SP)",
    "stage": 1,
-   "status": "Prova realizada; resultado previsto para novembro",
+   "status": "Prova realizada em outubro; acompanhar publicações da banca",
    "cargo": "Auditor Fiscal de Tributos Municipais",
    "vagas": "2",
    "education": "Conferir edital",
-   "salary": "R$ 12.171,25 divulgado incluindo auxílio-alimentação",
+   "salary": "Vencimento R$ 11.071,25 + auxílio-alimentação de R$ 1.100",
    "bank": "IBAM",
    "dates": "Prova realizada; resultado previsto para 24/11/2026",
-   "next": "Acompanhar resultado, recursos e homologação",
+   "next": "Resultados e classificação final",
    "perspective": "Não há nova inscrição indicada nesta fase.",
    "source": "Estratégia / IBAM",
    "url": "https://concursos.estrategia.com/portal/concurso-iss-santos/",
@@ -871,7 +401,8 @@
     {
      "date": "2026-11-24",
      "tipo": "prazo",
-     "label": "Resultado previsto"
+     "label": "Resultado previsto",
+     "obs": "Data prevista já passou; confirmar a publicação"
     }
    ]
   },
@@ -879,13 +410,13 @@
    "sphere": "Municipais",
    "name": "ISS Campina Grande (PB)",
    "stage": 1,
-   "status": "Inscrições encerradas; prova remarcada",
+   "status": "Inscrições encerradas (reabertura por decisão judicial e cronograma retificado)",
    "cargo": "Auditor Fiscal da Receita Municipal",
    "vagas": "4",
    "education": "Conferir edital",
-   "salary": "R$ 8.816,66 divulgado",
+   "salary": "Vencimento-base R$ 8.816,66 + produtividade variável",
    "bank": "IDECAN",
-   "dates": "Prova indicada para 09/01/2027; cronograma precisa de confirmação",
+   "dates": "Prova em 09/01/2027",
    "next": "Confirmar data e local na banca",
    "perspective": "Inscrições reabertas em setembro e encerradas em outubro; usar a data remarcada somente após conferir retificações.",
    "source": "Prof. Wilson Tavares",
@@ -907,9 +438,9 @@
    "cargo": "Auditor Fiscal da Receita Municipal",
    "vagas": "5 + 25 CR",
    "education": "Formação específica conforme edital",
-   "salary": "R$ 4.809,00 base; até R$ 16.831,50 com adicionais divulgados",
+   "salary": "Vencimento-base R$ 4.809,00 + adicionais; total potencial de até R$ 16.831,50 (não é salário fixo)",
    "bank": "UniRV",
-   "dates": "Prova prevista para 17/01/2027",
+   "dates": "Provas objetiva, discursiva e títulos em 17/01/2027",
    "next": "Acompanhar convocação e retificações",
    "perspective": "Remuneração total divulgada inclui gratificações; não equivale ao vencimento básico.",
    "source": "Prof. Wilson Tavares / UniRV",
@@ -934,7 +465,7 @@
    "bank": "Fundação FAFIPA",
    "dates": "Sem data oficial",
    "next": "Acompanhar contrato e publicação",
-   "perspective": "O Estratégia indica edital iminente, mas a referência salarial é do último edital, não necessariamente a atual.",
+   "perspective": "Contratação da banca reportada; sem edital específico. Não atribuir ao cargo de Auditor o total de vagas do concurso municipal.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
@@ -942,15 +473,15 @@
    "sphere": "Municipais",
    "name": "ISS Campinas (SP)",
    "stage": 2,
-   "status": "Banca definida/planejamento",
+   "status": "Banca contratada; edital pendente",
    "cargo": "Agente Fiscal Tributário e Auditor Fiscal Tributário Municipal",
-   "vagas": "2 vagas citadas no planejamento",
+   "vagas": "1 Auditor Fiscal Tributário + 1 Agente Fiscal Tributário",
    "education": "Médio e superior, conforme cargo",
-   "salary": "R$ 4.281,91 a R$ 8.991,95 + produtividade divulgados",
-   "bank": "FCC",
-   "dates": "Sem inscrições; planejamento plurianual",
-   "next": "Acompanhar publicação de edital",
-   "perspective": "A definição da FCC foi noticiada; o planejamento não equivale a edital aberto.",
+   "salary": "Auditor R$ 8.613,79; Agente Fiscal R$ 4.101,83 (valores projetados)",
+   "bank": "FCC (Contrato nº 398/26, assinado em 04/11/2026)",
+   "dates": "Sem data de edital",
+   "next": "Publicação do edital (sem data confirmada)",
+   "perspective": "Contrato publicado no Diário Oficial do Município em 06/11. O concurso unificado da prefeitura prevê 485 vagas em 109 cargos; Auditor de Controle Interno fica fora do painel.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
@@ -962,11 +493,11 @@
    "cargo": "Auditor Fiscal Tributário",
    "vagas": "1 + CR",
    "education": "Nível superior",
-   "salary": "R$ 7.005,99 divulgado",
+   "salary": "Vencimento-base de referência R$ 7.005,99 + produtividade variável",
    "bank": "FURB",
    "dates": "Sem data oficial",
    "next": "Acompanhar edital e cronograma",
-   "perspective": "A banca foi indicada como contratada por fonte especializada; conferir contrato e ato municipal.",
+   "perspective": "Contratação reportada em novembro; ainda sem edital.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
@@ -982,46 +513,14 @@
    "bank": "Legalle",
    "dates": "Sem data oficial",
    "next": "Confirmar contratação e publicação",
-   "perspective": "Status divulgado por fonte especializada; verificar formalização no município.",
-   "source": "Estratégia — concursos ISS",
-   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Parintins (AM)",
-   "stage": 2,
-   "status": "Banca definida segundo acompanhamento",
-   "cargo": "Cargo fiscal municipal; nomenclatura a confirmar",
-   "vagas": "A definir",
-   "education": "A definir",
-   "salary": "A definir",
-   "bank": "FGV",
-   "dates": "Sem data oficial",
-   "next": "Acompanhar contrato e edital",
-   "perspective": "Manter como monitoramento, sem presumir quantitativo ou remuneração.",
-   "source": "Estratégia — concursos ISS",
-   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Foz do Iguaçu (PR)",
-   "stage": 2,
-   "status": "Banca definida; cargo correlato",
-   "cargo": "Técnico em Tributos",
-   "vagas": "1 + CR divulgado",
-   "education": "A confirmar no edital",
-   "salary": "A confirmar",
-   "bank": "Fundação FAFIPA",
-   "dates": "Sem novo cronograma confirmado",
-   "next": "Acompanhar edital específico e atos da banca",
-   "perspective": "Cargo tributário correlato, mas não equivalente a Auditor Fiscal. Não confundir com o concurso geral de Foz já em andamento.",
+   "perspective": "Contrato da banca identificado; cadastro de reserva não é vaga imediata.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
   {
    "sphere": "Municipais",
    "name": "ISS Belém (PA)",
-   "stage": 4,
+   "stage": 5,
    "status": "Autorizado; comissão atualizada",
    "cargo": "Auditor Fiscal da Receita Municipal",
    "vagas": "20 + 40 CR divulgados",
@@ -1040,29 +539,29 @@
    "stage": 5,
    "status": "Comissão formada",
    "cargo": "Auditor Fiscal",
-   "vagas": "A definir; fonte especializada menciona 17 cargos vagos",
+   "vagas": "Cerca de 17 cargos vagos em levantamentos; não são vagas autorizadas",
    "education": "Nível superior",
    "salary": "R$ 22.520,23 de referência divulgada",
    "bank": "A definir",
    "dates": "Sem data oficial",
    "next": "Acompanhar estudo de vagas e banca",
-   "perspective": "Comissão formada não garante edital imediato.",
+   "perspective": "Comissão formada; sem edital. Total de até R$ 22.520,23 depende das regras da carreira.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
   {
    "sphere": "Municipais",
    "name": "ISS São Luís (MA)",
-   "stage": 4,
+   "stage": 5,
    "status": "Autorizado e comissão formada",
    "cargo": "Auditor Fiscal de Tributos",
-   "vagas": "A definir",
+   "vagas": "Levantamentos citam cerca de 113 cargos vagos; não são vagas autorizadas",
    "education": "Nível superior",
    "salary": "R$ 21.255,88 de referência divulgada",
    "bank": "A definir",
    "dates": "Sem data oficial",
    "next": "Acompanhar contratação da banca",
-   "perspective": "A autorização e a comissão são sinais concretos de preparação; vagas ainda não confirmadas.",
+   "perspective": "Comissão reportada; sem edital. R$ 21.255,88 inclui gratificações e não é vencimento-base.",
    "source": "Gran / Estratégia",
    "url": "https://blog.grancursosonline.com.br/concurso-iss-sao-luis-ma/"
   },
@@ -1078,7 +577,7 @@
    "bank": "A definir",
    "dates": "Sem data oficial",
    "next": "Acompanhar definição de cargos e vagas",
-   "perspective": "O quantitativo divulgado abrange mais de um cargo; não atribuir todas as vagas ao Auditor Fiscal.",
+   "perspective": "Autorização de 24 oportunidades no conjunto das carreiras, sem distribuição por cargo; não são 24 vagas de Auditor.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
   },
@@ -1110,25 +609,9 @@
    "bank": "A definir",
    "dates": "Sem cronograma oficial",
    "next": "Aguardar autorização formal e comissão",
-   "perspective": "A recomendação do MP não equivale a autorização nem a edital.",
+   "perspective": "Decisão administrativa de setembro de 2025 considerou inviável o concurso enquanto os limites de despesa com pessoal não forem normalizados. Não é autorizado.",
    "source": "Estratégia — concursos ISS",
    "url": "https://concursos.estrategia.com/portal/concursos-iss/"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Várzea Grande (MT)",
-   "stage": 6,
-   "status": "Previsto para 2027",
-   "cargo": "Auditor Tributário da Receita Municipal e Inspetor de Tributos",
-   "vagas": "A definir para a área fiscal",
-   "education": "Superior para Auditor; médio para Inspetor",
-   "salary": "R$ 14.270,39 a R$ 15.021,47 projetados para 2027",
-   "bank": "A definir",
-   "dates": "Expectativa 2027",
-   "next": "Acompanhar orçamento, autorização e vagas",
-   "perspective": "Lei Complementar 5.522/2026 reestruturou as carreiras. A prefeita informou previsão de concurso geral em 2027; vagas fiscais ainda não quantificadas.",
-   "source": "Estratégia — notícia de 23/09/2026",
-   "url": "https://concursos.estrategia.com/portal/concurso-iss-varzea-grande-mt/"
   },
   {
    "sphere": "Municipais",
@@ -1138,67 +621,35 @@
    "cargo": "Auditor Fiscal",
    "vagas": "7 previstas",
    "education": "Nível superior",
-   "salary": "R$ 8.523,29 de vencimento inicial divulgado; gratificações à parte",
+   "salary": "Vencimento de referência R$ 8.523,29",
    "bank": "A definir",
    "dates": "Sem cronograma; PL precisa avançar",
    "next": "Acompanhar aprovação do PL e atos preparatórios",
-   "perspective": "As sete vagas e remuneração são dados divulgados; o projeto de lei ainda precisava de aprovação e sanção na fonte consultada.",
+   "perspective": "Projeto de Lei nº 232/2026 aprovado pela Câmara em julho; criação de cargos não equivale a edital ou banca.",
    "source": "Estratégia — notícia de 17/07/2026",
    "url": "https://concursos.estrategia.com/portal/concurso-iss-vitoria-santo-antao-pe/"
   },
   {
-   "sphere": "Municipais",
-   "name": "ISS Vila Velha (ES)",
-   "stage": 6,
-   "status": "Concurso anunciado para 2027",
-   "cargo": "Auditor Fiscal",
-   "vagas": "A definir",
-   "education": "Nível superior",
-   "salary": "R$ 4.324,01 de referência divulgada",
-   "bank": "A definir",
-   "dates": "Anunciado para 2027",
-   "next": "Aguardar comissão e autorização",
-   "perspective": "Concurso anunciado para 2027, sem cargo fiscal confirmado.",
-   "source": "Estratégia — concursos ISS",
-   "url": "https://concursos.estrategia.com/portal/concursos-iss/"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Juazeiro (BA)",
-   "stage": 6,
-   "status": "Cronograma geral de concursos municipais prevê etapa posterior em 2027",
-   "cargo": "Possíveis cargos tributários a confirmar",
-   "vagas": "A definir",
-   "education": "A definir",
-   "salary": "Último edital / referências históricas não confirmam novo vencimento",
-   "bank": "A definir",
-   "dates": "Etapa ampla prevista para 2º semestre de 2027",
-   "next": "Acompanhar atualização do acordo com MPBA e relação de cargos",
-   "perspective": "Banca noticiada; cargos e vagas fiscais a confirmar.",
-   "source": "Prefeitura de Juazeiro / MPBA",
-   "url": "https://www.juazeiro.ba.gov.br/prefeitura-de-juazeiro-avanca-na-realizacao-dos-concursos-publicos-e-define-novo-cronograma-dos-certames/"
-  },
-  {
    "sphere": "Estaduais",
    "name": "SEFAZ-SP",
-   "stage": 0,
-   "status": "Edital publicado; inscrições abertas",
+   "stage": 1,
+   "status": "Inscrições encerradas (prorrogadas até 05/11); provas em 20/12",
    "cargo": "Analista em Planejamento, Orçamento e Finanças Públicas (APOFP) — cargo correlato, não é Auditor Fiscal",
    "vagas": "60 imediatas, em 3 áreas de conhecimento",
    "education": "Nível superior em qualquer área",
    "salary": "Até R$ 11.359,50 (vencimento + PIQ máximo)",
    "bank": "FCC",
-   "dates": "Inscrições até 03/11/2026; provas 20/12/2026 (remarcadas de 13/12)",
-   "next": "Inscrever-se até 03/11 e pagar a taxa (R$ 150,00) até 04/11",
-   "perspective": "Edital 01/2026 publicado em 02/10; a retificação (Edital 02/2026, DOE de 22/10) adiou as provas de 13/12 para 20/12. Cargo de planejamento e finanças, fora do escopo de Auditor Fiscal.",
+   "dates": "Inscrições até 05/11/2026; convocação 08/12; provas 20/12/2026; gabarito 04/01/2027; resultado final previsto 07/07/2027",
+   "next": "Acompanhar o edital de convocação (08/12) e as provas de 20/12",
+   "perspective": "Edital 02/2026 remarcou as provas de 13/12 para 20/12. Cargo de planejamento e finanças, fora do núcleo de Auditor Fiscal. O boletim de 21/11 não lista este concurso.",
    "source": "Edital 01/2026 e 02/2026 (DOE-SP) via Aprova Concursos e Direção Concursos",
    "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-sp-provas-adiadas",
    "events": [
     {
-     "date": "2026-11-03",
+     "date": "2026-11-05",
      "tipo": "prazo",
      "label": "Fim das inscrições",
-     "obs": "Pagamento da taxa até 04/11"
+     "obs": "Prorrogado de 03/11"
     },
     {
      "date": "2026-12-08",
@@ -1209,7 +660,12 @@
      "date": "2026-12-20",
      "tipo": "prova",
      "label": "Provas objetivas e discursiva",
-     "obs": "Remarcadas de 13/12 (Edital 02/2026)"
+     "obs": "Remarcadas de 13/12"
+    },
+    {
+     "date": "2027-01-04",
+     "tipo": "prazo",
+     "label": "Gabarito das provas objetivas"
     }
    ]
   },
@@ -1217,49 +673,17 @@
    "sphere": "Estaduais",
    "name": "SEFAZ-MA",
    "stage": 5,
-   "status": "Comissão formada; contratação de bancas autorizada",
+   "status": "Primeiro edital unificado (17-18/11) não inclui a SEFAZ",
    "cargo": "Analista Executivo Fazendário — cargo administrativo fazendário, não é Auditor Fiscal",
-   "vagas": "10 previstas na LOA 2026; pedido de ampliação de +25",
+   "vagas": "10 previstas na LOA 2026; distribuição por cargo diverge entre fontes",
    "education": "Nível superior",
    "salary": "Fontes divergem: vencimento básico de R$ 4.725,94 e referência de R$ 17.996,03 divulgadas",
-   "bank": "A definir (contratação direta de bancas autorizada em abril/2026)",
-   "dates": "Sem cronograma oficial",
-   "next": "Acompanhar a contratação da banca e a ampliação das vagas",
-   "perspective": "Fontes divergem sobre vagas de Auditor Fiscal; a resposta da secretaria noticiada pela Magistrar fala só em Analista Executivo Fazendário.",
+   "bank": "FCC (Contrato nº 009/2026, de 01/10/2026)",
+   "dates": "Edital da SEFAZ sem data. 1º edital unificado, de outros órgãos: inscrições de 14/12/2026 a 29/01/2027; prova em 04/04/2027",
+   "next": "Aguardar edital específico da SEFAZ (consta do 'Concurso 4' na proposta técnica da FCC)",
+   "perspective": "Cargo previsto: Analista Executivo Fazendário. Auditor Fiscal e Agente da Receita Estadual não estão no primeiro edital. Fontes divergem sobre vagas de Auditor.",
    "source": "Direção Concursos / Magistrar Cursos",
-   "url": "https://www.direcaoconcursos.com.br/noticias/concurso-sefaz-ma-loa-vagas-banca"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Belo Horizonte (MG)",
-   "stage": 5,
-   "status": "Comissão formada; estudos em andamento",
-   "cargo": "Analista Fazendário — cargo correlato; Auditor Fiscal não confirmado",
-   "vagas": "A definir",
-   "education": "Nível superior (áreas esperadas: Ciências Contábeis e TI)",
-   "salary": "R$ 7.756,25 de referência (último edital de Agente Fazendário); conferir",
-   "bank": "A definir",
-   "dates": "Comissão em 27/05/2026; estudos em 09/06/2026; sem cronograma",
-   "next": "Acompanhar definição de vagas e banca",
-   "perspective": "Não há previsão oficial de novo edital de Auditor Fiscal. O último concurso de Auditor (2021, 14 vagas) teve validade citada até agosto/2026; conferir prorrogação.",
-   "source": "Gran Cursos / Próximos Concursos / Estudo Certeiro",
-   "url": "https://blog.grancursosonline.com.br/concurso-iss-bh/amp/"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Niterói (RJ)",
-   "stage": 6,
-   "status": "Previsto",
-   "cargo": "Auditor Fiscal, Fiscal de Posturas e Agente Fazendário",
-   "vagas": "A definir",
-   "education": "Médio e superior, conforme cargo",
-   "salary": "Até R$ 30.468,68 (referência divulgada)",
-   "bank": "A definir",
-   "dates": "Sem cronograma; previsto para 2026/2027",
-   "next": "Aguardar comissão e ato oficial",
-   "perspective": "Expectativa antiga, de baixa confiança. Não foram localizados edital, banca ou comissão oficiais.",
-   "source": "Estratégia Concursos / Magistrar Cursos / Estudo Certeiro",
-   "url": "https://www.estrategiaconcursos.com.br/blog/concurso-iss-niteroi/"
+   "url": "https://www.aprovaconcursos.com.br/noticias/?p=169002"
   },
   {
    "sphere": "Estaduais",
@@ -1273,14 +697,14 @@
    "bank": "A definir",
    "dates": "Sem cronograma",
    "next": "Acompanhar atualizações",
-   "perspective": "Intenção divulgada, sem formalização.",
+   "perspective": "Intenção divulgada, sem formalização; sem base para edital iminente.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
    "sphere": "Estaduais",
    "name": "SEFIN-RO",
-   "stage": 6,
-   "status": "Expectativa, sem autorização formal",
+   "stage": 5,
+   "status": "Ato antigo de planejamento; resposta oficial posterior informa ausência de previsão",
    "cargo": "A confirmar",
    "vagas": "A definir",
    "education": "A confirmar no edital",
@@ -1288,7 +712,7 @@
    "bank": "A definir",
    "dates": "Sem cronograma",
    "next": "Acompanhar atualizações",
-   "perspective": "Expectativa, sem autorização formal.",
+   "perspective": "Não tratar como concurso previsto.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
@@ -1323,36 +747,6 @@
   },
   {
    "sphere": "Estaduais",
-   "name": "SEFAZ-GO",
-   "stage": 6,
-   "status": "Acompanhar nomeações",
-   "cargo": "A confirmar",
-   "vagas": "A definir",
-   "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
-   "bank": "A definir",
-   "dates": "Sem cronograma",
-   "next": "Acompanhar atualizações",
-   "perspective": "Sem novo edital confirmado; acompanhar nomeações.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "sphere": "Estaduais",
-   "name": "SEFA-PA",
-   "stage": 6,
-   "status": "Acompanhar nomeações",
-   "cargo": "A confirmar",
-   "vagas": "A definir",
-   "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
-   "bank": "A definir",
-   "dates": "Sem cronograma",
-   "next": "Acompanhar atualizações",
-   "perspective": "Sem novo edital confirmado; acompanhar nomeações.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "sphere": "Estaduais",
    "name": "SEFAZ-MG",
    "stage": 6,
    "status": "Carreira correlata citada",
@@ -1363,22 +757,22 @@
    "bank": "A definir",
    "dates": "Sem cronograma",
    "next": "Acompanhar atualizações",
-   "perspective": "Carreira correlata, fora do núcleo de Auditor Fiscal tributário.",
+   "perspective": "Carreira correlata (Gestor Fazendário); sem base para edital iminente.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
    "sphere": "Municipais",
    "name": "ISS Nova Pádua (RS)",
-   "stage": 0,
-   "status": "Edital publicado; inscrições abertas",
+   "stage": 1,
+   "status": "Inscrições encerradas em 19/11",
    "cargo": "Auditor Tributário",
    "vagas": "Cadastro de reserva",
    "education": "Superior em Contabilidade, Economia, Administração ou Direito",
    "salary": "R$ 9.113,48 (40 horas semanais)",
    "bank": "Fundatec",
    "dates": "Inscrições até 19/11/2026; prova 13/12/2026",
-   "next": "Inscrever-se e conferir o Edital 01/2026",
-   "perspective": "Registro histórico preservado: Edital 01/2026, Auditor Tributário em cadastro de reserva.",
+   "next": "Prova objetiva em 13/12/2026",
+   "perspective": "Edital vigente. Registro mantido mesmo sendo município de pequeno porte.",
    "source": "Painel de acompanhamento de 02/11/2026",
    "events": [
     {
@@ -1395,47 +789,17 @@
   },
   {
    "sphere": "Municipais",
-   "name": "ISS Caxias do Sul (RS)",
-   "stage": 1,
-   "status": "Provas realizadas; acompanhar resultados",
-   "cargo": "Auditor-Fiscal",
-   "vagas": "2 + CR",
-   "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
-   "bank": "Fundatec",
-   "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar resultados, recursos e homologação",
-   "perspective": "Fontes divergem: o levantamento de 29/10 indicava homologação final em setembro; o painel de 02/11 indica acompanhar resultados e homologação. Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "sphere": "Municipais",
    "name": "ISS Guarulhos (SP)",
    "stage": 1,
    "status": "Prova realizada; acompanhar resultados",
    "cargo": "Auditor Fiscal VI",
    "vagas": "10",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "Vencimento-base R$ 7.213,33 + auxílio-alimentação de R$ 1.297,05 (sem produtividade)",
    "bank": "IBAM",
    "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar resultados",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
-   "source": "Painel de acompanhamento de 02/11/2026"
-  },
-  {
-   "sphere": "Municipais",
-   "name": "ISS Itajaí (SC)",
-   "stage": 1,
-   "status": "Verificar homologação e validade",
-   "cargo": "Auditor Fiscal",
-   "vagas": "1 + CR",
-   "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
-   "bank": "Fepese",
-   "dates": "Prova já realizada; sem nova data",
-   "next": "Verificar homologação e validade",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "next": "Resultados e classificação",
+   "perspective": "Prova aplicada; sem homologação final localizada. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
@@ -1446,41 +810,41 @@
    "cargo": "Auditor Fiscal",
    "vagas": "1 + CR",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "R$ 8.293,78 (referência)",
    "bank": "Fundatec",
    "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar títulos e homologação",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "next": "Confirmar resultados finais e eventual homologação",
+   "perspective": "Pendência de confirmação documental de encerramento. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
    "sphere": "Municipais",
    "name": "ISS Taubaté (SP)",
    "stage": 1,
-   "status": "Acompanhar resultados",
+   "status": "Prova aplicada em setembro; aguardar resultados",
    "cargo": "Auditor Fiscal",
    "vagas": "2 + CR",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "R$ 10.653,91",
    "bank": "IBAM",
    "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar resultados",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "next": "Resultados e classificação final",
+   "perspective": "Mantido até confirmação do encerramento formal. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
    "sphere": "Municipais",
    "name": "ISS Porto Velho (RO)",
    "stage": 1,
-   "status": "Resultados e títulos em andamento",
+   "status": "Avançado; títulos e atos finais",
    "cargo": "Auditor Fiscal da Receita Municipal",
-   "vagas": "15 + CR no conjunto do concurso",
+   "vagas": "10 imediatas + 30 CR para Auditor Fiscal (o concurso também tem vagas de Assistente de Arrecadação)",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "Total divulgado de até R$ 18.431,04, com parcelas variáveis e auxílio; não é o vencimento-base",
    "bank": "Cebraspe",
    "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar resultados e títulos",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "next": "Avaliação de títulos e demais atos finais",
+   "perspective": "Resultados de heteroidentificação e avaliação biopsicossocial já publicados; sem homologação integral confirmada. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
@@ -1489,13 +853,13 @@
    "stage": 1,
    "status": "Fase posterior à prova",
    "cargo": "Auditor Fiscal",
-   "vagas": "1 + CR",
+   "vagas": "1",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "R$ 6.141,66",
    "bank": "IDECAN",
    "dates": "Prova já realizada; sem nova data",
-   "next": "Acompanhar resultados",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "next": "Confirmar homologação e acompanhar nomeações",
+   "perspective": "Prova e resultados divulgados; sem ato suficiente para excluir. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
   },
   {
@@ -1506,198 +870,84 @@
    "cargo": "Auditor Fiscal",
    "vagas": "1 vaga",
    "education": "A confirmar no edital",
-   "salary": "A confirmar no edital",
+   "salary": "Vencimento-base de referência R$ 8.144,93 (produtividade não somada)",
    "bank": "FCC",
    "dates": "Sem data oficial",
    "next": "Acompanhar edital",
-   "perspective": "Registro recuperado do inventário anterior; precisa de revalidação em fonte primária.",
+   "perspective": "FCC indicada no procedimento de escolha; contrato específico sem confirmação documental. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
    "source": "Painel de acompanhamento de 02/11/2026"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Queimados (RJ)",
+   "stage": 1,
+   "status": "Provas objetivas em 22/11 (data já passou); acompanhar gabarito e resultado",
+   "cargo": "Agente Fiscal e Agente Fazendário — cargos fazendários correlatos, não Auditor Fiscal",
+   "vagas": "5 + CR (Agente Fiscal) e 8 + CR (Agente Fazendário)",
+   "education": "Superior em qualquer área",
+   "salary": "Agente Fiscal R$ 10.805,10; Agente Fazendário R$ 8.866,68 (conferir composição)",
+   "bank": "IAN (Instituto de Avaliação Nacional)",
+   "dates": "Inscrições prorrogadas até 03/11; provas em 22/11/2026; gabarito preliminar previsto para 23/11",
+   "next": "Acompanhar gabarito, recursos e resultado",
+   "perspective": "Correção ao boletim de 21/11: pelo edital, Agente Fiscal (manhã) e Agente Fazendário (tarde) fazem prova só em 22/11; o dia 20/11 era de outros cargos.",
+   "source": "Boletim de 21/11/2026, conferido na web em 26/11/2026",
+   "url": "https://www.novaconcursos.com.br/portal/concursos/concurso-prefeitura-de-queimados-rj",
+   "events": [
+    {
+     "date": "2026-11-22",
+     "tipo": "prova",
+     "label": "Prova objetiva",
+     "obs": "Agente Fiscal pela manhã; Agente Fazendário à tarde"
+    },
+    {
+     "date": "2026-11-23",
+     "tipo": "prazo",
+     "label": "Gabarito preliminar previsto"
+    }
+   ]
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Indaial (SC)",
+   "stage": 1,
+   "status": "Prova realizada; acompanhar resultados e homologação",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "3",
+   "education": "Ciências Contábeis, com registro no CRC",
+   "salary": "R$ 6.234,00",
+   "bank": "IBAM",
+   "dates": "Prova já realizada",
+   "next": "Confirmar resultados finais e homologação",
+   "perspective": "Mantido enquanto não há confirmação de encerramento formal. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
+   "source": "Boletim de 21/11/2026, conferido na web em 26/11/2026"
+  },
+  {
+   "sphere": "Municipais",
+   "name": "ISS Franco da Rocha (SP)",
+   "stage": 1,
+   "status": "Resultados finais e homologação parcial em novembro",
+   "cargo": "Auditor Fiscal de Tributos Municipais",
+   "vagas": "Cadastro de reserva",
+   "education": "Superior em Administração, Ciências Contábeis, Ciências Econômicas ou Direito",
+   "salary": "R$ 6.067,97",
+   "bank": "Instituto Consulpam",
+   "dates": "Prova em julho; homologação parcial em novembro",
+   "next": "Acompanhar homologação e convocação",
+   "perspective": "A homologação parcial não equivale ao encerramento de todos os cargos. Dados do boletim de 21/11; não conferidos na web nesta rodada.",
+   "source": "Boletim de 21/11/2026, conferido na web em 26/11/2026"
   }
  ],
  "notas": [
-  "Todo concurso identificado anteriormente permanece no inventário até justificativa verificável para sua saída. Ausência de notícia não é tratada como cancelamento ou encerramento.",
-  "Os registros recuperados do inventário anterior precisam de revalidação individual em fonte primária (oficial, banca, diário oficial) e em fontes especializadas.",
-  "Cada seleção é contada uma única vez, na etapa mais avançada comprovada. Auditor Fiscal, Auditor Tributário, Fiscal de Tributos e cargos fazendários correlatos são separados, assim como vagas imediatas, cadastro de reserva, cargos vagos e previsões.",
-  "Carreiras correlatas, fora do núcleo de Auditor Fiscal tributário: SEFAZ-SC (Auditor Estadual de Finanças Públicas), SEFAZ-MG (Gestor Fazendário), SEFAZ-MA (Analista Executivo Fazendário), SEFAZ-SP (APOFP) e ISS Belo Horizonte (Analista Fazendário).",
-  "Fontes recorrentes: portais oficiais, diários oficiais, bancas organizadoras, Gran Cursos, Estratégia, sindicatos e imprensa especializada.",
-  "Limitações: reconciliação histórica ainda incompleta; não foi possível comprovar consulta integral aos 15 portais municipais definidos. Este painel não apresenta total nacional fechado."
+  "Inventário reconciliado, não um censo de todos os concursos fiscais do Brasil. A cobertura municipal é ampla, mas não exaustiva, e não foi possível comprovar a consulta integral aos 15 portais municipais fixos.",
+  "Cargos vagos, vagas imediatas, cadastro de reserva, posições criadas por lei e previsões são mantidos separados. Produtividade, gratificações e auxílios são distinguidos do vencimento-base; remuneração total potencial não é pagamento fixo garantido.",
+  "Carreiras correlatas, fora do núcleo de Auditor Fiscal tributário: SEFAZ-SC (Finanças Públicas), SEFAZ-SP (APOFP), SEFAZ-MA (Analista Executivo Fazendário), SEFAZ-MG (Gestor Fazendário), ISS Queimados (Agente Fiscal e Agente Fazendário), ISS Santa Luzia (Fiscal de Tributos) e ISS Caruaru (Analista Fiscal).",
+  "Fora do painel nesta edição, segundo o boletim de 21/11: ISS Itajaí (o edital de 2026 não traz Auditor Fiscal), Ponta Grossa, Caxias do Sul e Córrego Fundo (homologados), Parintins, Juazeiro, Belo Horizonte, Vila Velha, Várzea Grande, Niterói e Foz do Iguaçu (sem cargo fiscal ou edital confirmados), SEFAZ-GO e SEFA-PA (concursos anteriores homologados) e SEFAZ-RJ, RN, PI e SE (seleções anteriores em resultado, homologação ou validade).",
+  "Conferidos na web em 26/11: Receita Federal, SEFAZ-RS, BA, DF, MA e SP, ISS Queimados, Campinas e Manaus. Os demais registros vêm do boletim de 21/11 e ainda precisam de confirmação em fonte oficial; Novo Hamburgo, Indaial e Sorocaba têm pendências documentais."
  ],
  "panorama": {
   "periodo": "nov/2026 a out/2027",
-  "Federal": "Receita Federal: 146 vagas autorizadas (30 Auditor-Fiscal e 116 Analista-Tributário), banca ainda sem contratação concluída confirmada. Edital estimado para dezembro de 2026.",
-  "Estaduais": "SEFAZ-BA, com Cesgranrio reportada como contratada, tem a perspectiva mais alta, com edital pendente. DF e RS têm bancas definidas em registros anteriores, com quantitativos e editais a confirmar. SC, SP e AL têm provas até janeiro/2027.",
-  "Municipais": "Curitiba, Aracati e Nova Pádua têm inscrições abertas, com prazos de 05/11 a 19/11. Belém e São Luís estão em autorização, e Juiz de Fora e Vitória da Conquista em comissão ou planejamento. Lagoa Santa tem edital publicado, com inscrições de 16/12 a 18/01."
+  "Federal": "Receita Federal: 146 vagas autorizadas (30 Auditor-Fiscal e 116 Analista-Tributário). A FGV foi definida como banca em 23/11, com contrato a assinar. Edital previsto para dezembro/2026, sem data de inscrição ou prova.",
+  "Estaduais": "SEFAZ-RS (FCC, 29 Auditor e 17 Analista), BA (Cesgranrio) e DF (Cebraspe) têm banca definida e aguardam edital. SC, AL e SP têm provas até janeiro/2027. O primeiro edital unificado do Maranhão não incluiu a SEFAZ.",
+  "Municipais": "As provas se concentram até março/2027: Caruaru (29/11), Curitiba (06/12), Nova Pádua (13/12), Campina Grande, Rio Verde, Aracati e Manaus. Lagoa Santa e Santa Luzia abrem inscrições em dezembro. Campinas, Cascavel, Pelotas, Blumenau e Sorocaba têm banca definida, sem edital."
  }
 }
-</script>
-
-<script>
-(async function () {
-  const $ = id => document.getElementById(id);
-  const MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
-  const pad = n => String(n).padStart(2, "0");
-  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "";
-
-  let D;
-  try { D = JSON.parse($("boletim-data").textContent); } catch (e) { D = null; }
-  // dados.json (atualizado pela automação) tem prioridade; o bloco embutido é só reserva
-  try {
-    const r = await fetch("dados.json?v=" + Date.now(), { cache: "no-store" });
-    if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.contests) && j.contests.length) D = j; }
-  } catch (e) { /* sem rede ou aberto como arquivo local: usa os dados embutidos */ }
-  if (!D) {
-    const box = $("app-error");
-    box.hidden = false;
-    box.textContent = "Não foi possível carregar os dados do boletim.";
-    $("edition").textContent = "Dados indisponíveis";
-    return;
-  }
-  const contests = Array.isArray(D.contests) ? D.contests : [];
-  const news = Array.isArray(D.news) ? D.news : [];
-  const meta = D.meta || {};
-
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-  function parseDate(s) {
-    const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(s || "");
-    if (!m) return null;
-    const y = +m[1], mo = +m[2] - 1;
-    return m[3] ? { d: new Date(y, mo, +m[3]), approx: false } : { d: new Date(y, mo + 1, 0), approx: true };
-  }
-  const fmt = p => p.approx ? `${MES[p.d.getMonth()]}/${p.d.getFullYear()}` : `${pad(p.d.getDate())}/${pad(p.d.getMonth() + 1)}/${p.d.getFullYear()}`;
-  const diffDays = p => Math.round((p.d - today) / 864e5);
-  function when(p) {
-    if (p.approx) return "previsão";
-    const n = diffDays(p);
-    if (n === 0) return "hoje";
-    if (n === 1) return "amanhã";
-    if (n === -1) return "ontem";
-    return n > 0 ? `em ${n} dias` : `há ${-n} dias`;
-  }
-
-  // ---------- cabeçalho / aviso de dados antigos
-  const ed = parseDate(meta.edicao);
-  $("edition").innerHTML = (ed ? `<strong>Edição de ${ed.d.toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}</strong> · ` : "") +
-    "Brasil · SEFAZ, SEFIN, ISS e Receita Federal";
-  if (ed) document.title = `Boletim Semanal — Concursos da Área Fiscal | ${fmt(ed)}`;
-  const upd = parseDate(meta.atualizadoEm) || ed;
-  if (upd) {
-    $("updated").textContent = `Última atualização dos dados: ${fmt(upd)}.`;
-    const age = diffDays(upd) * -1;
-    if (age > 10) {
-      const st = $("stale");
-      st.hidden = false;
-      st.textContent = `Atenção: os dados têm ${age} dias. Confira os editais nos canais oficiais.`;
-    }
-  }
-
-  if (Array.isArray(D.notas) && D.notas.length) { $("notes-box").hidden = false; $("notes").innerHTML = D.notas.map(n => `<li>${esc(n)}</li>`).join(""); }
-
-  // ---------- contadores (calculados)
-  const groups = [
-    ["Editais abertos", [0]], ["Provas / Encerrados", [1]], ["Banca definida", [2]],
-    ["Em contratação", [3]], ["Comissão / Autoriz.", [4, 5]], ["Previstos", [6]]
-  ];
-  $("summary").innerHTML = groups.map(([label, st]) =>
-    `<div class="summary-box"><span class="summary-num">${contests.filter(c => st.includes(c.stage)).length}</span><span class="summary-label">${esc(label)}</span></div>`).join("");
-
-  // ---------- novidades
-  const newsSorted = news.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 10);
-  if (newsSorted.length) {
-    $("news-section").hidden = false;
-    $("news").innerHTML = newsSorted.map(n => {
-      const p = parseDate(n.date), url = safeUrl(n.url);
-      return `<article class="card">
-        <h3>${esc(n.title)} ${p ? `<span class="muted" style="font-weight:normal; float:right;">(${fmt(p)})</span>` : ""}</h3>
-        ${n.tag ? `<span class="tag ${n.warn ? "warn" : ""}">${esc(n.tag)}</span>` : ""}
-        <p>${esc(n.text)}</p>
-        ${n.source ? `<p class="muted">Fonte: ${esc(n.source)}.</p>` : ""}
-        ${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">Acessar fonte</a>` : ""}
-      </article>`;
-    }).join("");
-  }
-
-  // ---------- agenda (gerada dos events de cada concurso)
-  const events = contests.flatMap(c => (c.events || []).map(e => ({ ...e, concurso: c.name, p: parseDate(e.date) }))).filter(e => e.p);
-  const tipoTag = { prazo: ["warn", "Prazo"], prova: ["", "Prova"], previsao: ["info", "Previsão"] };
-  const row = e => {
-    const [cls, txt] = tipoTag[e.tipo] || ["gray", "Evento"];
-    const soon = !e.p.approx && diffDays(e.p) >= 0 && diffDays(e.p) <= 7;
-    return `<tr class="${soon ? "soon" : ""}"><td class="date">${fmt(e.p)}</td><td class="when">${when(e.p)}</td><td>${esc(e.concurso)}</td><td>${esc(e.label)}${e.obs ? `<br><span class="muted">${esc(e.obs)}</span>` : ""}</td><td><span class="tag ${cls}" style="margin:0">${txt}</span></td></tr>`;
-  };
-  const sortFn = (a, b) => a.p.d - b.p.d || a.p.approx - b.p.approx;
-  const next = events.filter(e => e.p.d >= today).sort(sortFn);
-  const past = events.filter(e => e.p.d < today).sort((a, b) => sortFn(b, a));
-  $("agenda").innerHTML = next.length ? next.map(row).join("") : '<tr><td colspan="5" class="muted">Nenhum compromisso futuro cadastrado.</td></tr>';
-  if (past.length) {
-    $("past-box").hidden = false;
-    $("past-title").textContent = `Eventos já realizados (${past.length})`;
-    $("agenda-past").innerHTML = past.map(row).join("");
-  }
-
-  // ---------- panorama 12 meses (só texto, vindo do JSON)
-  const pan = D.panorama || {};
-  if (pan.Federal || pan.Estaduais || pan.Municipais) {
-    $("panorama-section").hidden = false;
-    if (pan.periodo) $("panorama-title").textContent = `Panorama dos próximos 12 meses (${pan.periodo})`;
-    $("panorama").innerHTML = [["Federal", "Federal"], ["Estaduais", "Estadual"], ["Municipais", "Municipal"]]
-      .map(([k, t]) => `<article class="card"><h3>${t}</h3><p>${esc(pan[k])}</p></article>`).join("");
-  }
-
-  // ---------- painel por esfera
-  const stageLabels = [
-    "Editais abertos — inscrições em andamento", "Editais publicados — inscrições encerradas / em andamento", "Banca definida ou aprovada",
-    "Banca em contratação", "Concursos autorizados", "Comissão formada ou planejamento iniciado", "Previsões e expectativas"
-  ];
-  let selectedSphere = "Municipais";
-  $("stage").innerHTML = '<option value="all">Todas as etapas</option>' + stageLabels.map((l, i) => `<option value="${i}">${esc(l)}</option>`).join("");
-
-  function render() {
-    const q = $("search").value.trim().toLowerCase();
-    const stSel = $("stage").value;
-    const filtered = contests.filter(c => c.sphere === selectedSphere && (stSel === "all" || String(c.stage) === stSel) &&
-      (!q || [c.name, c.cargo, c.status, c.bank].join(" ").toLowerCase().includes(q)));
-    $("count").textContent = `${filtered.length} concurso(s) encontrado(s) em ${selectedSphere}.`;
-    const host = $("contests");
-    if (!filtered.length) {
-      host.innerHTML = '<div class="card"><p class="muted" style="margin:0; text-align:center;">Nenhum concurso encontrado para esta busca.</p></div>';
-      return;
-    }
-    const grouped = {};
-    filtered.forEach(c => (grouped[c.stage] = grouped[c.stage] || []).push(c));
-    host.innerHTML = Object.keys(grouped).sort((a, b) => a - b).map(st => `
-      <div class="stage-section"><div class="stage-title">${esc(stageLabels[st] || "Outras etapas")}</div><div class="contest-list">
-      ${grouped[st].map(c => { const url = safeUrl(c.url); return `
-        <article class="contest">
-          <h3>${esc(c.name)}</h3>
-          <div class="meta"><strong>Cargo:</strong> ${esc(c.cargo)}</div>
-          <span class="tag">${esc(c.status)}</span>
-          <div class="facts">
-            <div class="fact"><b>Vagas</b>${esc(c.vagas)}</div>
-            <div class="fact"><b>Escolaridade</b>${esc(c.education)}</div>
-            <div class="fact"><b>Remuneração</b>${esc(c.salary)}</div>
-            <div class="fact"><b>Banca</b>${esc(c.bank)}</div>
-          </div>
-          <p><strong>Datas:</strong> ${esc(c.dates)}</p>
-          <p><strong>Próximo passo:</strong> ${esc(c.next)}</p>
-          <p class="muted"><strong>Perspectiva:</strong> ${esc(c.perspective)}</p>
-          <p class="muted"><strong>Fonte:</strong> ${esc(c.source)} ${url ? `· <a href="${esc(url)}" target="_blank" rel="noopener">abrir página</a>` : ""}</p>
-        </article>`; }).join("")}
-      </div></div>`).join("");
-  }
-
-  const buttons = document.querySelectorAll("[data-sphere]");
-  buttons.forEach(btn => btn.addEventListener("click", () => {
-    selectedSphere = btn.getAttribute("data-sphere");
-    buttons.forEach(b => { b.classList.toggle("active", b === btn); b.setAttribute("aria-selected", b === btn ? "true" : "false"); });
-    render();
-  }));
-  $("search").addEventListener("input", render);
-  $("stage").addEventListener("change", render);
-  render();
-})();
-</script>
-</body>
-</html>
